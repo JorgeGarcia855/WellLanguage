@@ -9,15 +9,16 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import WellLanguage.editor.regulartext_StyleSheet.arialfontStyleClass;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -26,44 +27,13 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import de.slisson.mps.tables.runtime.cells.TableEditor;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import de.slisson.mps.hacks.editor.EditorCacheHacks;
-import de.slisson.mps.tables.runtime.cells.ChildsTracker;
-import de.slisson.mps.tables.runtime.cells.PartialTableExtractor;
-import de.slisson.mps.tables.runtime.gridmodel.Grid;
-import java.util.List;
-import de.slisson.mps.tables.runtime.gridmodel.HeaderGrid;
-import java.util.ArrayList;
-import de.slisson.mps.tables.runtime.gridmodel.GridAdapter;
-import de.slisson.mps.tables.runtime.gridmodel.IHeaderNodeInsertAction;
-import de.slisson.mps.tables.runtime.gridmodel.ChildNodesInsertAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import de.slisson.mps.hacks.editor.SubstituteUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
-import de.slisson.mps.tables.runtime.gridmodel.HeaderNodeInsertAction;
-import de.slisson.mps.tables.runtime.style.ITableStyleFactory;
-import de.slisson.mps.tables.runtime.gridmodel.EditorCellFactory;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
-import de.slisson.mps.tables.runtime.gridmodel.IRowCreateHandler;
-import de.slisson.mps.tables.runtime.gridmodel.IHeaderNodeDeleteAction;
-import de.slisson.mps.tables.runtime.gridmodel.HeaderGridFactory;
-import de.slisson.mps.tables.runtime.gridmodel.Header;
-import de.slisson.mps.tables.runtime.gridmodel.EditorCellHeader;
-import de.slisson.mps.tables.runtime.gridmodel.StringHeaderReference;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
+import javax.swing.JButton;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 /*package*/ class Well_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -89,15 +59,18 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setCellId("Collection_gkjbwf_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
+    Style style = new StyleImpl();
+    new arialfontStyleClass(this).apply(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createCollection_2());
-    editorCell.addEditorCell(createJComponent_0());
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createProperty_1());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createComponent_0());
     editorCell.addEditorCell(createConstant_3());
     editorCell.addEditorCell(createConstant_4());
-    editorCell.addEditorCell(createJComponent_1());
-    editorCell.addEditorCell(createConstant_5());
-    editorCell.addEditorCell(createConstant_6());
-    editorCell.addEditorCell(createConstant_7());
+    editorCell.addEditorCell(createCollection_2());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -106,17 +79,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_0());
-    editorCell.addEditorCell(createIndentCell_1());
     editorCell.addEditorCell(createProperty_0());
-    return editorCell;
-  }
-  private EditorCell createIndentCell_0() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
-    return editorCell;
-  }
-  private EditorCell createIndentCell_1() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
   private EditorCell createProperty_0() {
@@ -127,6 +90,10 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no name>");
       editorCell.setCellId("property_name");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_SIZE, 22);
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.LIGHT_BLUE));
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -140,876 +107,101 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_2() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_gkjbwf_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    if (nodeCondition_gkjbwf_a0b0()) {
-      editorCell.addEditorCell(createCollection_3());
-    }
-    editorCell.addEditorCell(createCollection_4());
-    editorCell.addEditorCell(createCollection_5());
-    return editorCell;
-  }
-  private boolean nodeCondition_gkjbwf_a0b0() {
-    return SPropertyOperations.getBoolean(myNode, PROPS.visibility$dLsO);
-  }
-  private EditorCell createCollection_3() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_gkjbwf_a1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_0());
-    editorCell.addEditorCell(createTable_1());
-    return editorCell;
-  }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Downhole Properties");
-    editorCell.setCellId("Constant_gkjbwf_a0b0");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_gkjbwf_b0");
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createTable_0(final EditorContext editorContext, final SNode node) {
-
-    final Wrappers._T<TableEditor> editorCell = new Wrappers._T<TableEditor>(null);
-    _FunctionTypes._void_P0_E0 creator = () -> EditorCacheHacks.noCaching(editorContext, () -> {
-      try {
-
-        ChildsTracker.pushNewInstance();
-        PartialTableExtractor.pushNewInstance();
-        Grid grid = new Grid();
-
-        // column headers
-        {
-          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
-          grid.setColumnHeaders(headerGrids);
-        }
-
-        // row headers
-        {
-          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
-          grid.setRowHeaders(headerGrids);
-        }
-        final Grid childGrid = createChildsVertical_gkjbwf_a1a1a(editorContext, node);
-        childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
-        childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
-        grid.setElement(0, 0, childGrid);
-
-        editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_gkjbwf_b0b0");
-
-
-        editorCell.value.init();
-      } finally {
-        PartialTableExtractor.popInstance();
-        ChildsTracker.popInstance(true);
-      }
-    });
-
-    creator.invoke();
-
-    return editorCell.value;
-
-  }
-  private EditorCell createTable_1() {
-    return createTable_0(getEditorContext(), myNode);
-  }
-  public Grid createChildsVertical_gkjbwf_a1a1a(final EditorContext editorContext, final SNode node) {
-    Grid grid = new Grid();
-    GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
-
-    grid.setColumnHeaders(0, 0, createHeaderCollection_gkjbwf_a0b0b0(editorContext, node));
-    grid.setRowHeaders(0, 0, createHeadQuery_gkjbwf_a0b0b0(editorContext, node));
-
-    final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.downholeProps$hpf5)) {};
-
-    try {
-      getCellFactory().pushCellContext();
-      getCellFactory().addCellContextHints();
-      getCellFactory().removeCellContextHints();
-      int y = 0;
-      Iterable<SNode> elements = SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5);
-      for (SNode child : Sequence.fromIterable(elements)) {
-        final int yFinal = y;
-        EditorCell cell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
-        ChildsTracker.getInstance().registerChild(cell);
-        SubstituteInfo substituteInfo = SubstituteUtil.forChild(editorContext, node, (y < ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).count() ? ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).getElement(y) : null), LINKS.downholeProps$hpf5);
-        cell.setSubstituteInfo(substituteInfo);
-
-        IGridElement gridElement = PartialTableExtractor.getGridElementFromEditorCell(cell, grid);
-
-        gridElement.setRightRowCreateHandler(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child) + 1, insertAction));
-        gridElement.setLeftRowCreateHandler(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child), insertAction));
-        gridElement.setSpanX(Math.max(1, grid.getSizeX()));
-
-        grid.setElement(0, y, gridElement);
-
-
-        gridElement.setStyle(new ITableStyleFactory() {
-          public Style createStyle(final int columnIndex, final int rowIndex) {
-            Style style = new StyleImpl();
-            final EditorCell editorCell = null;
-            return style;
-          }
-        }.createStyle(0, y));
-
-        gridElement.setInsertBeforeAction(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child), insertAction), -1);
-        gridElement.setInsertAction(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child) + 1, insertAction), -1);
-
-        y++;
-      }
-    } finally {
-      getCellFactory().popCellContext();
-    }
-
-    if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).isEmpty()) {
-      EditorCell placeholder = new EditorCellFactory(editorContext, node, grid).createPlaceholderConstant("<no downholeProps>");
-      IGridElement element = PartialTableExtractor.getGridElementFromEditorCell(placeholder, grid);
-      element.setSpanX(Math.max(element.getSpanX(), grid.getColumnHeadersSizeX()));
-      element.setSpanY(Math.max(element.getSpanY(), grid.getRowHeadersSizeY()));
-      grid.setElement(0, 0, element);
-
-      placeholder.setAction(CellActionType.INSERT, new AbstractCellAction() {
-        public void execute(EditorContext p0) {
-          insertAction.insertNew(0);
-        }
-      });
-      placeholder.setAction(CellActionType.INSERT_BEFORE, placeholder.getAction(CellActionType.INSERT));
-      SubstituteInfo substituteInfo = new DefaultSChildSubstituteInfo(node, null, LINKS.downholeProps$hpf5, editorContext);
-      placeholder.setSubstituteInfo(substituteInfo);
-      IRowCreateHandler rowCreateHandler = new IRowCreateHandler() {
-        public void create() {
-          insertAction.insertNew(0);
-        }
-      };
-
-      grid.setLeftRowCreateHandler(rowCreateHandler);
-      grid.setRightRowCreateHandler(rowCreateHandler);
-    }
-
-    grid.flattenOneLevel();
-    return grid;
-  }
-  public HeaderGrid createHeaderCollection_gkjbwf_a0b0b0(final EditorContext editorContext, final SNode node) {
-    IHeaderNodeInsertAction insertAction = null;
-    IHeaderNodeDeleteAction deleteAction = null;
-
-    List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_gkjbwf_a0a1a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_b0a1a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_c0a1a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_d0a1a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_e0a1a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_f0a1a1a(editorContext, node));
-
-    return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_a0a1a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Top Perforation", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Top Perforation"), cell);
-    header.setLabel("Top Perforation");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_b0a1a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Bottom Perforation", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Bottom Perforation"), cell);
-    header.setLabel("Bottom Perforation");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_c0a1a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Anchor", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Anchor"), cell);
-    header.setLabel("Anchor");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_d0a1a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "PlugBack", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("PlugBack"), cell);
-    header.setLabel("PlugBack");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_e0a1a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Pump Mearsured Depth", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Pump Mearsured Depth"), cell);
-    header.setLabel("Pump Mearsured Depth");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_f0a1a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Pump Vertical Measured Depth", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Pump Vertical Measured Depth"), cell);
-    header.setLabel("Pump Vertical Measured Depth");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createHeadQuery_gkjbwf_a0b0b0(final EditorContext editorContext, final SNode node) {
-    Object queryResult = new Object() {
-      public Object query() {
-        return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));
-      }
-    }.query();
-    IHeaderNodeInsertAction insertAction = new IHeaderNodeInsertAction() {
-      public void insertNew(int index) {
-        SNodeFactoryOperations.addNewChild(node, LINKS.downholeProps$hpf5, null);
-      }
-    };
-    IHeaderNodeDeleteAction deleteAction = new IHeaderNodeDeleteAction() {
-      public void delete(final int index) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).count() > 1) {
-          ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).removeElementAt(index);
-        }
-      }
-    };
-    HeaderGrid grid = new HeaderGridFactory(editorContext, node, false).createFromObject(queryResult, new StringHeaderReference("2373759000240132234"), insertAction, deleteAction, 0, new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }, "index");
-
-    return grid;
-  }
-  private EditorCell createCollection_4() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_gkjbwf_b1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createTable_3());
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Motor Properties");
-    editorCell.setCellId("Constant_gkjbwf_a1b0");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Description");
+    editorCell.setCellId("Constant_gkjbwf_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createTable_2(final EditorContext editorContext, final SNode node) {
-
-    final Wrappers._T<TableEditor> editorCell = new Wrappers._T<TableEditor>(null);
-    _FunctionTypes._void_P0_E0 creator = () -> EditorCacheHacks.noCaching(editorContext, () -> {
-      try {
-
-        ChildsTracker.pushNewInstance();
-        PartialTableExtractor.pushNewInstance();
-        Grid grid = new Grid();
-
-        // column headers
-        {
-          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
-          grid.setColumnHeaders(headerGrids);
-        }
-
-        // row headers
-        {
-          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
-          grid.setRowHeaders(headerGrids);
-        }
-        final Grid childGrid = createChildsVertical_gkjbwf_a1b1a(editorContext, node);
-        childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
-        childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
-        grid.setElement(0, 0, childGrid);
-
-        editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_gkjbwf_b1b0");
-
-
-        editorCell.value.init();
-      } finally {
-        PartialTableExtractor.popInstance();
-        ChildsTracker.popInstance(true);
-      }
-    });
-
-    creator.invoke();
-
-    return editorCell.value;
-
-  }
-  private EditorCell createTable_3() {
-    return createTable_2(getEditorContext(), myNode);
-  }
-  public Grid createChildsVertical_gkjbwf_a1b1a(final EditorContext editorContext, final SNode node) {
-    Grid grid = new Grid();
-    GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
-
-    grid.setColumnHeaders(0, 0, createHeaderCollection_gkjbwf_a0b1b0(editorContext, node));
-    grid.setRowHeaders(0, 0, createHeadQuery_gkjbwf_a0b1b0(editorContext, node));
-
-    final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.motorProps$MJ0l)) {};
-
+  private EditorCell createProperty_1() {
+    getCellFactory().pushCellContext();
     try {
-      getCellFactory().pushCellContext();
-      getCellFactory().addCellContextHints();
-      getCellFactory().removeCellContextHints();
-      int y = 0;
-      Iterable<SNode> elements = SLinkOperations.getChildren(node, LINKS.motorProps$MJ0l);
-      for (SNode child : Sequence.fromIterable(elements)) {
-        final int yFinal = y;
-        EditorCell cell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
-        ChildsTracker.getInstance().registerChild(cell);
-        SubstituteInfo substituteInfo = SubstituteUtil.forChild(editorContext, node, (y < ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.motorProps$MJ0l)).count() ? ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.motorProps$MJ0l)).getElement(y) : null), LINKS.motorProps$MJ0l);
-        cell.setSubstituteInfo(substituteInfo);
-
-        IGridElement gridElement = PartialTableExtractor.getGridElementFromEditorCell(cell, grid);
-
-        gridElement.setRightRowCreateHandler(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child) + 1, insertAction));
-        gridElement.setLeftRowCreateHandler(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child), insertAction));
-        gridElement.setSpanX(Math.max(1, grid.getSizeX()));
-
-        grid.setElement(0, y, gridElement);
-
-
-        gridElement.setStyle(new ITableStyleFactory() {
-          public Style createStyle(final int columnIndex, final int rowIndex) {
-            Style style = new StyleImpl();
-            final EditorCell editorCell = null;
-            return style;
-          }
-        }.createStyle(0, y));
-
-        gridElement.setInsertBeforeAction(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child), insertAction), -1);
-        gridElement.setInsertAction(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child) + 1, insertAction), -1);
-
-        y++;
-      }
+      final SProperty property = PROPS.generalDescription$eTEb;
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+      editorCell.setDefaultText("<no generalDescription>");
+      editorCell.setCellId("property_generalDescription");
+      editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
+      setCellContext(editorCell);
+      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
+      Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
+      if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
+      } else
+      return editorCell;
     } finally {
       getCellFactory().popCellContext();
     }
-
-    if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.motorProps$MJ0l)).isEmpty()) {
-      EditorCell placeholder = new EditorCellFactory(editorContext, node, grid).createPlaceholderConstant("<no motorProps>");
-      IGridElement element = PartialTableExtractor.getGridElementFromEditorCell(placeholder, grid);
-      element.setSpanX(Math.max(element.getSpanX(), grid.getColumnHeadersSizeX()));
-      element.setSpanY(Math.max(element.getSpanY(), grid.getRowHeadersSizeY()));
-      grid.setElement(0, 0, element);
-
-      placeholder.setAction(CellActionType.INSERT, new AbstractCellAction() {
-        public void execute(EditorContext p0) {
-          insertAction.insertNew(0);
-        }
-      });
-      placeholder.setAction(CellActionType.INSERT_BEFORE, placeholder.getAction(CellActionType.INSERT));
-      SubstituteInfo substituteInfo = new DefaultSChildSubstituteInfo(node, null, LINKS.motorProps$MJ0l, editorContext);
-      placeholder.setSubstituteInfo(substituteInfo);
-      IRowCreateHandler rowCreateHandler = new IRowCreateHandler() {
-        public void create() {
-          insertAction.insertNew(0);
-        }
-      };
-
-      grid.setLeftRowCreateHandler(rowCreateHandler);
-      grid.setRightRowCreateHandler(rowCreateHandler);
-    }
-
-    grid.flattenOneLevel();
-    return grid;
-  }
-  public HeaderGrid createHeaderCollection_gkjbwf_a0b1b0(final EditorContext editorContext, final SNode node) {
-    IHeaderNodeInsertAction insertAction = null;
-    IHeaderNodeDeleteAction deleteAction = null;
-
-    List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_gkjbwf_a0a1b1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_b0a1b1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_c0a1b1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_d0a1b1a(editorContext, node));
-
-    return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_a0a1b1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Manufacturer", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Manufacturer"), cell);
-    header.setLabel("Manufacturer");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_b0a1b1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Type", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Type"), cell);
-    header.setLabel("Type");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_c0a1b1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Inertia", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Inertia"), cell);
-    header.setLabel("Inertia");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_d0a1b1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Max Amps", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Max Amps"), cell);
-    header.setLabel("Max Amps");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createHeadQuery_gkjbwf_a0b1b0(final EditorContext editorContext, final SNode node) {
-    Object queryResult = new Object() {
-      public Object query() {
-        return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));
-      }
-    }.query();
-    IHeaderNodeInsertAction insertAction = new IHeaderNodeInsertAction() {
-      public void insertNew(int index) {
-        SNodeFactoryOperations.addNewChild(node, LINKS.downholeProps$hpf5, null);
-      }
-    };
-    IHeaderNodeDeleteAction deleteAction = new IHeaderNodeDeleteAction() {
-      public void delete(final int index) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).count() > 1) {
-          ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).removeElementAt(index);
-        }
-      }
-    };
-    HeaderGrid grid = new HeaderGridFactory(editorContext, node, false).createFromObject(queryResult, new StringHeaderReference("4599733001849056868"), insertAction, deleteAction, 0, new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }, "index");
-
-    return grid;
-  }
-  private EditorCell createCollection_5() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_gkjbwf_c1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createConstant_2());
-    editorCell.addEditorCell(createTable_5());
-    return editorCell;
   }
   private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Fluid Properties");
-    editorCell.setCellId("Constant_gkjbwf_a2b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createTable_4(final EditorContext editorContext, final SNode node) {
-
-    final Wrappers._T<TableEditor> editorCell = new Wrappers._T<TableEditor>(null);
-    _FunctionTypes._void_P0_E0 creator = () -> EditorCacheHacks.noCaching(editorContext, () -> {
-      try {
-
-        ChildsTracker.pushNewInstance();
-        PartialTableExtractor.pushNewInstance();
-        Grid grid = new Grid();
-
-        // column headers
-        {
-          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
-          grid.setColumnHeaders(headerGrids);
-        }
-
-        // row headers
-        {
-          List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
-          grid.setRowHeaders(headerGrids);
-        }
-        final Grid childGrid = createChildsVertical_gkjbwf_a1c1a(editorContext, node);
-        childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
-        childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
-        grid.setElement(0, 0, childGrid);
-
-        editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_gkjbwf_b2b0");
-
-
-        editorCell.value.init();
-      } finally {
-        PartialTableExtractor.popInstance();
-        ChildsTracker.popInstance(true);
-      }
-    });
-
-    creator.invoke();
-
-    return editorCell.value;
-
-  }
-  private EditorCell createTable_5() {
-    return createTable_4(getEditorContext(), myNode);
-  }
-  public Grid createChildsVertical_gkjbwf_a1c1a(final EditorContext editorContext, final SNode node) {
-    Grid grid = new Grid();
-    GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
-
-    grid.setColumnHeaders(0, 0, createHeaderCollection_gkjbwf_a0b2b0(editorContext, node));
-    grid.setRowHeaders(0, 0, createHeadQuery_gkjbwf_a0b2b0(editorContext, node));
-
-    final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.fluidProps$hpW8)) {};
-
-    try {
-      getCellFactory().pushCellContext();
-      getCellFactory().addCellContextHints();
-      getCellFactory().removeCellContextHints();
-      int y = 0;
-      Iterable<SNode> elements = SLinkOperations.getChildren(node, LINKS.fluidProps$hpW8);
-      for (SNode child : Sequence.fromIterable(elements)) {
-        final int yFinal = y;
-        EditorCell cell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
-        ChildsTracker.getInstance().registerChild(cell);
-        SubstituteInfo substituteInfo = SubstituteUtil.forChild(editorContext, node, (y < ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.fluidProps$hpW8)).count() ? ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.fluidProps$hpW8)).getElement(y) : null), LINKS.fluidProps$hpW8);
-        cell.setSubstituteInfo(substituteInfo);
-
-        IGridElement gridElement = PartialTableExtractor.getGridElementFromEditorCell(cell, grid);
-
-        gridElement.setRightRowCreateHandler(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child) + 1, insertAction));
-        gridElement.setLeftRowCreateHandler(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child), insertAction));
-        gridElement.setSpanX(Math.max(1, grid.getSizeX()));
-
-        grid.setElement(0, y, gridElement);
-
-
-        gridElement.setStyle(new ITableStyleFactory() {
-          public Style createStyle(final int columnIndex, final int rowIndex) {
-            Style style = new StyleImpl();
-            final EditorCell editorCell = null;
-            return style;
-          }
-        }.createStyle(0, y));
-
-        gridElement.setInsertBeforeAction(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child), insertAction), -1);
-        gridElement.setInsertAction(new HeaderNodeInsertAction(SNodeOperations.getIndexInParent(child) + 1, insertAction), -1);
-
-        y++;
-      }
-    } finally {
-      getCellFactory().popCellContext();
-    }
-
-    if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.fluidProps$hpW8)).isEmpty()) {
-      EditorCell placeholder = new EditorCellFactory(editorContext, node, grid).createPlaceholderConstant("<no fluidProps>");
-      IGridElement element = PartialTableExtractor.getGridElementFromEditorCell(placeholder, grid);
-      element.setSpanX(Math.max(element.getSpanX(), grid.getColumnHeadersSizeX()));
-      element.setSpanY(Math.max(element.getSpanY(), grid.getRowHeadersSizeY()));
-      grid.setElement(0, 0, element);
-
-      placeholder.setAction(CellActionType.INSERT, new AbstractCellAction() {
-        public void execute(EditorContext p0) {
-          insertAction.insertNew(0);
-        }
-      });
-      placeholder.setAction(CellActionType.INSERT_BEFORE, placeholder.getAction(CellActionType.INSERT));
-      SubstituteInfo substituteInfo = new DefaultSChildSubstituteInfo(node, null, LINKS.fluidProps$hpW8, editorContext);
-      placeholder.setSubstituteInfo(substituteInfo);
-      IRowCreateHandler rowCreateHandler = new IRowCreateHandler() {
-        public void create() {
-          insertAction.insertNew(0);
-        }
-      };
-
-      grid.setLeftRowCreateHandler(rowCreateHandler);
-      grid.setRightRowCreateHandler(rowCreateHandler);
-    }
-
-    grid.flattenOneLevel();
-    return grid;
-  }
-  public HeaderGrid createHeaderCollection_gkjbwf_a0b2b0(final EditorContext editorContext, final SNode node) {
-    IHeaderNodeInsertAction insertAction = null;
-    IHeaderNodeDeleteAction deleteAction = null;
-
-    List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_gkjbwf_a0a1c1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_b0a1c1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_c0a1c1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_d0a1c1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_e0a1c1a(editorContext, node));
-    nodeList.add(createStaticHeader_gkjbwf_f0a1c1a(editorContext, node));
-
-    return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_a0a1c1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Oil", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Oil"), cell);
-    header.setLabel("Oil");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_b0a1c1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Water", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Water"), cell);
-    header.setLabel("Water");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_c0a1c1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Gas", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Gas"), cell);
-    header.setLabel("Gas");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_d0a1c1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Pressure", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Pressure"), cell);
-    header.setLabel("Pressure");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_e0a1c1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Gradient", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Gradient"), cell);
-    header.setLabel("Gradient");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_gkjbwf_f0a1c1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Temperature", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Temperature"), cell);
-    header.setLabel("Temperature");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createHeadQuery_gkjbwf_a0b2b0(final EditorContext editorContext, final SNode node) {
-    Object queryResult = new Object() {
-      public Object query() {
-        return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));
-      }
-    }.query();
-    IHeaderNodeInsertAction insertAction = new IHeaderNodeInsertAction() {
-      public void insertNew(int index) {
-        SNodeFactoryOperations.addNewChild(node, LINKS.downholeProps$hpf5, null);
-      }
-    };
-    IHeaderNodeDeleteAction deleteAction = new IHeaderNodeDeleteAction() {
-      public void delete(final int index) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).count() > 1) {
-          ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholeProps$hpf5)).removeElementAt(index);
-        }
-      }
-    };
-    HeaderGrid grid = new HeaderGridFactory(editorContext, node, false).createFromObject(queryResult, new StringHeaderReference("4599733001849088258"), insertAction, deleteAction, 0, new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }, "index");
-
-    return grid;
-  }
-  private EditorCell createJComponent_0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_gkjbwf_a2a(), "JComponent_gkjbwf_c0");
-    editorCell.setCellId("JComponent_gkjbwf_c0_0");
-    return editorCell;
-  }
-  private JComponent _QueryFunction_JComponent_gkjbwf_a2a() {
-    return SwingComponents.createCheckbox(myNode, getEditorContext(), "Hide", new Runnable() {
-      @Override
-      public void run() {
-      }
-    });
-  }
-  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_gkjbwf_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_4() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Graphical Reports");
     editorCell.setCellId("Constant_gkjbwf_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createJComponent_1() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_gkjbwf_a5a(), "JComponent_gkjbwf_f0");
-    editorCell.setCellId("JComponent_gkjbwf_f0_0");
+  private EditorCell createComponent_0() {
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "WellLanguage.editor.BasicProperties");
     return editorCell;
   }
-  private JComponent _QueryFunction_JComponent_gkjbwf_a5a() {
-    return SwingComponents.chartComponent();
-  }
-  private EditorCell createConstant_5() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_gkjbwf_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_6() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+  private EditorCell createConstant_4() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Options");
     editorCell.setCellId("Constant_gkjbwf_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_7() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Generate Report");
-    editorCell.setCellId("Constant_gkjbwf_i0");
+  private EditorCell createCollection_2() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_gkjbwf_i0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createJComponent_0());
+    editorCell.addEditorCell(createConstant_5());
+    editorCell.addEditorCell(createJComponent_1());
+    return editorCell;
+  }
+  private EditorCell createJComponent_0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_gkjbwf_a0i0(), "JComponent_gkjbwf_a8a");
+    editorCell.setCellId("JComponent_gkjbwf_a8a_0");
+    return editorCell;
+  }
+  private JComponent _QueryFunction_JComponent_gkjbwf_a0i0() {
+    return new JButton("Generate PDF Report") {};
+  }
+  private EditorCell createConstant_5() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_gkjbwf_b8a");
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private EditorCell createJComponent_1() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_gkjbwf_a2i0(), "JComponent_gkjbwf_c8a");
+    editorCell.setCellId("JComponent_gkjbwf_c8a_0");
+    return editorCell;
+  }
+  private JComponent _QueryFunction_JComponent_gkjbwf_a2i0() {
+    return new JButton("Test") {};
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty visibility$dLsO = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x3ea0f8753d1b49d0L, "visibility");
+    /*package*/ static final SProperty generalDescription$eTEb = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x42bc18f0f6edd996L, "generalDescription");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SContainmentLink downholeProps$hpf5 = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607d7d60L, "downholeProps");
-    /*package*/ static final SContainmentLink motorProps$MJ0l = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x51643a35ce934d39L, "motorProps");
-    /*package*/ static final SContainmentLink fluidProps$hpW8 = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607d7d63L, "fluidProps");
   }
 }

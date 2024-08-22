@@ -9,33 +9,47 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int CasingProperties = 0;
-  public static final int Coordinates = 1;
-  public static final int DepositWell = 2;
-  public static final int Downhole = 3;
-  public static final int Fluid = 4;
-  public static final int HorizontalWell = 5;
-  public static final int InjectionWell = 6;
-  public static final int Motor = 7;
-  public static final int ProductionWell = 8;
-  public static final int PumpingUnit = 9;
-  public static final int SurfaceProperties = 10;
-  public static final int Well = 11;
+  public static final int ActivitySchedule = 0;
+  public static final int CasingProperties = 1;
+  public static final int Coordinates = 2;
+  public static final int DepositWell = 3;
+  public static final int Downhole = 4;
+  public static final int DownholeTable = 5;
+  public static final int Fluid = 6;
+  public static final int FluidTable = 7;
+  public static final int HorizontalWell = 8;
+  public static final int InjectionWell = 9;
+  public static final int Motor = 10;
+  public static final int MotorTable = 11;
+  public static final int ProductionWell = 12;
+  public static final int PumpingUnit = 13;
+  public static final int SurfaceProperties = 14;
+  public static final int Tasks = 15;
+  public static final int Well = 16;
+  public static final int Worker = 17;
+  public static final int WorkersTable = 18;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L);
+    builder.put(0x7014fcf8df986606L, ActivitySchedule);
     builder.put(0x6e825ec7df0e6c14L, CasingProperties);
     builder.put(0x14a09e31147cce5L, Coordinates);
     builder.put(0x6f377013607a9598L, DepositWell);
     builder.put(0x14a09e31149b0a1L, Downhole);
+    builder.put(0x5a2ab5393abdd2fdL, DownholeTable);
     builder.put(0x14a09e31149cc8dL, Fluid);
+    builder.put(0x5a2ab5393ab6687eL, FluidTable);
     builder.put(0x6f377013607d7d5eL, HorizontalWell);
     builder.put(0x7c11e1450a8fc74aL, InjectionWell);
     builder.put(0x14a09e31149b081L, Motor);
+    builder.put(0x5a2ab5393ab9e7cfL, MotorTable);
     builder.put(0x6f377013607d7d5cL, ProductionWell);
     builder.put(0x14a09e31149b05dL, PumpingUnit);
     builder.put(0x7e18434ae3095a34L, SurfaceProperties);
+    builder.put(0x7014fcf8df9866aaL, Tasks);
     builder.put(0x4787dd1b0fb9452cL, Well);
+    builder.put(0x42bc18f0f6f96090L, Worker);
+    builder.put(0xa279d96fed31899L, WorkersTable);
     myIndex = builder.seal();
   }
 

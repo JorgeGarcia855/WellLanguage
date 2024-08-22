@@ -6,6 +6,7 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="4fqr" ref="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
@@ -60,7 +61,12 @@
     <property role="TrG5h" value="Well" />
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="Wells" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4aW6f3QVtAm" role="1TKVEl">
+      <property role="IQ2nx" value="4808745925338847638" />
+      <property role="TrG5h" value="generalDescription" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyi" id="6WRs1dwuDme" role="1TKVEl">
       <property role="IQ2nx" value="8013997290454422926" />
       <property role="TrG5h" value="casingSize" />
@@ -75,11 +81,6 @@
       <property role="IQ2nx" value="8013997290454422928" />
       <property role="TrG5h" value="temperature" />
       <ref role="AX2Wp" to="tpc2:i2E8K1n" resolve="_FloatOrInteger_String" />
-    </node>
-    <node concept="1TJgyi" id="3UwY7kX6OBg" role="1TKVEl">
-      <property role="IQ2nx" value="4512880009045297616" />
-      <property role="TrG5h" value="visibility" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="6WRs1dwuDmc" role="1TKVEi">
       <property role="IQ2ns" value="8013997290454422924" />
@@ -118,6 +119,9 @@
     <node concept="PrWs8" id="1HDq$pjIlbJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="5CEHj$UR3NN" role="PzmwI">
+      <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7KhSkkazWta">
     <property role="EcuMT" value="8940174421953333066" />
@@ -129,7 +133,7 @@
   <node concept="1TIwiD" id="5a2uchhWN_">
     <property role="EcuMT" value="92897613166660837" />
     <property role="TrG5h" value="Coordinates" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5a2uchhWNA" role="1TKVEl">
       <property role="IQ2nx" value="92897613166660838" />
       <property role="TrG5h" value="x" />
@@ -149,7 +153,8 @@
   <node concept="1TIwiD" id="5a2uchir1t">
     <property role="EcuMT" value="92897613166784605" />
     <property role="TrG5h" value="PumpingUnit" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <property role="3GE5qa" value="PumpUnitConcepts" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5a2uchir1y" role="1TKVEl">
       <property role="IQ2nx" value="92897613166784610" />
       <property role="TrG5h" value="id" />
@@ -158,17 +163,23 @@
     <node concept="1TJgyi" id="5a2uchir1$" role="1TKVEl">
       <property role="IQ2nx" value="92897613166784612" />
       <property role="TrG5h" value="unitGeo" />
-      <ref role="AX2Wp" node="5a2uchir1D" resolve="PumpGeometry" />
+      <ref role="AX2Wp" node="5a2uchir1D" resolve="PumpUnitGeometry" />
     </node>
     <node concept="1TJgyi" id="5a2uchir1V" role="1TKVEl">
       <property role="IQ2nx" value="92897613166784635" />
       <property role="TrG5h" value="description" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="1TJgyj" id="5CEHj$ULlo6" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669839136262" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
+    </node>
   </node>
   <node concept="25R3W" id="5a2uchir1D">
     <property role="3F6X1D" value="92897613166784617" />
     <property role="TrG5h" value="PumpUnitGeometry" />
+    <property role="3GE5qa" value="PumpUnitConcepts" />
     <node concept="25R33" id="5a2uchir1E" role="25R1y">
       <property role="3tVfz5" value="92897613166784618" />
       <property role="TrG5h" value="Conventional" />
@@ -189,7 +200,8 @@
   <node concept="1TIwiD" id="5a2uchir21">
     <property role="EcuMT" value="92897613166784641" />
     <property role="TrG5h" value="Motor" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <property role="3GE5qa" value="MotorConcepts" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5a2uchir23" role="1TKVEl">
       <property role="IQ2nx" value="92897613166784643" />
       <property role="TrG5h" value="manufacturer" />
@@ -210,10 +222,16 @@
       <property role="TrG5h" value="maxAmp" />
       <ref role="AX2Wp" to="tpc2:i2E8K1n" resolve="_FloatOrInteger_String" />
     </node>
+    <node concept="1TJgyj" id="5CEHj$ULlo4" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669839136260" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
+    </node>
   </node>
   <node concept="25R3W" id="5a2uchir2g">
     <property role="3F6X1D" value="92897613166784656" />
     <property role="TrG5h" value="MotorType" />
+    <property role="3GE5qa" value="MotorConcepts" />
     <node concept="25R33" id="5a2uchir2h" role="25R1y">
       <property role="3tVfz5" value="92897613166784657" />
       <property role="TrG5h" value="NemaD" />
@@ -230,7 +248,7 @@
   <node concept="1TIwiD" id="5a2uchir2x">
     <property role="EcuMT" value="92897613166784673" />
     <property role="TrG5h" value="Downhole" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7SogOFz2hXf" role="1TKVEl">
       <property role="IQ2nx" value="9086086237135642447" />
       <property role="TrG5h" value="topPerforation" />
@@ -261,12 +279,17 @@
       <property role="TrG5h" value="pumpVerticalMeasuredDepth" />
       <ref role="AX2Wp" to="tpc2:i2E8K1n" resolve="_FloatOrInteger_String" />
     </node>
+    <node concept="1TJgyj" id="5CEHj$ULlo0" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669839136256" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5a2uchisMd">
     <property role="EcuMT" value="92897613166791821" />
     <property role="TrG5h" value="Fluid" />
     <property role="3GE5qa" value="" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6U2nGvv3AJM" role="1TKVEl">
       <property role="IQ2nx" value="7963031303678225394" />
       <property role="TrG5h" value="oil" />
@@ -297,12 +320,17 @@
       <property role="TrG5h" value="temperature" />
       <ref role="AX2Wp" to="tpc2:i2E8K1n" resolve="_FloatOrInteger_String" />
     </node>
+    <node concept="1TJgyj" id="5CEHj$UJxc_" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669838660389" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6U2nGvv3AKk">
     <property role="EcuMT" value="7963031303678225428" />
     <property role="TrG5h" value="CasingProperties" />
     <property role="3GE5qa" value="" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6U2nGvv3AKm" role="1TKVEl">
       <property role="IQ2nx" value="7963031303678225430" />
       <property role="TrG5h" value="pressure" />
@@ -322,6 +350,11 @@
       <property role="IQ2nx" value="7963031303678225441" />
       <property role="TrG5h" value="pumpFluidLevel" />
       <ref role="AX2Wp" to="tpc2:i2E8K1n" resolve="_FloatOrInteger_String" />
+    </node>
+    <node concept="1TJgyj" id="5CEHj$ULlo2" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669839136258" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
     </node>
   </node>
   <node concept="1TIwiD" id="6WRs1dwuDmo">
@@ -348,7 +381,8 @@
   <node concept="1TIwiD" id="7SogOFz2lCO">
     <property role="EcuMT" value="9086086237135657524" />
     <property role="TrG5h" value="SurfaceProperties" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <property role="3GE5qa" value="SurfaceConcepts" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7SogOFz2lCQ" role="1TKVEl">
       <property role="IQ2nx" value="9086086237135657526" />
       <property role="TrG5h" value="id" />
@@ -364,10 +398,16 @@
       <property role="TrG5h" value="rotation" />
       <ref role="AX2Wp" node="7SogOFz2lD6" resolve="Rotation" />
     </node>
+    <node concept="1TJgyj" id="5CEHj$ULlo8" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669839136264" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
+    </node>
   </node>
   <node concept="25R3W" id="7SogOFz2lD6">
     <property role="3F6X1D" value="9086086237135657542" />
     <property role="TrG5h" value="Rotation" />
+    <property role="3GE5qa" value="SurfaceConcepts" />
     <node concept="25R33" id="7SogOFz2lD7" role="25R1y">
       <property role="3tVfz5" value="9086086237135657543" />
       <property role="TrG5h" value="Clockwise" />
@@ -376,6 +416,148 @@
       <property role="3tVfz5" value="9086086237135657544" />
       <property role="TrG5h" value="Counterclockwise" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="5CEHj$UHAxY">
+    <property role="EcuMT" value="6497204669838157950" />
+    <property role="TrG5h" value="FluidTable" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="Tables" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5CEHj$UHAxZ" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669838157951" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="fluids" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5a2uchisMd" resolve="Fluid" />
+    </node>
+    <node concept="PrWs8" id="5CEHj$UHAya" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5CEHj$UIuvf">
+    <property role="EcuMT" value="6497204669838387151" />
+    <property role="3GE5qa" value="Tables" />
+    <property role="TrG5h" value="MotorTable" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5CEHj$UIuvg" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669838387152" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="motors" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5a2uchir21" resolve="Motor" />
+    </node>
+    <node concept="PrWs8" id="5CEHj$UIuvr" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5CEHj$UJtbX">
+    <property role="EcuMT" value="6497204669838643965" />
+    <property role="3GE5qa" value="Tables" />
+    <property role="TrG5h" value="DownholeTable" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5CEHj$ULlnY" role="1TKVEi">
+      <property role="IQ2ns" value="6497204669839136254" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="downholes" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5a2uchir2x" resolve="Downhole" />
+    </node>
+    <node concept="PrWs8" id="5CEHj$ULqXQ" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4aW6f3QYm2g">
+    <property role="EcuMT" value="4808745925339603088" />
+    <property role="TrG5h" value="Worker" />
+    <property role="3GE5qa" value="Workers" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="4aW6f3QYm2h" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="CBBprYOLsR" role="1TKVEl">
+      <property role="IQ2nx" value="731726736316897079" />
+      <property role="TrG5h" value="id" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4aW6f3QYm2j" role="1TKVEl">
+      <property role="IQ2nx" value="4808745925339603091" />
+      <property role="TrG5h" value="description" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4aW6f3QYm2l" role="1TKVEl">
+      <property role="IQ2nx" value="4808745925339603093" />
+      <property role="TrG5h" value="role" />
+      <ref role="AX2Wp" node="4aW6f3R3nih" resolve="Roles" />
+    </node>
+    <node concept="1TJgyj" id="70kZfzvv13H" role="1TKVEi">
+      <property role="IQ2ns" value="8076358177613680877" />
+      <property role="20kJfa" value="well" />
+      <ref role="20lvS9" node="4u7RhGfIkkG" resolve="Well" />
+    </node>
+  </node>
+  <node concept="25R3W" id="4aW6f3R3nih">
+    <property role="3F6X1D" value="4808745925340918929" />
+    <property role="TrG5h" value="Roles" />
+    <property role="3GE5qa" value="Workers" />
+    <node concept="25R33" id="4aW6f3R3nii" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918930" />
+      <property role="TrG5h" value="Director" />
+    </node>
+    <node concept="25R33" id="4aW6f3R3nim" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918934" />
+      <property role="TrG5h" value="Administrador" />
+    </node>
+    <node concept="25R33" id="4aW6f3R3niq" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918938" />
+      <property role="TrG5h" value="Gerente" />
+    </node>
+    <node concept="25R33" id="4aW6f3R3niv" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918943" />
+      <property role="TrG5h" value="Ingeniero" />
+    </node>
+    <node concept="25R33" id="4aW6f3R3nij" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918931" />
+      <property role="TrG5h" value="Topografo" />
+    </node>
+    <node concept="25R33" id="4aW6f3R3ni_" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918949" />
+      <property role="TrG5h" value="Maestro" />
+    </node>
+    <node concept="25R33" id="4aW6f3R3niG" role="25R1y">
+      <property role="3tVfz5" value="4808745925340918956" />
+      <property role="TrG5h" value="Soldador" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="CBBprYOLyp">
+    <property role="EcuMT" value="731726736316897433" />
+    <property role="3GE5qa" value="Workers" />
+    <property role="TrG5h" value="WorkersTable" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="277Uq_lYssc" role="1TKVEi">
+      <property role="IQ2ns" value="2434171037118220044" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="workers" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4aW6f3QYm2g" resolve="Worker" />
+    </node>
+    <node concept="PrWs8" id="277Uq_m0F4u" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="70kZfzvA6o6">
+    <property role="EcuMT" value="8076358177615537670" />
+    <property role="TrG5h" value="ActivitySchedule" />
+    <property role="3GE5qa" value="Activities" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="70kZfzvA6qE">
+    <property role="EcuMT" value="8076358177615537834" />
+    <property role="3GE5qa" value="Activities" />
+    <property role="TrG5h" value="Tasks" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
 </model>
 

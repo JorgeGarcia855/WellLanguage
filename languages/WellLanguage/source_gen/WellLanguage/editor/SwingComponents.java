@@ -15,10 +15,6 @@ import java.awt.Font;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JCheckBox;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SwingComponents {
   public static JComponent chartComponent() {
@@ -49,36 +45,10 @@ public class SwingComponents {
     return button;
   }
 
-  public static JCheckBox createCheckbox(final SNode node, final EditorContext editorContext, String title, final Runnable action) {
-    final JCheckBox checkBox = new JCheckBox(title);
-    checkBox.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent p0) {
-
-        editorContext.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SPropertyOperations.assign(node, PROPS.visibility$dLsO, checkBox.isSelected());
-          }
-        });
-      }
-    });
-    return checkBox;
-  }
 
 
-  public static JComponent removeButtonm(final EditorContext editorContext, final SNode node) {
-    final JCheckBox checkBox = SwingComponents.createCheckbox(node, editorContext, "Hide", new Runnable() {
-      @Override
-      public void run() {
-        SPropertyOperations.assign(node, PROPS.visibility$dLsO, false);
-      }
-    });
-    return checkBox;
-  }
 
 
-  private static final class PROPS {
-    /*package*/ static final SProperty visibility$dLsO = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x3ea0f8753d1b49d0L, "visibility");
-  }
+
+
 }
