@@ -10,8 +10,10 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_ActivitySchedule;
+  private ConceptPresentation props_ActivityTable;
   private ConceptPresentation props_CasingProperties;
   private ConceptPresentation props_Coordinates;
+  private ConceptPresentation props_Date;
   private ConceptPresentation props_DepositWell;
   private ConceptPresentation props_Downhole;
   private ConceptPresentation props_DownholeTable;
@@ -19,12 +21,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_FluidTable;
   private ConceptPresentation props_HorizontalWell;
   private ConceptPresentation props_InjectionWell;
+  private ConceptPresentation props_Machinery;
   private ConceptPresentation props_Motor;
   private ConceptPresentation props_MotorTable;
+  private ConceptPresentation props_Personel;
   private ConceptPresentation props_ProductionWell;
   private ConceptPresentation props_PumpingUnit;
+  private ConceptPresentation props_SingleLineComment;
+  private ConceptPresentation props_Supplies;
   private ConceptPresentation props_SurfaceProperties;
-  private ConceptPresentation props_Tasks;
+  private ConceptPresentation props_Task;
   private ConceptPresentation props_Well;
   private ConceptPresentation props_Worker;
   private ConceptPresentation props_WorkersTable;
@@ -37,10 +43,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActivitySchedule:
         if (props_ActivitySchedule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ActivitySchedule");
+          cpb.presentationByName();
           props_ActivitySchedule = cpb.create();
         }
         return props_ActivitySchedule;
+      case LanguageConceptSwitch.ActivityTable:
+        if (props_ActivityTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_ActivityTable = cpb.create();
+        }
+        return props_ActivityTable;
       case LanguageConceptSwitch.CasingProperties:
         if (props_CasingProperties == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -55,6 +68,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Coordinates = cpb.create();
         }
         return props_Coordinates;
+      case LanguageConceptSwitch.Date:
+        if (props_Date == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Date");
+          props_Date = cpb.create();
+        }
+        return props_Date;
       case LanguageConceptSwitch.DepositWell:
         if (props_DepositWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -104,6 +124,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_InjectionWell = cpb.create();
         }
         return props_InjectionWell;
+      case LanguageConceptSwitch.Machinery:
+        if (props_Machinery == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("machinery");
+          props_Machinery = cpb.create();
+        }
+        return props_Machinery;
       case LanguageConceptSwitch.Motor:
         if (props_Motor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -118,6 +145,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MotorTable = cpb.create();
         }
         return props_MotorTable;
+      case LanguageConceptSwitch.Personel:
+        if (props_Personel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Personel");
+          props_Personel = cpb.create();
+        }
+        return props_Personel;
       case LanguageConceptSwitch.ProductionWell:
         if (props_ProductionWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -132,6 +166,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_PumpingUnit = cpb.create();
         }
         return props_PumpingUnit;
+      case LanguageConceptSwitch.SingleLineComment:
+        if (props_SingleLineComment == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SingleLineComment");
+          props_SingleLineComment = cpb.create();
+        }
+        return props_SingleLineComment;
+      case LanguageConceptSwitch.Supplies:
+        if (props_Supplies == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Supplies");
+          props_Supplies = cpb.create();
+        }
+        return props_Supplies;
       case LanguageConceptSwitch.SurfaceProperties:
         if (props_SurfaceProperties == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -139,13 +187,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SurfaceProperties = cpb.create();
         }
         return props_SurfaceProperties;
-      case LanguageConceptSwitch.Tasks:
-        if (props_Tasks == null) {
+      case LanguageConceptSwitch.Task:
+        if (props_Task == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Tasks");
-          props_Tasks = cpb.create();
+          cpb.presentationByName();
+          props_Task = cpb.create();
         }
-        return props_Tasks;
+        return props_Task;
       case LanguageConceptSwitch.Well:
         if (props_Well == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
-public class regulartext_StyleSheet {
+public class Styles_StyleSheet {
   public static class arialfontStyleClass extends AbstractStyleClass {
     public arialfontStyleClass(EditorContext editorContext, SNode node) {
       super(editorContext, node);

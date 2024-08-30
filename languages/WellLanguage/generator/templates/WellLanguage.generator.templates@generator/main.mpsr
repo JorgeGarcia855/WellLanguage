@@ -49,6 +49,16 @@
       <ref role="30HIoZ" to="n484:4u7RhGfIkkG" resolve="Well" />
       <ref role="3lhOvi" node="6rVDBxylARM" resolve="html_well" />
     </node>
+    <node concept="3lhOvk" id="70kZfzvC6oA" role="3lj3bC">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="n484:4u7RhGfIkkG" resolve="Well" />
+      <ref role="3lhOvi" node="70kZfzvC6qb" resolve="map_Well" />
+    </node>
+    <node concept="3lhOvk" id="70kZfzvMiNJ" role="3lj3bC">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="n484:4u7RhGfIkkG" resolve="Well" />
+      <ref role="3lhOvi" node="70kZfzvMiPb" resolve="map_Well" />
+    </node>
   </node>
 </model>
 

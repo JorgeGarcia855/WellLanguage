@@ -31,6 +31,9 @@
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
+        <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
+      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -39,6 +42,7 @@
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
+      <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
     </language>
     <language id="8a10cb27-2249-43ab-ad37-4b804d24ba45" name="jetbrains.mps.lang.html">
       <concept id="6666499814681515200" name="jetbrains.mps.lang.html.structure.HtmlFile" flags="ng" index="2pMbU2">
@@ -366,7 +370,7 @@
                                         <node concept="2OqwBi" id="70kZfzvAdrM" role="2Oq$k0">
                                           <node concept="30H73N" id="70kZfzvAdrN" role="2Oq$k0" />
                                           <node concept="3TrEf2" id="70kZfzvAdrO" role="2OqNvi">
-                                            <ref role="3Tt5mk" to="n484:6WRs1dwuDmc" />
+                                            <ref role="3Tt5mk" to="n484:6WRs1dwuDmc" resolve="coordinates" />
                                           </node>
                                         </node>
                                         <node concept="3TrcHB" id="70kZfzvAeG$" role="2OqNvi">
@@ -417,7 +421,23 @@
                     </node>
                   </node>
                   <node concept="1T5XQC" id="70kZfzvAgi4" role="3o6s8t">
-                    <node concept="3o6iSG" id="70kZfzvAgi3" role="1T5Xju" />
+                    <node concept="3o6iSG" id="70kZfzvAgi3" role="1T5Xju">
+                      <property role="3o6i5n" value="worker" />
+                      <node concept="29HgVG" id="70kZfzvMknS" role="lGtFl">
+                        <node concept="3NFfHV" id="70kZfzvMknT" role="3NFExx">
+                          <node concept="3clFbS" id="70kZfzvMknU" role="2VODD2">
+                            <node concept="3clFbF" id="70kZfzvMko0" role="3cqZAp">
+                              <node concept="2OqwBi" id="70kZfzvMknV" role="3clFbG">
+                                <node concept="3TrEf2" id="70kZfzvMknY" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="n484:70kZfzvHIq_" resolve="worker" />
+                                </node>
+                                <node concept="30H73N" id="70kZfzvMknZ" role="2Oq$k0" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
