@@ -8,14 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import WellLanguage.editor.Styles_StyleSheet.propertycolorStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
@@ -29,22 +27,14 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
-import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class BasicProperties_ComponentBuilder_a extends AbstractEditorBuilder {
+/*package*/ class CasingProperties_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public BasicProperties_ComponentBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public CasingProperties_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -60,108 +50,69 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private EditorCell createCollection_0() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_v4ot80_a");
-    editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createCollection_2());
-    return editorCell;
-  }
-  private EditorCell createCollection_1() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_v4ot80_a0");
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_emm3eu_a");
+    editorCell.setBig(true);
+    setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createCollection_1());
+    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createConstant_5());
+    editorCell.addEditorCell(createConstant_6());
+    editorCell.addEditorCell(createCollection_4());
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Basic Properties");
-    editorCell.setCellId("Constant_v4ot80_a0a");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_emm3eu_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_2() {
+  private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_v4ot80_b0");
-    Style style = new StyleImpl();
-    new propertycolorStyleClass(this).apply(style, editorCell);
-    style.set(StyleAttributes.FONT_FAMILY, "JetBrains Mono");
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createCollection_3());
-    editorCell.addEditorCell(createCollection_4());
-    editorCell.addEditorCell(createCollection_5());
-    editorCell.addEditorCell(createCollection_6());
-    return editorCell;
-  }
-  private EditorCell createCollection_3() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_v4ot80_a1a");
+    editorCell.setCellId("Collection_emm3eu_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createCollection_3());
+    return editorCell;
+  }
+  private EditorCell createCollection_2() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_emm3eu_a1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createIndentCell_1());
     editorCell.addEditorCell(createProperty_0());
+    return editorCell;
+  }
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Pressure:");
+    editorCell.setCellId("Constant_emm3eu_a0b0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Casing Size:");
-    editorCell.setCellId("Constant_v4ot80_b0b0");
-    editorCell.setDefaultText("");
+  private EditorCell createIndentCell_1() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.casingSize$24xN;
-      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no casingSize>");
-      editorCell.setCellId("BP_property_casingSize");
-      editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-      setCellContext(editorCell);
-      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-      Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
-      if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-      } else
-      return editorCell;
-    } finally {
-      getCellFactory().popCellContext();
-    }
-  }
-  private EditorCell createCollection_4() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_v4ot80_b1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_1());
-    editorCell.addEditorCell(createConstant_2());
-    editorCell.addEditorCell(createProperty_1());
-    return editorCell;
-  }
-  private EditorCell createIndentCell_1() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
-    return editorCell;
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Pressure:");
-    editorCell.setCellId("Constant_v4ot80_b1b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_1() {
-    getCellFactory().pushCellContext();
-    try {
-      final SProperty property = PROPS.pressure$24KO;
+      final SProperty property = PROPS.pressure$Uuvj;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no pressure>");
-      editorCell.setCellId("BP_property_pressure");
+      editorCell.setCellId("property_pressure");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -175,36 +126,40 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_5() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_v4ot80_c1a");
+    editorCell.setCellId("Collection_emm3eu_b1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createConstant_2());
     editorCell.addEditorCell(createIndentCell_2());
-    editorCell.addEditorCell(createConstant_3());
-    editorCell.addEditorCell(createProperty_2());
-    editorCell.addEditorCell(createConstant_4());
+    editorCell.addEditorCell(createIndentCell_3());
+    editorCell.addEditorCell(createProperty_1());
+    return editorCell;
+  }
+  private EditorCell createConstant_2() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Cut:");
+    editorCell.setCellId("Constant_emm3eu_a1b0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createIndentCell_2() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Temperature:");
-    editorCell.setCellId("Constant_v4ot80_b2b0");
-    editorCell.setDefaultText("");
+  private EditorCell createIndentCell_3() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createProperty_2() {
+  private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.temperature$24ZP;
+      final SProperty property = PROPS.cut$UuXl;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no temperature>");
-      editorCell.setCellId("BP_property_temperature");
+      editorCell.setDefaultText("<no cut>");
+      editorCell.setCellId("property_cut");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -218,93 +173,143 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_4() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "C°");
-    editorCell.setCellId("Constant_v4ot80_d2b0");
+  private EditorCell createConstant_3() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_emm3eu_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_6() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_v4ot80_d1a");
+  private EditorCell createConstant_4() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_emm3eu_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_5() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_emm3eu_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_6() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_emm3eu_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_4() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
+    editorCell.setCellId("Collection_emm3eu_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_3());
-    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createCollection_5());
+    editorCell.addEditorCell(createCollection_6());
     return editorCell;
   }
-  private EditorCell createIndentCell_3() {
+  private EditorCell createCollection_5() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_emm3eu_a6a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createConstant_7());
+    editorCell.addEditorCell(createIndentCell_4());
+    editorCell.addEditorCell(createIndentCell_5());
+    editorCell.addEditorCell(createProperty_2());
+    return editorCell;
+  }
+  private EditorCell createConstant_7() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Surface Fluid Level:");
+    editorCell.setCellId("Constant_emm3eu_a0g0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createIndentCell_4() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new coordinatesSingleRoleHandler_v4ot80_b3b0(myNode, LINKS.coordinates$243L, getEditorContext());
-    return provider.createCell();
+  private EditorCell createIndentCell_5() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
   }
-  private static class coordinatesSingleRoleHandler_v4ot80_b3b0 extends SingleRoleCellProvider {
-    @NotNull
-    private SNode myNode;
-
-    public coordinatesSingleRoleHandler_v4ot80_b3b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(containmentLink, context);
-      myNode = ownerNode;
-    }
-
-    @Override
-    @NotNull
-    public SNode getNode() {
-      return myNode;
-    }
-
-    protected EditorCell createChildCell(SNode child) {
-      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.coordinates$243L, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.coordinates$243L, child));
-      installCellInfo(child, editorCell, false);
+  private EditorCell createProperty_2() {
+    getCellFactory().pushCellContext();
+    try {
+      final SProperty property = PROPS.surfaceFluidLevel$UvTp;
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+      editorCell.setDefaultText("<no surfaceFluidLevel>");
+      editorCell.setCellId("property_surfaceFluidLevel");
+      editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
+      setCellContext(editorCell);
+      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
+      Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
+      if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
+      } else
       return editorCell;
+    } finally {
+      getCellFactory().popCellContext();
     }
-
-
-
-    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
-      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
-      }
-      if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.coordinates$243L);
-      }
-    }
-    @Override
-    protected EditorCell createEmptyCell() {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.coordinates$243L));
-      try {
-        EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_coordinates");
-        installCellInfo(null, editorCell, true);
-        setCellContext(editorCell);
-        return editorCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    }
-    protected String getNoTargetText() {
-      return "<no coordinates>";
+  }
+  private EditorCell createCollection_6() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_emm3eu_b6a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createConstant_8());
+    editorCell.addEditorCell(createIndentCell_6());
+    editorCell.addEditorCell(createIndentCell_7());
+    editorCell.addEditorCell(createProperty_3());
+    return editorCell;
+  }
+  private EditorCell createConstant_8() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Pump Fluid Level:");
+    editorCell.setCellId("Constant_emm3eu_a1g0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createIndentCell_6() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
+  private EditorCell createIndentCell_7() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
+  private EditorCell createProperty_3() {
+    getCellFactory().pushCellContext();
+    try {
+      final SProperty property = PROPS.pumpFluidLevel$U_ZN;
+      getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+      editorCell.setDefaultText("<no pumpFluidLevel>");
+      editorCell.setCellId("property_pumpFluidLevel");
+      editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
+      setCellContext(editorCell);
+      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
+      Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where((it) -> Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property));
+      if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
+        EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+        return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
+      } else
+      return editorCell;
+    } finally {
+      getCellFactory().popCellContext();
     }
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty casingSize$24xN = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a958eL, "casingSize");
-    /*package*/ static final SProperty pressure$24KO = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a958fL, "pressure");
-    /*package*/ static final SProperty temperature$24ZP = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a9590L, "temperature");
+    /*package*/ static final SProperty pressure$Uuvj = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x6e825ec7df0e6c14L, 0x6e825ec7df0e6c16L, "pressure");
+    /*package*/ static final SProperty cut$UuXl = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x6e825ec7df0e6c14L, 0x6e825ec7df0e6c18L, "cut");
+    /*package*/ static final SProperty surfaceFluidLevel$UvTp = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x6e825ec7df0e6c14L, 0x6e825ec7df0e6c1cL, "surfaceFluidLevel");
+    /*package*/ static final SProperty pumpFluidLevel$U_ZN = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x6e825ec7df0e6c14L, 0x6e825ec7df0e6c21L, "pumpFluidLevel");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SContainmentLink coordinates$243L = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a958cL, "coordinates");
   }
 }

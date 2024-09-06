@@ -26,6 +26,7 @@ public class RunPythonScript_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ProcessBuilder pb = new ProcessBuilder("bash", "");
+
     JOptionPane.showMessageDialog(null, "Generate Python");
   }
 }

@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class DownholeTable_Editor extends DefaultNodeEditor {
+public class WellPersonel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new DownholeTable_EditorBuilder_a(editorContext, node).createCell();
+    return new WellPersonel_EditorBuilder_a(editorContext, node).createCell();
   }
 }

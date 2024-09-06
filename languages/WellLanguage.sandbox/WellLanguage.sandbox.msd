@@ -12,6 +12,7 @@
   </facets>
   <dependencies>
     <dependency reexport="false">c7fb639f-be78-4307-89b0-b5959c3fa8c8(jetbrains.mps.lang.text)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:1f9e61a5-590e-4e5e-9835-cf0a05fde422:WellLanguage" version="0" />

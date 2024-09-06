@@ -4,24 +4,89 @@
   <languages>
     <use id="1f9e61a5-590e-4e5e-9835-cf0a05fde422" name="WellLanguage" version="0" />
   </languages>
-  <imports />
+  <imports>
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+  </imports>
   <registry>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
+      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
+      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
+        <child id="1070534760952" name="componentType" index="10Q1$1" />
+      </concept>
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
+        <child id="1068580123135" name="body" index="3clF47" />
+      </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+        <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ngI" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+    </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="4816492477345855364" name="jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration" flags="ig" index="3_nuBB" />
+    </language>
     <language id="1f9e61a5-590e-4e5e-9835-cf0a05fde422" name="WellLanguage">
+      <concept id="3849951613487734061" name="WellLanguage.structure.WellPersonel" flags="ng" index="13hIP">
+        <child id="4128156691544798918" name="personel" index="2xTXT_" />
+      </concept>
       <concept id="3849951613484974921" name="WellLanguage.structure.ActivityTable" flags="ng" index="1mKnh">
         <child id="3849951613484974922" name="activities" index="1mKni" />
       </concept>
       <concept id="8013997290454422936" name="WellLanguage.structure.DepositWell" flags="ng" index="fjumb" />
+      <concept id="92897613166784673" name="WellLanguage.structure.Downhole" flags="ng" index="g0V_2">
+        <property id="9086086237135642447" name="topPerforation" index="2t4lK5" />
+        <property id="9086086237135642460" name="plugBackTotalDepth" index="2t4lKm" />
+        <property id="9086086237135642450" name="bottomPerforation" index="2t4lKo" />
+        <property id="9086086237135642454" name="anchor" index="2t4lKs" />
+        <property id="9086086237135642472" name="pumpVerticalMeasuredDepth" index="2t4lKy" />
+        <property id="9086086237135642466" name="pumpMeasuredDepth" index="2t4lKC" />
+      </concept>
       <concept id="92897613166784641" name="WellLanguage.structure.Motor" flags="ng" index="g0V_y">
         <property id="92897613166784643" name="manufacturer" index="g0V_w" />
         <property id="92897613166784645" name="inertia" index="g0V_A" />
         <property id="92897613166784649" name="maxAmp" index="g0V_E" />
         <property id="92897613166784667" name="type" index="g0V_S" />
       </concept>
+      <concept id="92897613166791821" name="WellLanguage.structure.Fluid" flags="ng" index="g0WlI" />
       <concept id="92897613166660837" name="WellLanguage.structure.Coordinates" flags="ng" index="g3sk6">
         <property id="92897613166660838" name="x" index="g3sk5" />
         <property id="92897613166660843" name="z" index="g3sk8" />
         <property id="92897613166660840" name="y" index="g3skb" />
       </concept>
+      <concept id="9086086237135657524" name="WellLanguage.structure.SurfaceProperties" flags="ng" index="2t4h_Y" />
+      <concept id="4128156691549025848" name="WellLanguage.structure.SimpleJavaScripts" flags="ng" index="2xD5Ur">
+        <child id="4128156691549026429" name="methods" index="2xD53u" />
+      </concept>
+      <concept id="4128156691544833704" name="WellLanguage.structure.InnerPesonel" flags="ng" index="2xT5ob" />
       <concept id="8076358177615537834" name="WellLanguage.structure.Task" flags="ng" index="2Jz9Di" />
       <concept id="8076358177615537670" name="WellLanguage.structure.ActivitySchedule" flags="ng" index="2Jz9FY">
         <reference id="8076358177616816031" name="worker" index="2JJLHB" />
@@ -34,13 +99,16 @@
         <reference id="8076358177613680877" name="well" index="2JqeKl" />
       </concept>
       <concept id="5154331406846477612" name="WellLanguage.structure.Well" flags="ng" index="18fDwR">
-        <property id="8013997290454422928" name="temperature" index="fjum3" />
-        <property id="8013997290454422927" name="pressure" index="fjums" />
-        <property id="8013997290454422926" name="casingSize" index="fjumt" />
         <property id="4808745925338847638" name="generalDescription" index="2Oks5A" />
         <reference id="8076358177617536677" name="worker" index="2JCxDt" />
+        <child id="3849951613487812115" name="personel" index="13Wyb" />
         <child id="3849951613483565067" name="machinery" index="1j8qj" />
+        <child id="8013997290454613347" name="fluidProps" index="fiwPK" />
+        <child id="8013997290454613344" name="downholeProps" index="fiwPN" />
         <child id="8013997290454422924" name="coordinates" index="fjumv" />
+        <child id="4128156691547990188" name="customStatements" index="2x_80f" />
+        <child id="4128156691550109127" name="surfaceProps" index="2xHdl$" />
+        <child id="4128156691545689906" name="customMethods" index="2xWquh" />
       </concept>
       <concept id="6497204669838387151" name="WellLanguage.structure.MotorTable" flags="ng" index="1w$PbQ">
         <child id="6497204669838387152" name="motors" index="1w$PbD" />
@@ -68,22 +136,6 @@
       <property role="g0V_E" value="5" />
     </node>
   </node>
-  <node concept="fjumb" id="70kZfzv$EQl">
-    <property role="TrG5h" value="NewDepositWell" />
-    <property role="3GE5qa" value="Wells" />
-    <property role="2Oks5A" value="this is a well that does well things" />
-    <property role="fjumt" value="20" />
-    <property role="fjums" value="20" />
-    <property role="fjum3" value="20" />
-    <ref role="2JCxDt" node="70kZfzvEYx4" resolve="juan" />
-    <node concept="1IRpYY" id="3lHLDwOb8Ed" role="1j8qj" />
-    <node concept="1IRpYY" id="3lHLDwOoaqb" role="1j8qj" />
-    <node concept="g3sk6" id="70kZfzvA0cV" role="fjumv">
-      <property role="g3sk5" value="6" />
-      <property role="g3skb" value="5" />
-      <property role="g3sk8" value="5" />
-    </node>
-  </node>
   <node concept="3OX8kf" id="70kZfzvEYwr">
     <property role="TrG5h" value="Brand new workers" />
     <node concept="2Ohnxw" id="70kZfzvEYx4" role="1OfyU_">
@@ -91,30 +143,22 @@
       <property role="TrG5h" value="juan" />
       <property role="2Ohnx_" value="4aW6f3R3niv/Ingeniero" />
       <property role="2Ohnxz" value="hace cosas" />
-      <ref role="2JqeKl" node="70kZfzv$EQl" resolve="NewDepositWell" />
+      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="AAA" />
     </node>
     <node concept="2Ohnxw" id="70kZfzvMjPd" role="1OfyU_">
       <property role="3OX8Ex" value="3" />
       <property role="TrG5h" value="asf" />
       <property role="2Ohnx_" value="4aW6f3R3nii/Director" />
       <property role="2Ohnxz" value="3" />
-      <ref role="2JqeKl" node="70kZfzv$EQl" resolve="NewDepositWell" />
+      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="AAA" />
     </node>
     <node concept="2Ohnxw" id="70kZfzvP9TB" role="1OfyU_">
       <property role="3OX8Ex" value="4" />
       <property role="TrG5h" value="Fran" />
       <property role="2Ohnx_" value="4aW6f3R3niv/Ingeniero" />
       <property role="2Ohnxz" value="profesor" />
-      <ref role="2JqeKl" node="3lHLDwObH4G" resolve="Deposito" />
+      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="AAA" />
     </node>
-  </node>
-  <node concept="fjumb" id="3lHLDwObH4G">
-    <property role="3GE5qa" value="Wells" />
-    <property role="TrG5h" value="Deposito" />
-    <property role="2Oks5A" value="asd" />
-    <property role="fjumt" value="3" />
-    <property role="fjums" value="3" />
-    <property role="fjum3" value="3" />
   </node>
   <node concept="1mKnh" id="3lHLDwOf9Im">
     <property role="TrG5h" value="Name of activiites" />
@@ -128,5 +172,96 @@
     <node concept="2Jz9FY" id="3lHLDwOi1Lw" role="1mKni" />
   </node>
   <node concept="1w$PbQ" id="3lHLDwOodOF" />
+  <node concept="fjumb" id="3_aaaeo_ku3">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="AAA" />
+    <property role="2Oks5A" value="AAA" />
+    <ref role="2JCxDt" node="70kZfzvP9TB" resolve="Fran" />
+    <node concept="1IRpYY" id="3_aaaeoGYMr" role="1j8qj" />
+    <node concept="13hIP" id="3_aaaeoGYMn" role="13Wyb">
+      <property role="TrG5h" value="New" />
+      <node concept="2xT5ob" id="3_aaaeoGYMp" role="2xTXT_" />
+      <node concept="2xT5ob" id="3_aaaep1MUR" role="2xTXT_" />
+    </node>
+    <node concept="13hIP" id="3_aaaep1MV9" role="13Wyb">
+      <property role="TrG5h" value="new" />
+    </node>
+    <node concept="13hIP" id="3_aaaep1MVt" role="13Wyb">
+      <property role="TrG5h" value="ghvcgh" />
+    </node>
+    <node concept="g0V_2" id="3_aaaeoDYl4" role="fiwPN">
+      <property role="2t4lK5" value="3" />
+      <property role="2t4lKs" value="33" />
+      <property role="2t4lKC" value="3" />
+      <property role="2t4lKo" value="5" />
+      <property role="2t4lKm" value="5" />
+      <property role="2t4lKy" value="5" />
+    </node>
+    <node concept="g3sk6" id="3_aaaeo_ku4" role="fjumv">
+      <property role="g3sk5" value="54" />
+      <property role="g3skb" value="54" />
+      <property role="g3sk8" value="4" />
+    </node>
+    <node concept="3clFbS" id="3_aaaeoT6bX" role="2x_80f">
+      <node concept="3cpWs8" id="3_aaaeoT6bS" role="3cqZAp">
+        <node concept="3cpWsn" id="3_aaaeoT6bV" role="3cpWs9">
+          <property role="TrG5h" value="strin" />
+          <node concept="3uibUv" id="3_aaaeoT6bR" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
+          <node concept="Xl_RD" id="3_aaaeoT7mK" role="33vP2m">
+            <property role="Xl_RC" value="sadf" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3_aaaeoT7ns" role="3cqZAp">
+        <node concept="3cpWsn" id="3_aaaeoT7nv" role="3cpWs9">
+          <property role="TrG5h" value="numI" />
+          <node concept="10Oyi0" id="3_aaaeoT7oT" role="1tU5fm" />
+          <node concept="3cmrfG" id="3_aaaeoT7qw" role="33vP2m">
+            <property role="3cmrfH" value="93" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3_aaaep1MZw" role="3cqZAp" />
+      <node concept="3clFbH" id="3_aaaeoT7pK" role="3cqZAp" />
+    </node>
+    <node concept="3_nuBB" id="3_aaaeoT7rS" role="2xWquh">
+      <node concept="3cqZAl" id="3_aaaeoT7rT" role="3clF45" />
+      <node concept="3Tm1VV" id="3_aaaeoT7rU" role="1B3o_S" />
+      <node concept="3clFbS" id="3_aaaeoT7rV" role="3clF47">
+        <node concept="3clFbH" id="3_aaaeoVAce" role="3cqZAp" />
+      </node>
+      <node concept="37vLTG" id="3_aaaeoT7sv" role="3clF46">
+        <property role="TrG5h" value="sAbstractMethodError" />
+        <node concept="3uibUv" id="3_aaaeoT7su" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~AbstractMethodError" resolve="AbstractMethodError" />
+        </node>
+      </node>
+    </node>
+    <node concept="g0WlI" id="3_aaaeoZHCC" role="fiwPK" />
+    <node concept="2t4h_Y" id="3_aaaep1giE" role="2xHdl$" />
+  </node>
+  <node concept="2xD5Ur" id="3_aaaeoWYoc">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="Some java stuff" />
+    <node concept="2YIFZL" id="3_aaaeoWYqb" role="2xD53u">
+      <property role="TrG5h" value="main" />
+      <node concept="37vLTG" id="3_aaaeoWYqc" role="3clF46">
+        <property role="TrG5h" value="args" />
+        <node concept="10Q1$e" id="3_aaaeoWYqd" role="1tU5fm">
+          <node concept="17QB3L" id="3_aaaeoWYqe" role="10Q1$1" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="3_aaaeoWYqf" role="3clF45" />
+      <node concept="3Tm1VV" id="3_aaaeoWYqg" role="1B3o_S" />
+      <node concept="3clFbS" id="3_aaaeoWYqh" role="3clF47" />
+    </node>
+  </node>
+  <node concept="1mKnh" id="3_aaaep1MD9">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="I" />
+    <node concept="2Jz9FY" id="3_aaaep1MF6" role="1mKni" />
+  </node>
 </model>
 

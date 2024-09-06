@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-6tx88uunbchw5az9y4hk6mlwkzrkgev">
-  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_ActivityType.java:EnumerationDescriptor_MotorType.java:EnumerationDescriptor_PumpUnitGeometry.java:EnumerationDescriptor_Roles.java:EnumerationDescriptor_Rotation.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
+<product version="3" modelHash="-15n0rv9wrd6809vog9uan6u76op8s00">
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_ActivityType.java:EnumerationDescriptor_LengthUnits.java:EnumerationDescriptor_MotorType.java:EnumerationDescriptor_PumpUnitGeometry.java:EnumerationDescriptor_Roles.java:EnumerationDescriptor_Rotation.java:EnumerationDescriptor_TempUnits.java:EnumerationDescriptor_VolumeUnits.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 

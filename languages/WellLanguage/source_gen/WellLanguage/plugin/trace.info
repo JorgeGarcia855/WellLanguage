@@ -65,22 +65,23 @@
       <node id="3849951613478900843" at="19,52,20,29" concept="1" />
       <node id="3849951613478900843" at="23,32,24,16" concept="5" />
       <node id="3849951613480533313" at="27,96,28,55" concept="4" />
-      <node id="3849951613478901278" at="28,55,29,59" concept="1" />
+      <node id="3849951613487812430" at="28,55,29,0" concept="7" />
+      <node id="3849951613478901278" at="29,0,30,59" concept="1" />
       <node id="3849951613478900843" at="22,0,26,0" concept="3" trace="isDumbAware#()Z" />
-      <node id="3849951613478900843" at="26,0,31,0" concept="3" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="3849951613478900843" at="16,0,22,0" concept="0" trace="RunPythonScript_Action#()V" />
+      <node id="3849951613478900843" at="26,0,32,0" concept="3" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <scope id="3849951613478900843" at="23,32,24,16" />
-      <scope id="3849951613478900843" at="27,96,29,59">
+      <scope id="3849951613478900843" at="27,96,30,59">
         <var name="pb" id="3849951613480533314" />
       </scope>
       <scope id="3849951613478900843" at="16,35,20,29" />
       <scope id="3849951613478900843" at="22,0,26,0" />
-      <scope id="3849951613478900843" at="26,0,31,0">
+      <scope id="3849951613478900843" at="16,0,22,0" />
+      <scope id="3849951613478900843" at="26,0,32,0">
         <var name="_params" id="3849951613478900843" />
         <var name="event" id="3849951613478900843" />
       </scope>
-      <scope id="3849951613478900843" at="16,0,22,0" />
-      <unit id="3849951613478900843" at="13,0,32,0" name="WellLanguage.plugin.RunPythonScript_Action" />
+      <unit id="3849951613478900843" at="13,0,33,0" name="WellLanguage.plugin.RunPythonScript_Action" />
     </file>
     <file name="WellLanguage_ApplicationPlugin.java">
       <node id="3849951613478900843" at="23,41,24,44" concept="1" />

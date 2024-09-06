@@ -9,9 +9,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import WellLanguage.editor.Styles_StyleSheet.arialfontStyleClass;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -51,7 +53,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import de.slisson.mps.tables.runtime.gridmodel.IRowCreateHandler;
 import de.slisson.mps.tables.runtime.gridmodel.IHeaderNodeDeleteAction;
 import de.slisson.mps.tables.runtime.gridmodel.HeaderGridFactory;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import de.slisson.mps.tables.runtime.gridmodel.Header;
 import de.slisson.mps.tables.runtime.gridmodel.EditorCellHeader;
 import de.slisson.mps.tables.runtime.gridmodel.StringHeaderReference;
@@ -60,11 +61,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
-/*package*/ class DownholeTable_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class WellPersonel_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public DownholeTable_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public WellPersonel_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -81,14 +82,27 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_tenpsw_a");
+    editorCell.setCellId("Collection_gaovrl_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
-    Style style = new StyleImpl();
-    new arialfontStyleClass(this).apply(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createCollection_1());
     editorCell.addEditorCell(createTable_1());
+    return editorCell;
+  }
+  private EditorCell createCollection_1() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_gaovrl_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    return editorCell;
+  }
+  private EditorCell createConstant_0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Team Name:");
+    editorCell.setCellId("Constant_gaovrl_a0a");
+    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createProperty_0() {
@@ -133,13 +147,13 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
           List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
           grid.setRowHeaders(headerGrids);
         }
-        final Grid childGrid = createChildsVertical_tenpsw_a1a(editorContext, node);
+        final Grid childGrid = createChildsVertical_gaovrl_a1a(editorContext, node);
         childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
         childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
         grid.setElement(0, 0, childGrid);
 
         editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_tenpsw_b0");
+        editorCell.value.setCellId("Table_gaovrl_b0");
 
 
         editorCell.value.init();
@@ -157,26 +171,26 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createTable_1() {
     return createTable_0(getEditorContext(), myNode);
   }
-  public Grid createChildsVertical_tenpsw_a1a(final EditorContext editorContext, final SNode node) {
+  public Grid createChildsVertical_gaovrl_a1a(final EditorContext editorContext, final SNode node) {
     Grid grid = new Grid();
     GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
 
-    grid.setColumnHeaders(0, 0, createHeaderCollection_tenpsw_a0b0(editorContext, node));
-    grid.setRowHeaders(0, 0, createHeadQuery_tenpsw_a0b0(editorContext, node));
+    grid.setColumnHeaders(0, 0, createHeaderCollection_gaovrl_a0b0(editorContext, node));
+    grid.setRowHeaders(0, 0, createHeadQuery_gaovrl_a0b0(editorContext, node));
 
-    final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.downholes$1zMn)) {};
+    final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.personel$5Vw3)) {};
 
     try {
       getCellFactory().pushCellContext();
       getCellFactory().addCellContextHints();
       getCellFactory().removeCellContextHints();
       int y = 0;
-      Iterable<SNode> elements = SLinkOperations.getChildren(node, LINKS.downholes$1zMn);
+      Iterable<SNode> elements = SLinkOperations.getChildren(node, LINKS.personel$5Vw3);
       for (SNode child : Sequence.fromIterable(elements)) {
         final int yFinal = y;
         EditorCell cell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
         ChildsTracker.getInstance().registerChild(cell);
-        SubstituteInfo substituteInfo = SubstituteUtil.forChild(editorContext, node, (y < ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholes$1zMn)).count() ? ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholes$1zMn)).getElement(y) : null), LINKS.downholes$1zMn);
+        SubstituteInfo substituteInfo = SubstituteUtil.forChild(editorContext, node, (y < ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).count() ? ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).getElement(y) : null), LINKS.personel$5Vw3);
         cell.setSubstituteInfo(substituteInfo);
 
         IGridElement gridElement = PartialTableExtractor.getGridElementFromEditorCell(cell, grid);
@@ -205,8 +219,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       getCellFactory().popCellContext();
     }
 
-    if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholes$1zMn)).isEmpty()) {
-      EditorCell placeholder = new EditorCellFactory(editorContext, node, grid).createPlaceholderConstant("<no downholes>");
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).isEmpty()) {
+      EditorCell placeholder = new EditorCellFactory(editorContext, node, grid).createPlaceholderConstant("<no personel>");
       IGridElement element = PartialTableExtractor.getGridElementFromEditorCell(placeholder, grid);
       element.setSpanX(Math.max(element.getSpanX(), grid.getColumnHeadersSizeX()));
       element.setSpanY(Math.max(element.getSpanY(), grid.getRowHeadersSizeY()));
@@ -218,7 +232,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         }
       });
       placeholder.setAction(CellActionType.INSERT_BEFORE, placeholder.getAction(CellActionType.INSERT));
-      SubstituteInfo substituteInfo = new DefaultSChildSubstituteInfo(node, null, LINKS.downholes$1zMn, editorContext);
+      SubstituteInfo substituteInfo = new DefaultSChildSubstituteInfo(node, null, LINKS.personel$5Vw3, editorContext);
       placeholder.setSubstituteInfo(substituteInfo);
       IRowCreateHandler rowCreateHandler = new IRowCreateHandler() {
         public void create() {
@@ -233,22 +247,19 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.flattenOneLevel();
     return grid;
   }
-  public HeaderGrid createHeaderCollection_tenpsw_a0b0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeaderCollection_gaovrl_a0b0(final EditorContext editorContext, final SNode node) {
     IHeaderNodeInsertAction insertAction = null;
     IHeaderNodeDeleteAction deleteAction = null;
 
     List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_tenpsw_a0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_tenpsw_b0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_tenpsw_c0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_tenpsw_d0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_tenpsw_e0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_tenpsw_f0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_tenpsw_g0a1a(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_a0a1a(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_b0a1a(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_c0a1a(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_d0a1a(editorContext, node));
 
     return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
   }
-  public HeaderGrid createStaticHeader_tenpsw_a0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_a0a1a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -256,15 +267,15 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         return style;
       }
     }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Top Perforation", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Top Perforation"), cell);
-    header.setLabel("Top Perforation");
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "ID", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("ID"), cell);
+    header.setLabel("ID");
     header.setStyle(style);
     HeaderGrid grid = new HeaderGrid();
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_tenpsw_b0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_b0a1a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -272,15 +283,15 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         return style;
       }
     }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Bottom Perforation", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Bottom Perforation"), cell);
-    header.setLabel("Bottom Perforation");
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Name", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("Name"), cell);
+    header.setLabel("Name");
     header.setStyle(style);
     HeaderGrid grid = new HeaderGrid();
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_tenpsw_c0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_c0a1a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -288,15 +299,15 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         return style;
       }
     }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Anchor", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Anchor"), cell);
-    header.setLabel("Anchor");
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Role", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("Role"), cell);
+    header.setLabel("Role");
     header.setStyle(style);
     HeaderGrid grid = new HeaderGrid();
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_tenpsw_d0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_d0a1a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -304,81 +315,33 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
         return style;
       }
     }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "PlugBack", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("PlugBack"), cell);
-    header.setLabel("PlugBack");
+    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Description", false);
+    Header header = new EditorCellHeader(new StringHeaderReference("Description"), cell);
+    header.setLabel("Description");
     header.setStyle(style);
     HeaderGrid grid = new HeaderGrid();
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_tenpsw_e0a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Pump Mearsured Depth", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Pump Mearsured Depth"), cell);
-    header.setLabel("Pump Mearsured Depth");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_tenpsw_f0a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Pump Vertical Measured Depth", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Pump Vertical Measured Depth"), cell);
-    header.setLabel("Pump Vertical Measured Depth");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createStaticHeader_tenpsw_g0a1a(final EditorContext editorContext, final SNode snode) {
-    final Style style = new ITableStyleFactory() {
-      public Style createStyle(final int columnIndex, final int rowIndex) {
-        Style style = new StyleImpl();
-        final EditorCell editorCell = null;
-        return style;
-      }
-    }.createStyle(0, 0);
-    final EditorCell_Constant cell = new EditorCell_Constant(editorContext, snode, "Well", false);
-    Header header = new EditorCellHeader(new StringHeaderReference("Well"), cell);
-    header.setLabel("Well");
-    header.setStyle(style);
-    HeaderGrid grid = new HeaderGrid();
-    grid.setElement(0, 0, header);
-    return grid;
-  }
-  public HeaderGrid createHeadQuery_tenpsw_a0b0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeadQuery_gaovrl_a0b0(final EditorContext editorContext, final SNode node) {
     Object queryResult = new Object() {
       public Object query() {
-        return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholes$1zMn)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));
+        return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));
       }
     }.query();
     IHeaderNodeInsertAction insertAction = new IHeaderNodeInsertAction() {
       public void insertNew(int index) {
-        SNodeFactoryOperations.addNewChild(node, LINKS.downholes$1zMn, null);
+        SNodeFactoryOperations.addNewChild(node, LINKS.personel$5Vw3, null);
       }
     };
     IHeaderNodeDeleteAction deleteAction = new IHeaderNodeDeleteAction() {
       public void delete(final int index) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholes$1zMn)).count() > 1) {
-          ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.downholes$1zMn)).removeElementAt(index);
+        if (ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).count() > 1) {
+          ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).removeElementAt(index);
         }
       }
     };
-    HeaderGrid grid = new HeaderGridFactory(editorContext, node, false).createFromObject(queryResult, new StringHeaderReference("6497204669839159269"), insertAction, deleteAction, 0, new ITableStyleFactory() {
+    HeaderGrid grid = new HeaderGridFactory(editorContext, node, false).createFromObject(queryResult, new StringHeaderReference("4128156691544818833"), insertAction, deleteAction, 0, new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
         final EditorCell editorCell = null;
@@ -398,6 +361,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink downholes$1zMn = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x5a2ab5393abdd2fdL, 0x5a2ab5393ac555feL, "downholes");
+    /*package*/ static final SContainmentLink personel$5Vw3 = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x356dc6983460dd2dL, 0x394a28a398adf6c6L, "personel");
   }
 }

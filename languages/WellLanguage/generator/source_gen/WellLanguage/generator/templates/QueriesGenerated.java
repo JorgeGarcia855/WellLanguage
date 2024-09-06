@@ -37,24 +37,15 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.generalDescription$eTEb);
   }
   public static Object propertyMacro_GetValue_0_3(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.casingSize$24xN);
-  }
-  public static Object propertyMacro_GetValue_0_4(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.pressure$24KO);
-  }
-  public static Object propertyMacro_GetValue_0_5(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.temperature$24ZP);
-  }
-  public static Object propertyMacro_GetValue_0_6(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.coordinates$243L), PROPS.x$6$Yt);
   }
-  public static Object propertyMacro_GetValue_0_7(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_0_4(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.coordinates$243L), PROPS.y$6EnO);
   }
-  public static Object propertyMacro_GetValue_0_8(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_0_5(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.coordinates$243L), PROPS.z$6F4R);
   }
-  public static Object propertyMacro_GetValue_0_9(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_0_6(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL).replaceAll("\\s", "");
   }
   public static Object propertyMacro_GetValue_2_0(final PropertyMacroContext _context) {
@@ -105,9 +96,6 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("7420707846999142214", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "Well"));
     pvqMethods.put("8076358177615184953", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "wellname"));
     pvqMethods.put("8076358177615186277", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "description"));
-    pvqMethods.put("8076358177615539088", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "size"));
-    pvqMethods.put("8076358177615544233", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "pressure"));
-    pvqMethods.put("8076358177615551341", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "temp"));
     pvqMethods.put("8076358177615555675", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "x"));
     pvqMethods.put("8076358177615566307", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "y"));
     pvqMethods.put("8076358177615576409", new PVQ(i++, MetaAdapterFactory.getProperty(0x8a10cb27224943abL, 0xad374b804d24ba45L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "z"));
@@ -147,18 +135,12 @@ public class QueriesGenerated extends QueryProviderBase {
         case 6:
           return QueriesGenerated.propertyMacro_GetValue_0_6(ctx);
         case 7:
-          return QueriesGenerated.propertyMacro_GetValue_0_7(ctx);
-        case 8:
-          return QueriesGenerated.propertyMacro_GetValue_0_8(ctx);
-        case 9:
-          return QueriesGenerated.propertyMacro_GetValue_0_9(ctx);
-        case 10:
           return QueriesGenerated.propertyMacro_GetValue_2_0(ctx);
-        case 11:
+        case 8:
           return QueriesGenerated.propertyMacro_GetValue_3_0(ctx);
-        case 12:
+        case 9:
           return QueriesGenerated.propertyMacro_GetValue_3_1(ctx);
-        case 13:
+        case 10:
           return QueriesGenerated.propertyMacro_GetValue_5_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -169,9 +151,6 @@ public class QueriesGenerated extends QueryProviderBase {
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty generalDescription$eTEb = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x42bc18f0f6edd996L, "generalDescription");
-    /*package*/ static final SProperty casingSize$24xN = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a958eL, "casingSize");
-    /*package*/ static final SProperty pressure$24KO = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a958fL, "pressure");
-    /*package*/ static final SProperty temperature$24ZP = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x6f377013607a9590L, "temperature");
     /*package*/ static final SProperty x$6$Yt = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31147cce5L, 0x14a09e31147cce6L, "x");
     /*package*/ static final SProperty y$6EnO = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31147cce5L, 0x14a09e31147cce8L, "y");
     /*package*/ static final SProperty z$6F4R = MetaAdapterFactory.getProperty(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31147cce5L, 0x14a09e31147ccebL, "z");
