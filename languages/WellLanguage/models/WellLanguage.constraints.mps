@@ -39,8 +39,14 @@
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="3lHLDwO1NDW">
+    <property role="3GE5qa" value="Scripting" />
     <ref role="1M2myG" to="n484:3lHLDwO1z7D" resolve="SingleLineComment" />
     <node concept="9S07l" id="3lHLDwO1NEK" role="9Vyp8">
       <node concept="3clFbS" id="3lHLDwO1NEL" role="2VODD2">

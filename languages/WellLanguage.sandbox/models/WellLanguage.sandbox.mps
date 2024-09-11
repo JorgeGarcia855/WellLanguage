@@ -82,7 +82,11 @@
         <property id="92897613166660843" name="z" index="g3sk8" />
         <property id="92897613166660840" name="y" index="g3skb" />
       </concept>
+      <concept id="952715169456142323" name="WellLanguage.structure.Authors" flags="ng" index="iHSUl" />
       <concept id="9086086237135657524" name="WellLanguage.structure.SurfaceProperties" flags="ng" index="2t4h_Y" />
+      <concept id="4128156691550645071" name="WellLanguage.structure.Metadata" flags="ng" index="2wjgfG">
+        <child id="952715169456142330" name="authors" index="iHSUs" />
+      </concept>
       <concept id="4128156691549025848" name="WellLanguage.structure.SimpleJavaScripts" flags="ng" index="2xD5Ur">
         <child id="4128156691549026429" name="methods" index="2xD53u" />
       </concept>
@@ -106,6 +110,7 @@
         <child id="8013997290454613347" name="fluidProps" index="fiwPK" />
         <child id="8013997290454613344" name="downholeProps" index="fiwPN" />
         <child id="8013997290454422924" name="coordinates" index="fjumv" />
+        <child id="952715169456142729" name="metadata" index="iHS3J" />
         <child id="4128156691547990188" name="customStatements" index="2x_80f" />
         <child id="4128156691550109127" name="surfaceProps" index="2xHdl$" />
         <child id="4128156691545689906" name="customMethods" index="2xWquh" />
@@ -241,6 +246,13 @@
     </node>
     <node concept="g0WlI" id="3_aaaeoZHCC" role="fiwPK" />
     <node concept="2t4h_Y" id="3_aaaep1giE" role="2xHdl$" />
+    <node concept="2wjgfG" id="OSImovAl45" role="iHS3J">
+      <node concept="iHSUl" id="OSImovAl47" role="iHSUs">
+        <property role="TrG5h" value="a" />
+      </node>
+      <node concept="iHSUl" id="OSImovDfhF" role="iHSUs" />
+      <node concept="iHSUl" id="OSImovBMOM" role="iHSUs" />
+    </node>
   </node>
   <node concept="2xD5Ur" id="3_aaaeoWYoc">
     <property role="3GE5qa" value="Wells" />

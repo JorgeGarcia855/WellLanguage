@@ -35,6 +35,8 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styles" index="V601i" />
       </concept>
@@ -741,13 +743,10 @@
         </node>
       </node>
       <node concept="3F0ifn" id="4aW6f3R0nVf" role="3EZMnx" />
-      <node concept="3F0ifn" id="6un6fD1ojce" role="3EZMnx">
-        <property role="3F0ifm" value="Description" />
+      <node concept="3F1sOY" id="OSImov$dxl" role="3EZMnx">
+        <ref role="1NtTu8" to="n484:OSImovzNA9" resolve="metadata" />
       </node>
-      <node concept="3F0A7n" id="4aW6f3QVtRJ" role="3EZMnx">
-        <ref role="1NtTu8" to="n484:4aW6f3QVtAm" resolve="generalDescription" />
-      </node>
-      <node concept="3F0ifn" id="4aW6f3QYm_i" role="3EZMnx" />
+      <node concept="3F0ifn" id="OSImov$czG" role="3EZMnx" />
       <node concept="3F0ifn" id="70kZfzvHJRv" role="3EZMnx">
         <property role="3F0ifm" value="Responsible Worker:" />
       </node>
@@ -1516,6 +1515,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3lHLDwO1zav">
+    <property role="3GE5qa" value="Scripting" />
     <ref role="1XX52x" to="n484:3lHLDwO1z7D" resolve="SingleLineComment" />
     <node concept="3EZMnI" id="3lHLDwO1NCF" role="2wV5jI">
       <node concept="3F0ifn" id="3lHLDwO1NCZ" role="3EZMnx">
@@ -1731,6 +1731,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="3_aaaeoVB_l">
+    <property role="3GE5qa" value="Scripting" />
     <ref role="1XX52x" to="n484:3_aaaeoVBoS" resolve="SimpleJavaScripts" />
     <node concept="3EZMnI" id="3_aaaeoVBA4" role="2wV5jI">
       <node concept="3EZMnI" id="3_aaaeoVBCr" role="3EZMnx">
@@ -1864,6 +1865,275 @@
         <node concept="2iRkQZ" id="3_aaaeoZJVb" role="2iSdaV" />
       </node>
       <node concept="l2Vlx" id="3_aaaeoZJVx" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="OSImovzNvp">
+    <property role="3GE5qa" value="Metadata" />
+    <ref role="1XX52x" to="n484:3_aaaep1MHf" resolve="Metadata" />
+    <node concept="3EZMnI" id="OSImovzNxV" role="2wV5jI">
+      <node concept="2iRkQZ" id="OSImovzNxW" role="2iSdaV" />
+      <node concept="3EZMnI" id="OSImovzNvr" role="3EZMnx">
+        <node concept="3EZMnI" id="OSImovBMOT" role="3EZMnx">
+          <node concept="2iRkQZ" id="OSImovBMOU" role="2iSdaV" />
+          <node concept="3EZMnI" id="OSImovBMSF" role="3EZMnx">
+            <node concept="2iRfu4" id="OSImovBMSG" role="2iSdaV" />
+            <node concept="3F0ifn" id="OSImovzNv_" role="3EZMnx">
+              <property role="3F0ifm" value="Version:" />
+            </node>
+            <node concept="3F0A7n" id="OSImovzNvF" role="3EZMnx">
+              <ref role="1NtTu8" to="n484:3_aaaep1MIV" resolve="version" />
+            </node>
+          </node>
+          <node concept="3EZMnI" id="OSImovzN$9" role="3EZMnx">
+            <node concept="3F0ifn" id="OSImovzNzH" role="3EZMnx">
+              <property role="3F0ifm" value="Date:" />
+            </node>
+            <node concept="3F0A7n" id="OSImovzN$u" role="3EZMnx">
+              <ref role="1NtTu8" to="n484:3_aaaep1MLQ" resolve="date" />
+            </node>
+            <node concept="2iRfu4" id="OSImovBMW8" role="2iSdaV" />
+          </node>
+        </node>
+        <node concept="3XFhqQ" id="OSImovzNx6" role="3EZMnx" />
+        <node concept="3XFhqQ" id="OSImovzNxg" role="3EZMnx" />
+        <node concept="3F0ifn" id="OSImovzNxF" role="3EZMnx" />
+        <node concept="3F0ifn" id="OSImovzNxN" role="3EZMnx" />
+        <node concept="l2Vlx" id="OSImovzNvu" role="2iSdaV" />
+        <node concept="3EZMnI" id="OSImovBMR7" role="3EZMnx">
+          <node concept="2iRkQZ" id="OSImovBMR8" role="2iSdaV" />
+          <node concept="3F0ifn" id="OSImovzNyw" role="3EZMnx">
+            <property role="3F0ifm" value="Authors:" />
+          </node>
+          <node concept="3F2HdR" id="OSImovzNyW" role="3EZMnx">
+            <ref role="1NtTu8" to="n484:OSImovzNvU" resolve="authors" />
+            <node concept="2EHx9g" id="OSImovAl4g" role="2czzBx" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="OSImovzN_r" role="3EZMnx" />
+      <node concept="3F0ifn" id="OSImovzN$$" role="3EZMnx">
+        <property role="3F0ifm" value="Meta Description:" />
+      </node>
+      <node concept="3F0A7n" id="OSImovzN_8" role="3EZMnx">
+        <ref role="1NtTu8" to="n484:3_aaaep1MK9" resolve="metaDescription" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="OSImovzNvW">
+    <property role="3GE5qa" value="Metadata" />
+    <ref role="1XX52x" to="n484:OSImovzNvN" resolve="Authors" />
+    <node concept="3EZMnI" id="OSImovzNw$" role="2wV5jI">
+      <node concept="3F0ifn" id="OSImovzNwI" role="3EZMnx">
+        <property role="3F0ifm" value="*" />
+      </node>
+      <node concept="3F0A7n" id="OSImovzNwS" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="l2Vlx" id="OSImovzNwB" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="OSImovDh21">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="BaseMetadata" />
+    <ref role="1XX52x" to="n484:4u7RhGfIkkG" resolve="Well" />
+    <node concept="3EZMnI" id="OSImovDjT8" role="2wV5jI">
+      <node concept="3EZMnI" id="OSImovDjTf" role="3EZMnx">
+        <node concept="2iRfu4" id="OSImovDjTg" role="2iSdaV" />
+        <node concept="VPM3Z" id="OSImovDjTh" role="3F10Kt" />
+        <node concept="3F0A7n" id="OSImovDjTi" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          <node concept="VSNWy" id="OSImovDjTj" role="3F10Kt">
+            <property role="1lJzqX" value="22" />
+          </node>
+          <node concept="VechU" id="OSImovDjTk" role="3F10Kt">
+            <property role="Vb096" value="hGRnIZc/lightBlue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="OSImovDjTl" role="3EZMnx" />
+      <node concept="3F1sOY" id="OSImovDjTm" role="3EZMnx">
+        <ref role="1NtTu8" to="n484:OSImovzNA9" />
+      </node>
+      <node concept="3F0ifn" id="OSImovDjTn" role="3EZMnx" />
+      <node concept="3F0ifn" id="OSImovDjTa" role="3EZMnx" />
+      <node concept="2iRkQZ" id="OSImovDjTb" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="OSImovDiUD">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="TeamWorkers" />
+    <ref role="1XX52x" to="n484:4u7RhGfIkkG" resolve="Well" />
+    <node concept="3EZMnI" id="OSImovDkLB" role="2wV5jI">
+      <node concept="3F0ifn" id="OSImovDlS5" role="3EZMnx">
+        <property role="3F0ifm" value="Responsible Worker:" />
+      </node>
+      <node concept="1iCGBv" id="OSImovDlS6" role="3EZMnx">
+        <ref role="1NtTu8" to="n484:70kZfzvHIq_" />
+        <node concept="1sVBvm" id="OSImovDlS7" role="1sWHZn">
+          <node concept="3F0A7n" id="OSImovDlS8" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="OSImovDlS9" role="3EZMnx" />
+      <node concept="3F0ifn" id="OSImovDlSa" role="3EZMnx">
+        <property role="3F0ifm" value="Personel" />
+      </node>
+      <node concept="3F2HdR" id="OSImovDlSb" role="3EZMnx">
+        <ref role="1NtTu8" to="n484:3lHLDwOowSj" />
+        <node concept="2iRkQZ" id="OSImovDlSc" role="2czzBx" />
+      </node>
+      <node concept="3F0ifn" id="OSImovDlSd" role="3EZMnx" />
+      <node concept="2iRkQZ" id="OSImovDkLE" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="OSImovDlSn">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="MainFeatures" />
+    <ref role="1XX52x" to="n484:4u7RhGfIkkG" resolve="Well" />
+    <node concept="3EZMnI" id="OSImovDmQo" role="2wV5jI">
+      <node concept="3F0ifn" id="OSImovDmQv" role="3EZMnx">
+        <property role="3F0ifm" value="Coordinates" />
+      </node>
+      <node concept="3F1sOY" id="OSImovDmQw" role="3EZMnx">
+        <ref role="1NtTu8" to="n484:6WRs1dwuDmc" />
+      </node>
+      <node concept="3F0ifn" id="OSImovDmQx" role="3EZMnx" />
+      <node concept="3F0ifn" id="OSImovDmQy" role="3EZMnx">
+        <property role="3F0ifm" value="Main Features" />
+      </node>
+      <node concept="3EZMnI" id="OSImovDmQz" role="3EZMnx">
+        <node concept="VPM3Z" id="OSImovDmQ$" role="3F10Kt" />
+        <node concept="3F0ifn" id="OSImovDmQ_" role="3EZMnx">
+          <property role="3F0ifm" value="Fluids" />
+        </node>
+        <node concept="3F1sOY" id="OSImovDmQA" role="3EZMnx">
+          <ref role="1NtTu8" to="n484:6WRs1dwvnPz" />
+        </node>
+        <node concept="3F0ifn" id="OSImovDmQB" role="3EZMnx" />
+        <node concept="3F0ifn" id="OSImovDmQC" role="3EZMnx">
+          <property role="3F0ifm" value="Downhole" />
+        </node>
+        <node concept="3F1sOY" id="OSImovDmQD" role="3EZMnx">
+          <ref role="1NtTu8" to="n484:6WRs1dwvnPw" />
+        </node>
+        <node concept="3F0ifn" id="OSImovDmQE" role="3EZMnx" />
+        <node concept="3F0ifn" id="OSImovDmQF" role="3EZMnx">
+          <property role="3F0ifm" value="Casing Properties" />
+        </node>
+        <node concept="3F1sOY" id="OSImovDmQG" role="3EZMnx">
+          <ref role="1NtTu8" to="n484:3_aaaeoZJOk" />
+        </node>
+        <node concept="3F0ifn" id="OSImovDmQH" role="3EZMnx" />
+        <node concept="3F0ifn" id="OSImovDmQI" role="3EZMnx">
+          <property role="3F0ifm" value="Surface Properties" />
+        </node>
+        <node concept="3F1sOY" id="OSImovDmQJ" role="3EZMnx">
+          <ref role="1NtTu8" to="n484:3_aaaeoZJR7" />
+        </node>
+        <node concept="2iRkQZ" id="OSImovDmQK" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="OSImovDmQL" role="3EZMnx" />
+      <node concept="2iRkQZ" id="OSImovDmQr" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="OSImovDoBf">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="Coding" />
+    <ref role="1XX52x" to="n484:4u7RhGfIkkG" resolve="Well" />
+    <node concept="3EZMnI" id="OSImovDoFv" role="2wV5jI">
+      <node concept="3F0ifn" id="OSImovDoFA" role="3EZMnx">
+        <property role="3F0ifm" value="Coding (Advanced Configuration)" />
+      </node>
+      <node concept="3EZMnI" id="OSImovDoFB" role="3EZMnx">
+        <node concept="VPM3Z" id="OSImovDoFC" role="3F10Kt" />
+        <node concept="2biZxu" id="OSImovDoFD" role="3F10Kt">
+          <property role="1rj3mz" value="JetBrains Mono" />
+        </node>
+        <node concept="3F0ifn" id="OSImovDoFE" role="3EZMnx" />
+        <node concept="2iRkQZ" id="OSImovDoFF" role="2iSdaV" />
+        <node concept="3F0ifn" id="OSImovDoFG" role="3EZMnx">
+          <property role="3F0ifm" value="Custom Statements" />
+        </node>
+        <node concept="3F1sOY" id="OSImovDoFH" role="3EZMnx">
+          <ref role="1NtTu8" to="n484:3_aaaeoREyG" />
+        </node>
+        <node concept="3F0ifn" id="OSImovDoFI" role="3EZMnx" />
+        <node concept="3F0ifn" id="OSImovDoFJ" role="3EZMnx">
+          <property role="3F0ifm" value="Custom Methods" />
+        </node>
+        <node concept="3F2HdR" id="OSImovDoFK" role="3EZMnx">
+          <ref role="1NtTu8" to="n484:3_aaaeoISWM" />
+          <node concept="2iRkQZ" id="OSImovDoFL" role="2czzBx" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="OSImovDoFM" role="3EZMnx" />
+      <node concept="3F0ifn" id="OSImovDoFN" role="3EZMnx">
+        <property role="3F0ifm" value="Classes" />
+      </node>
+      <node concept="3F0ifn" id="OSImovDoFO" role="3EZMnx" />
+      <node concept="2iRkQZ" id="OSImovDoFy" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="OSImovDoG4">
+    <property role="3GE5qa" value="Wells" />
+    <property role="TrG5h" value="OptionsButtons" />
+    <ref role="1XX52x" to="n484:4u7RhGfIkkG" resolve="Well" />
+    <node concept="3EZMnI" id="OSImovDpEV" role="2wV5jI">
+      <node concept="3F0ifn" id="OSImovDpF2" role="3EZMnx">
+        <property role="3F0ifm" value="Options" />
+      </node>
+      <node concept="3EZMnI" id="OSImovDpF3" role="3EZMnx">
+        <node concept="VPM3Z" id="OSImovDpF4" role="3F10Kt" />
+        <node concept="3gTLQM" id="OSImovDpF5" role="3EZMnx">
+          <node concept="3Fmcul" id="OSImovDpF6" role="3FoqZy">
+            <node concept="3clFbS" id="OSImovDpF7" role="2VODD2">
+              <node concept="3clFbF" id="OSImovDpF8" role="3cqZAp">
+                <node concept="2ShNRf" id="OSImovDpF9" role="3clFbG">
+                  <node concept="YeOm9" id="OSImovDpFa" role="2ShVmc">
+                    <node concept="1Y3b0j" id="OSImovDpFb" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <property role="373rjd" value="true" />
+                      <ref role="37wK5l" to="dxuu:~JButton.&lt;init&gt;(java.lang.String)" resolve="JButton" />
+                      <ref role="1Y3XeK" to="dxuu:~JButton" resolve="JButton" />
+                      <node concept="3Tm1VV" id="OSImovDpFc" role="1B3o_S" />
+                      <node concept="Xl_RD" id="OSImovDpFd" role="37wK5m">
+                        <property role="Xl_RC" value="Generate PDF Report" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="OSImovDpFe" role="3EZMnx" />
+        <node concept="l2Vlx" id="OSImovDpFf" role="2iSdaV" />
+        <node concept="3gTLQM" id="OSImovDpFg" role="3EZMnx">
+          <node concept="3Fmcul" id="OSImovDpFh" role="3FoqZy">
+            <node concept="3clFbS" id="OSImovDpFi" role="2VODD2">
+              <node concept="3clFbF" id="OSImovDpFj" role="3cqZAp">
+                <node concept="2ShNRf" id="OSImovDpFk" role="3clFbG">
+                  <node concept="YeOm9" id="OSImovDpFl" role="2ShVmc">
+                    <node concept="1Y3b0j" id="OSImovDpFm" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <property role="373rjd" value="true" />
+                      <ref role="37wK5l" to="dxuu:~JButton.&lt;init&gt;(java.lang.String)" resolve="JButton" />
+                      <ref role="1Y3XeK" to="dxuu:~JButton" resolve="JButton" />
+                      <node concept="3Tm1VV" id="OSImovDpFn" role="1B3o_S" />
+                      <node concept="Xl_RD" id="OSImovDpFo" role="37wK5m">
+                        <property role="Xl_RC" value="Test" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="OSImovDpEY" role="2iSdaV" />
     </node>
   </node>
 </model>

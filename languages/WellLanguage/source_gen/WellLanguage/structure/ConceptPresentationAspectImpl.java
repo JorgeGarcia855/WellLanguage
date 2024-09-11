@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_ActivitySchedule;
   private ConceptPresentation props_ActivityTable;
+  private ConceptPresentation props_Authors;
   private ConceptPresentation props_CasingProperties;
   private ConceptPresentation props_Coordinates;
   private ConceptPresentation props_Date;
@@ -57,6 +58,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ActivityTable = cpb.create();
         }
         return props_ActivityTable;
+      case LanguageConceptSwitch.Authors:
+        if (props_Authors == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Authors = cpb.create();
+        }
+        return props_Authors;
       case LanguageConceptSwitch.CasingProperties:
         if (props_CasingProperties == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
