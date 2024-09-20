@@ -46,7 +46,9 @@
       </concept>
     </language>
     <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">
-      <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR" />
+      <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR">
+        <property id="6862207549896125199" name="needInitConfig" index="3_H9TB" />
+      </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
@@ -97,7 +99,9 @@
       </concept>
     </language>
   </registry>
-  <node concept="2DaZZR" id="3lHLDwNO4q6" />
+  <node concept="2DaZZR" id="3lHLDwNO4q6">
+    <property role="3_H9TB" value="true" />
+  </node>
   <node concept="tC5Ba" id="3lHLDwNQxhz">
     <property role="TrG5h" value="Scripting" />
     <node concept="ftmFs" id="3lHLDwNR5H0" role="ftER_">

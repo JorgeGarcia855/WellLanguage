@@ -13,11 +13,11 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import WellLanguage.editor.Styles_StyleSheet.arialfontStyleClass;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
+import WellLanguage.editor.Styles_StyleSheet.titleStyleClass;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -26,6 +26,15 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import de.slisson.mps.tables.runtime.cells.TableEditor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -47,7 +56,6 @@ import de.slisson.mps.tables.runtime.gridmodel.IGridElement;
 import de.slisson.mps.tables.runtime.gridmodel.HeaderNodeInsertAction;
 import de.slisson.mps.tables.runtime.style.ITableStyleFactory;
 import de.slisson.mps.tables.runtime.gridmodel.EditorCellFactory;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import de.slisson.mps.tables.runtime.gridmodel.IRowCreateHandler;
@@ -58,13 +66,12 @@ import de.slisson.mps.tables.runtime.gridmodel.EditorCellHeader;
 import de.slisson.mps.tables.runtime.gridmodel.StringHeaderReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 
-/*package*/ class ActivityTable_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class ActivityBoard_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public ActivityTable_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public ActivityBoard_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -81,28 +88,22 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_ibkdfa_a");
+    editorCell.setCellId("Collection_898r8q_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     Style style = new StyleImpl();
     new arialfontStyleClass(this).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createTable_1());
     return editorCell;
   }
   private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_ibkdfa_a0");
-    editorCell.addEditorCell(createConstant_0());
+    editorCell.setCellId("Collection_898r8q_a0");
     editorCell.addEditorCell(createProperty_0());
-    return editorCell;
-  }
-  private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Activity Table Name:");
-    editorCell.setCellId("Constant_ibkdfa_a0a");
-    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createProperty_0() {
@@ -113,6 +114,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no name>");
       editorCell.setCellId("property_name");
+      Style style = new StyleImpl();
+      new titleStyleClass(this).apply(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -126,9 +130,64 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createConstant_1() {
+  private EditorCell createRefNode_0() {
+    SingleRoleCellProvider provider = new metadataSingleRoleHandler_898r8q_b0(myNode, LINKS.metadata$8mJ1, getEditorContext());
+    return provider.createCell();
+  }
+  private static class metadataSingleRoleHandler_898r8q_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public metadataSingleRoleHandler_898r8q_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.metadata$8mJ1, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.metadata$8mJ1, child));
+      installCellInfo(child, editorCell, false);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell, boolean isEmpty) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
+      }
+      if (editorCell.getSRole() == null) {
+        editorCell.setSRole(LINKS.metadata$8mJ1);
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.metadata$8mJ1));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_metadata");
+        installCellInfo(null, editorCell, true);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no metadata>";
+    }
+  }
+  private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_ibkdfa_b0");
+    editorCell.setCellId("Constant_898r8q_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -153,13 +212,13 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
           List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
           grid.setRowHeaders(headerGrids);
         }
-        final Grid childGrid = createChildsVertical_ibkdfa_a2a(editorContext, node);
+        final Grid childGrid = createChildsVertical_898r8q_a3a(editorContext, node);
         childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
         childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
         grid.setElement(0, 0, childGrid);
 
         editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_ibkdfa_c0");
+        editorCell.value.setCellId("Table_898r8q_d0");
 
 
         editorCell.value.init();
@@ -177,11 +236,11 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createTable_1() {
     return createTable_0(getEditorContext(), myNode);
   }
-  public Grid createChildsVertical_ibkdfa_a2a(final EditorContext editorContext, final SNode node) {
+  public Grid createChildsVertical_898r8q_a3a(final EditorContext editorContext, final SNode node) {
     Grid grid = new Grid();
     GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
 
-    grid.setColumnHeaders(0, 0, createHeaderCollection_ibkdfa_a0c0(editorContext, node));
+    grid.setColumnHeaders(0, 0, createHeaderCollection_898r8q_a0d0(editorContext, node));
 
     final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.activities$xScX)) {};
 
@@ -252,18 +311,18 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.flattenOneLevel();
     return grid;
   }
-  public HeaderGrid createHeaderCollection_ibkdfa_a0c0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeaderCollection_898r8q_a0d0(final EditorContext editorContext, final SNode node) {
     IHeaderNodeInsertAction insertAction = null;
     IHeaderNodeDeleteAction deleteAction = null;
 
     List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_ibkdfa_a0a2a(editorContext, node));
-    nodeList.add(createStaticHeader_ibkdfa_b0a2a(editorContext, node));
-    nodeList.add(createStaticHeader_ibkdfa_c0a2a(editorContext, node));
+    nodeList.add(createStaticHeader_898r8q_a0a3a(editorContext, node));
+    nodeList.add(createStaticHeader_898r8q_b0a3a(editorContext, node));
+    nodeList.add(createStaticHeader_898r8q_c0a3a(editorContext, node));
 
     return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
   }
-  public HeaderGrid createStaticHeader_ibkdfa_a0a2a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_898r8q_a0a3a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -279,7 +338,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_ibkdfa_b0a2a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_898r8q_b0a3a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -295,7 +354,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_ibkdfa_c0a2a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_898r8q_c0a3a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -321,6 +380,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   }
 
   private static final class LINKS {
+    /*package*/ static final SContainmentLink metadata$8mJ1 = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x356dc6983436c349L, 0xd38b9661fae7610L, "metadata");
     /*package*/ static final SContainmentLink activities$xScX = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x356dc6983436c349L, 0x356dc6983436c34aL, "activities");
   }
 }

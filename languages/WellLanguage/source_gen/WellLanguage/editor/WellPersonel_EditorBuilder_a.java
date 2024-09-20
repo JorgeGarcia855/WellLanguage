@@ -13,11 +13,14 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import WellLanguage.editor.Styles_StyleSheet.secondarycolorStyleClass;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
+import WellLanguage.editor.Styles_StyleSheet.valuecolorStyleClass;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -86,7 +89,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createTable_1());
+    editorCell.addEditorCell(createConstant_1());
+    editorCell.addEditorCell(createCollection_2());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -95,13 +100,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_0());
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createProperty_0());
     return editorCell;
   }
+  private EditorCell createIndentCell_0() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Team Name:");
-    editorCell.setCellId("Constant_gaovrl_a0a");
+    editorCell.setCellId("Constant_gaovrl_b0a");
+    Style style = new StyleImpl();
+    new secondarycolorStyleClass(this).apply(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -113,6 +126,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no name>");
       editorCell.setCellId("property_name");
+      Style style = new StyleImpl();
+      new valuecolorStyleClass(this).apply(style, editorCell);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -125,6 +141,28 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     } finally {
       getCellFactory().popCellContext();
     }
+  }
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_gaovrl_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_2() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_gaovrl_c0");
+    editorCell.addEditorCell(createIndentCell_1());
+    editorCell.addEditorCell(createIndentCell_2());
+    editorCell.addEditorCell(createTable_1());
+    return editorCell;
+  }
+  private EditorCell createIndentCell_1() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
+  private EditorCell createIndentCell_2() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
   }
   private EditorCell createTable_0(final EditorContext editorContext, final SNode node) {
 
@@ -147,13 +185,13 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
           List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
           grid.setRowHeaders(headerGrids);
         }
-        final Grid childGrid = createChildsVertical_gaovrl_a1a(editorContext, node);
+        final Grid childGrid = createChildsVertical_gaovrl_a2c0(editorContext, node);
         childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
         childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
         grid.setElement(0, 0, childGrid);
 
         editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_gaovrl_b0");
+        editorCell.value.setCellId("Table_gaovrl_c2a");
 
 
         editorCell.value.init();
@@ -171,12 +209,12 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
   private EditorCell createTable_1() {
     return createTable_0(getEditorContext(), myNode);
   }
-  public Grid createChildsVertical_gaovrl_a1a(final EditorContext editorContext, final SNode node) {
+  public Grid createChildsVertical_gaovrl_a2c0(final EditorContext editorContext, final SNode node) {
     Grid grid = new Grid();
     GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
 
-    grid.setColumnHeaders(0, 0, createHeaderCollection_gaovrl_a0b0(editorContext, node));
-    grid.setRowHeaders(0, 0, createHeadQuery_gaovrl_a0b0(editorContext, node));
+    grid.setColumnHeaders(0, 0, createHeaderCollection_gaovrl_a0c2a(editorContext, node));
+    grid.setRowHeaders(0, 0, createHeadQuery_gaovrl_a0c2a(editorContext, node));
 
     final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.personel$5Vw3)) {};
 
@@ -247,19 +285,19 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.flattenOneLevel();
     return grid;
   }
-  public HeaderGrid createHeaderCollection_gaovrl_a0b0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeaderCollection_gaovrl_a0c2a(final EditorContext editorContext, final SNode node) {
     IHeaderNodeInsertAction insertAction = null;
     IHeaderNodeDeleteAction deleteAction = null;
 
     List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_gaovrl_a0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gaovrl_b0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gaovrl_c0a1a(editorContext, node));
-    nodeList.add(createStaticHeader_gaovrl_d0a1a(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_a0a2c0(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_b0a2c0(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_c0a2c0(editorContext, node));
+    nodeList.add(createStaticHeader_gaovrl_d0a2c0(editorContext, node));
 
     return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
   }
-  public HeaderGrid createStaticHeader_gaovrl_a0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_a0a2c0(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -275,7 +313,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_gaovrl_b0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_b0a2c0(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -291,7 +329,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_gaovrl_c0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_c0a2c0(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -307,7 +345,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_gaovrl_d0a1a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_gaovrl_d0a2c0(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -323,7 +361,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createHeadQuery_gaovrl_a0b0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeadQuery_gaovrl_a0c2a(final EditorContext editorContext, final SNode node) {
     Object queryResult = new Object() {
       public Object query() {
         return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.personel$5Vw3)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));
@@ -350,6 +388,12 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }, "index");
 
     return grid;
+  }
+  private EditorCell createConstant_2() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_gaovrl_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   private static final class PROPS {

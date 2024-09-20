@@ -35,6 +35,9 @@
       <scope id="3849951613478258310" at="21,0,28,0" />
       <unit id="3849951613478258310" at="10,0,32,0" name="WellLanguage.plugin.WellLanguage_ApplicationPlugin" />
     </file>
+    <file name="startup.properties">
+      <unit id="3849951613478258310" at="1,0,5,0" name="WellLanguage.plugin.startup" />
+    </file>
   </root>
   <root nodeRef="r:c9b9325a-217a-49a3-a02a-70f3704bacb2(WellLanguage.plugin)/3849951613478900835">
     <file name="Scripting_ActionGroup.java">

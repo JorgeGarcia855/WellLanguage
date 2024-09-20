@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int ActivitySchedule = 0;
-  public static final int ActivityTable = 1;
+  public static final int ActivityBoard = 0;
+  public static final int ActivitySchedule = 1;
   public static final int Authors = 2;
   public static final int CasingProperties = 3;
   public static final int Coordinates = 4;
@@ -30,19 +30,17 @@ public final class LanguageConceptSwitch {
   public static final int PumpingUnit = 18;
   public static final int SimpleJavaScripts = 19;
   public static final int SingleLineComment = 20;
-  public static final int Supplies = 21;
-  public static final int SurfaceProperties = 22;
-  public static final int Task = 23;
-  public static final int Versioning = 24;
-  public static final int Well = 25;
-  public static final int WellPersonel = 26;
-  public static final int Worker = 27;
-  public static final int WorkersTable = 28;
+  public static final int SurfaceProperties = 21;
+  public static final int Task = 22;
+  public static final int Well = 23;
+  public static final int WellPersonel = 24;
+  public static final int Worker = 25;
+  public static final int WorkersTable = 26;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L);
+    builder.put(0x356dc6983436c349L, ActivityBoard);
     builder.put(0x7014fcf8df986606L, ActivitySchedule);
-    builder.put(0x356dc6983436c349L, ActivityTable);
     builder.put(0xd38b9661f8f37f3L, Authors);
     builder.put(0x6e825ec7df0e6c14L, CasingProperties);
     builder.put(0x14a09e31147cce5L, Coordinates);
@@ -62,10 +60,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x14a09e31149b05dL, PumpingUnit);
     builder.put(0x394a28a398ee7638L, SimpleJavaScripts);
     builder.put(0x356dc698340631e9L, SingleLineComment);
-    builder.put(0x356dc6983460dd2eL, Supplies);
     builder.put(0x7e18434ae3095a34L, SurfaceProperties);
     builder.put(0x7014fcf8df9866aaL, Task);
-    builder.put(0x394a28a399072dc8L, Versioning);
     builder.put(0x4787dd1b0fb9452cL, Well);
     builder.put(0x356dc6983460dd2dL, WellPersonel);
     builder.put(0x42bc18f0f6f96090L, Worker);

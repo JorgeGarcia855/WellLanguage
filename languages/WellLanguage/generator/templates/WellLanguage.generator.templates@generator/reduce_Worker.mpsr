@@ -70,6 +70,7 @@
     <property role="TrG5h" value="reduce_Worker" />
     <ref role="3gUMe" to="n484:4aW6f3QYm2g" resolve="Worker" />
     <node concept="3rIKKV" id="70kZfzvA5s5" role="13RCb5">
+      <node concept="raruj" id="70kZfzvA5sr" role="lGtFl" />
       <node concept="1T5XQC" id="70kZfzvA5sL" role="2pNm8H">
         <node concept="2pNNFK" id="70kZfzvA5sX" role="1T5Xju">
           <property role="2pNNFO" value="div" />
@@ -108,7 +109,6 @@
           </node>
         </node>
       </node>
-      <node concept="raruj" id="70kZfzvA5sr" role="lGtFl" />
     </node>
   </node>
 </model>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="cgheszk2g4vqu6gz2x8wc48dx5q7an1">
-  <files names="GenerateHtml_Action.java:IconContainer.java:RunPythonScript_Action.java:Scripting_ActionGroup.java:WellLanguage_ApplicationPlugin.java" />
+<product version="3" modelHash="-12gaunwltjyp61gxbbsi40te8jx8vr4">
+  <files names="GenerateHtml_Action.java:IconContainer.java:RunPythonScript_Action.java:Scripting_ActionGroup.java:WellLanguage_ApplicationPlugin.java:startup.properties" />
 </product>
 

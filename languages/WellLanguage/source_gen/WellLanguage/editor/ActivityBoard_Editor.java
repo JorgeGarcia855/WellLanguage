@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ActivityTable_Editor extends DefaultNodeEditor {
+public class ActivityBoard_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new ActivityTable_EditorBuilder_a(editorContext, node).createCell();
+    return new ActivityBoard_EditorBuilder_a(editorContext, node).createCell();
   }
 }

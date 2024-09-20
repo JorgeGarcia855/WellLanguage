@@ -3,7 +3,6 @@
   <uses language="l:1f9e61a5-590e-4e5e-9835-cf0a05fde422:WellLanguage" />
   <uses language="l:990507d3-3527-4c54-bfe9-0ca3c9c6247a:com.dslfoundry.plaintextgen" />
   <uses language="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" />
-  <uses language="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" />
   <uses language="l:6cfe41ca-ff08-48e9-a59b-018c13b6a4a8:jetbrains.mps.lang.css" />
   <uses language="l:8a10cb27-2249-43ab-ad37-4b804d24ba45:jetbrains.mps.lang.html" />
   <uses module="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" kind="dp" />

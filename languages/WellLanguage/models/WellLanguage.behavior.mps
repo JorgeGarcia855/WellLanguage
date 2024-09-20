@@ -7,7 +7,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="n484" ref="r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)" implicit="true" />
+    <import index="n484" ref="r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -34,6 +34,13 @@
     <ref role="13h7C2" to="n484:4u7RhGfIkkG" resolve="Well" />
     <node concept="13hLZK" id="4MWPpPZkKk7" role="13h7CW">
       <node concept="3clFbS" id="4MWPpPZkKk8" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="4QEV_ZzbbHx">
+    <property role="3GE5qa" value="Wells" />
+    <ref role="13h7C2" to="n484:6WRs1dwvnPs" resolve="ProductionWell" />
+    <node concept="13hLZK" id="4QEV_ZzbbHy" role="13h7CW">
+      <node concept="3clFbS" id="4QEV_ZzbbHz" role="2VODD2" />
     </node>
   </node>
 </model>

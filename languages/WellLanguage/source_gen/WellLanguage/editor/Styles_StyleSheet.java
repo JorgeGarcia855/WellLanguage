@@ -9,7 +9,7 @@ import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
 
 public class Styles_StyleSheet {
   public static class arialfontStyleClass extends AbstractStyleClass {
@@ -26,17 +26,60 @@ public class Styles_StyleSheet {
     }
 
   }
-  public static class propertycolorStyleClass extends AbstractStyleClass {
-    public propertycolorStyleClass(EditorContext editorContext, SNode node) {
+  public static class primarycolorStyleClass extends AbstractStyleClass {
+    public primarycolorStyleClass(EditorContext editorContext, SNode node) {
       super(editorContext, node);
     }
-    public propertycolorStyleClass(EditorBuilderEnvironment builderEnv) {
+    public primarycolorStyleClass(EditorBuilderEnvironment builderEnv) {
       super(builderEnv);
     }
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.orange));
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(new Color(16007979)));
+    }
+
+  }
+  public static class secondarycolorStyleClass extends AbstractStyleClass {
+    public secondarycolorStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+    public secondarycolorStyleClass(EditorBuilderEnvironment builderEnv) {
+      super(builderEnv);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(new Color(14137387)));
+    }
+
+  }
+  public static class valuecolorStyleClass extends AbstractStyleClass {
+    public valuecolorStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+    public valuecolorStyleClass(EditorBuilderEnvironment builderEnv) {
+      super(builderEnv);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(new Color(4162161)));
+    }
+
+  }
+  public static class titleStyleClass extends AbstractStyleClass {
+    public titleStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+    public titleStyleClass(EditorBuilderEnvironment builderEnv) {
+      super(builderEnv);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.FONT_SIZE, 24);
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(new Color(16007979)));
     }
 
   }

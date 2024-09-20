@@ -30,7 +30,6 @@ public class SwingComponents {
     panel.setPreferredSize(new Dimension(800, 600));
     return panel;
 
-
   }
 
   private static JButton createButton(final SNode node, final EditorContext editorContext, String title, final Runnable action) {

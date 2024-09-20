@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_ActivityBoard;
   private ConceptPresentation props_ActivitySchedule;
-  private ConceptPresentation props_ActivityTable;
   private ConceptPresentation props_Authors;
   private ConceptPresentation props_CasingProperties;
   private ConceptPresentation props_Coordinates;
@@ -30,10 +30,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_PumpingUnit;
   private ConceptPresentation props_SimpleJavaScripts;
   private ConceptPresentation props_SingleLineComment;
-  private ConceptPresentation props_Supplies;
   private ConceptPresentation props_SurfaceProperties;
   private ConceptPresentation props_Task;
-  private ConceptPresentation props_Versioning;
   private ConceptPresentation props_Well;
   private ConceptPresentation props_WellPersonel;
   private ConceptPresentation props_Worker;
@@ -44,6 +42,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.ActivityBoard:
+        if (props_ActivityBoard == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_ActivityBoard = cpb.create();
+        }
+        return props_ActivityBoard;
       case LanguageConceptSwitch.ActivitySchedule:
         if (props_ActivitySchedule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -51,13 +56,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ActivitySchedule = cpb.create();
         }
         return props_ActivitySchedule;
-      case LanguageConceptSwitch.ActivityTable:
-        if (props_ActivityTable == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_ActivityTable = cpb.create();
-        }
-        return props_ActivityTable;
       case LanguageConceptSwitch.Authors:
         if (props_Authors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -191,13 +189,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SingleLineComment = cpb.create();
         }
         return props_SingleLineComment;
-      case LanguageConceptSwitch.Supplies:
-        if (props_Supplies == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Supplies");
-          props_Supplies = cpb.create();
-        }
-        return props_Supplies;
       case LanguageConceptSwitch.SurfaceProperties:
         if (props_SurfaceProperties == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -212,13 +203,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Task = cpb.create();
         }
         return props_Task;
-      case LanguageConceptSwitch.Versioning:
-        if (props_Versioning == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Versioning");
-          props_Versioning = cpb.create();
-        }
-        return props_Versioning;
       case LanguageConceptSwitch.Well:
         if (props_Well == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -65,8 +65,8 @@
   <node concept="1TIwiD" id="4u7RhGfIkkG">
     <property role="EcuMT" value="5154331406846477612" />
     <property role="TrG5h" value="Well" />
-    <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="Wells" />
+    <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4aW6f3QVtAm" role="1TKVEl">
       <property role="IQ2nx" value="4808745925338847638" />
@@ -123,12 +123,6 @@
       <property role="20kJfa" value="machinery" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="1I8QCPPlkkN" resolve="Machinery" />
-    </node>
-    <node concept="1TJgyj" id="3lHLDwOowSa" role="1TKVEi">
-      <property role="IQ2ns" value="3849951613487812106" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="supplies" />
-      <ref role="20lvS9" node="3lHLDwOodOI" resolve="Supplies" />
     </node>
     <node concept="1TJgyj" id="3lHLDwOowSj" role="1TKVEi">
       <property role="IQ2ns" value="3849951613487812115" />
@@ -413,8 +407,8 @@
   <node concept="1TIwiD" id="6WRs1dwvnPs">
     <property role="EcuMT" value="8013997290454613340" />
     <property role="TrG5h" value="ProductionWell" />
-    <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="Wells" />
+    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" node="4u7RhGfIkkG" resolve="Well" />
   </node>
   <node concept="1TIwiD" id="6WRs1dwvnPu">
@@ -470,6 +464,12 @@
       <property role="20kJfa" value="motors" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5a2uchir21" resolve="Motor" />
+    </node>
+    <node concept="1TJgyj" id="OSImovFBpN" role="1TKVEi">
+      <property role="IQ2ns" value="952715169458189939" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="metadata" />
+      <ref role="20lvS9" node="3_aaaep1MHf" resolve="Metadata" />
     </node>
     <node concept="PrWs8" id="5CEHj$UIuvr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -549,6 +549,12 @@
       <property role="20kJfa" value="workers" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="4aW6f3QYm2g" resolve="Worker" />
+    </node>
+    <node concept="1TJgyj" id="OSImovFEOV" role="1TKVEi">
+      <property role="IQ2ns" value="952715169458203963" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="metadata" />
+      <ref role="20lvS9" node="3_aaaep1MHf" resolve="Metadata" />
     </node>
     <node concept="PrWs8" id="277Uq_m0F4u" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -665,7 +671,7 @@
   <node concept="1TIwiD" id="3lHLDwOdGd9">
     <property role="EcuMT" value="3849951613484974921" />
     <property role="3GE5qa" value="Activities" />
-    <property role="TrG5h" value="ActivityTable" />
+    <property role="TrG5h" value="ActivityBoard" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3lHLDwOdGda" role="1TKVEi">
@@ -674,6 +680,12 @@
       <property role="20kJfa" value="activities" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="70kZfzvA6o6" resolve="ActivitySchedule" />
+    </node>
+    <node concept="1TJgyj" id="OSImovFBog" role="1TKVEi">
+      <property role="IQ2ns" value="952715169458189840" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="metadata" />
+      <ref role="20lvS9" node="3_aaaep1MHf" resolve="Metadata" />
     </node>
     <node concept="PrWs8" id="3lHLDwOg$Qo" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -699,11 +711,6 @@
       <property role="20kJfa" value="tasks" />
       <ref role="20lvS9" node="70kZfzvA6o6" resolve="ActivitySchedule" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="3lHLDwOodOI">
-    <property role="EcuMT" value="3849951613487734062" />
-    <property role="TrG5h" value="Supplies" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
   <node concept="25R3W" id="3_aaaeoz6KG">
     <property role="3F6X1D" value="4128156691542600748" />
@@ -821,6 +828,12 @@
       <property role="20kJfa" value="statements" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+    <node concept="1TJgyj" id="OSImovFBoK" role="1TKVEi">
+      <property role="IQ2ns" value="952715169458189872" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="metadata" />
+      <ref role="20lvS9" node="3_aaaep1MHf" resolve="Metadata" />
+    </node>
     <node concept="1TJgyj" id="3_aaaeoVBxX" role="1TKVEi">
       <property role="IQ2ns" value="4128156691549026429" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -844,11 +857,6 @@
       <property role="TrG5h" value="metaDescription" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyi" id="3_aaaep1MLQ" role="1TKVEl">
-      <property role="IQ2nx" value="4128156691550645366" />
-      <property role="TrG5h" value="date" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyj" id="OSImovzNvU" role="1TKVEi">
       <property role="IQ2ns" value="952715169456142330" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -856,12 +864,12 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="OSImovzNvN" resolve="Authors" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="3_aaaep1MR8">
-    <property role="EcuMT" value="4128156691550645704" />
-    <property role="TrG5h" value="Versioning" />
-    <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="OSImovFBpi" role="1TKVEi">
+      <property role="IQ2ns" value="952715169458189906" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="date" />
+      <ref role="20lvS9" node="70kZfzvER_m" resolve="Date" />
+    </node>
   </node>
   <node concept="1TIwiD" id="OSImovzNvN">
     <property role="EcuMT" value="952715169456142323" />
