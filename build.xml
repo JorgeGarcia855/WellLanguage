@@ -3,12 +3,13 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/WellLanguage" />
   <property name="build.layout" location="${build.dir}/artifacts/WellLanguage" />
-  <property name="idea_home" location="" />
-  <property name="mps.extensions" location="${basedir}/../../../.local/share/JetBrains/MPS2023.3" />
+  <property name="idea_home" location="${basedir}/../../../.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate" />
+  <property name="plugins_home" location="${idea_home}/plugins" />
   <property name="mps_home" location="${basedir}/../../../.local/share/JetBrains/Toolbox/apps/mps" />
-  <property name="plugins_home" location="${mps_home}/plugins" />
+  <property name="mps.extensions" location="${basedir}/../../../.local/share/JetBrains/MPS2023.3" />
   <property name="artifacts.mps" location="${mps_home}" />
-  <property name="artifacts.mpsPlugins" location="${plugins_home}" />
+  <property name="artifacts.mpsMigration" location="${mps_home}/plugins" />
+  <property name="artifacts.mpsVcs" location="${mps_home}/plugins" />
   <property name="artifacts.de.itemis.mps.extensions" location="${mps.extensions}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
@@ -183,7 +184,6 @@
     </echoxml>
     <jar destfile="${build.tmp}/default/WellLanguage.zip/WellLanguage/languages/WellLanguage/WellLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/WellLanguage" />
-      <fileset dir="${basedir}/languages/WellLanguage" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/languages/WellLanguage/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/WellLanguage.jar1" />
     </jar>
@@ -308,9 +308,9 @@
         <arg value="--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED" />
       </jvmargs>
       <macro name="idea_home" path="${idea_home}" />
-      <macro name="mps.extensions" path="${mps.extensions}" />
-      <macro name="mps_home" path="${mps_home}" />
       <macro name="plugins_home" path="${plugins_home}" />
+      <macro name="mps_home" path="${mps_home}" />
+      <macro name="mps.extensions" path="${mps.extensions}" />
     </generate>
   </target>
   
