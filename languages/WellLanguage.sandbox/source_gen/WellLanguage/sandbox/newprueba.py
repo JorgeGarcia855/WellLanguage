@@ -1,2 +1,2 @@
-print("Pozo de Prueba")
+print("NEwprueba")
 nombre = input("dame tu nombre")

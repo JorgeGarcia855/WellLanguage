@@ -64,11 +64,6 @@
     <property role="3GE5qa" value="Wells" />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="4aW6f3QVtAm" role="1TKVEl">
-      <property role="IQ2nx" value="4808745925338847638" />
-      <property role="TrG5h" value="generalDescription" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyj" id="6WRs1dwuDmc" role="1TKVEi">
       <property role="IQ2ns" value="8013997290454422924" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -79,13 +74,15 @@
       <property role="IQ2ns" value="8013997290454613344" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="downholeProps" />
-      <ref role="20lvS9" node="5a2uchir2x" resolve="Downhole" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="bG9WTCNko1" resolve="DownholeTable" />
     </node>
     <node concept="1TJgyj" id="6WRs1dwvnPz" role="1TKVEi">
       <property role="IQ2ns" value="8013997290454613347" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="fluidProps" />
-      <ref role="20lvS9" node="5a2uchisMd" resolve="Fluid" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="bG9WTCNlW_" resolve="FluidsTable" />
     </node>
     <node concept="1TJgyj" id="55$ezne$U9m" role="1TKVEi">
       <property role="IQ2ns" value="5864876617516687958" />
@@ -98,13 +95,15 @@
       <property role="IQ2ns" value="4128156691550109127" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="surfaceProps" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="7SogOFz2lCO" resolve="SurfaceProperties" />
     </node>
     <node concept="1TJgyj" id="3_aaaeoZJOk" role="1TKVEi">
       <property role="IQ2ns" value="4128156691550108948" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="casingProps" />
-      <ref role="20lvS9" node="6U2nGvv3AKk" resolve="CasingProperties" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="bG9WTCNknZ" resolve="CasingTable" />
     </node>
     <node concept="1TJgyj" id="55$ezne$OOT" role="1TKVEi">
       <property role="IQ2ns" value="5864876617516666169" />
@@ -131,6 +130,7 @@
       <property role="IQ2ns" value="3849951613487812125" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="urgentTasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="70kZfzvA6qE" resolve="Task" />
     </node>
     <node concept="1TJgyj" id="3_aaaeoISWM" role="1TKVEi">
@@ -414,7 +414,7 @@
   <node concept="1TIwiD" id="7SogOFz2lCO">
     <property role="EcuMT" value="9086086237135657524" />
     <property role="TrG5h" value="SurfaceProperties" />
-    <property role="3GE5qa" value="SurfaceConcepts" />
+    <property role="3GE5qa" value="WellProperties" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7SogOFz2lCW" role="1TKVEl">
       <property role="IQ2nx" value="9086086237135657532" />
@@ -435,7 +435,7 @@
   <node concept="25R3W" id="7SogOFz2lD6">
     <property role="3F6X1D" value="9086086237135657542" />
     <property role="TrG5h" value="Rotation" />
-    <property role="3GE5qa" value="SurfaceConcepts" />
+    <property role="3GE5qa" value="WellProperties" />
     <node concept="25R33" id="7SogOFz2lD7" role="25R1y">
       <property role="3tVfz5" value="9086086237135657543" />
       <property role="TrG5h" value="Clockwise" />
@@ -569,9 +569,9 @@
     <node concept="1TJgyj" id="70kZfzvEY1l" role="1TKVEi">
       <property role="IQ2ns" value="8076358177616814165" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="tasks" />
+      <property role="20kJfa" value="tasktables" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="70kZfzvA6qE" resolve="Task" />
+      <ref role="20lvS9" node="bG9WTCKaLa" resolve="TaskSubTable" />
     </node>
   </node>
   <node concept="1TIwiD" id="70kZfzvA6qE">
@@ -868,6 +868,71 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="OSImovzNvO" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bG9WTCKaLa">
+    <property role="EcuMT" value="210587050053774410" />
+    <property role="3GE5qa" value="Activities" />
+    <property role="TrG5h" value="TaskSubTable" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="bG9WTCKaLb" role="1TKVEi">
+      <property role="IQ2ns" value="210587050053774411" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="70kZfzvA6qE" resolve="Task" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bG9WTCNknZ">
+    <property role="EcuMT" value="210587050054600191" />
+    <property role="3GE5qa" value="Tables" />
+    <property role="TrG5h" value="CasingTable" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="bG9WTCOnEd" role="1TKVEi">
+      <property role="IQ2ns" value="210587050054875789" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="casings" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6U2nGvv3AKk" resolve="CasingProperties" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bG9WTCNko1">
+    <property role="EcuMT" value="210587050054600193" />
+    <property role="3GE5qa" value="Tables" />
+    <property role="TrG5h" value="DownholeTable" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="bG9WTCOnEf" role="1TKVEi">
+      <property role="IQ2ns" value="210587050054875791" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="downholes" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5a2uchir2x" resolve="Downhole" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bG9WTCNlW_">
+    <property role="EcuMT" value="210587050054606629" />
+    <property role="3GE5qa" value="Tables" />
+    <property role="TrG5h" value="FluidsTable" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="bG9WTCOnEh" role="1TKVEi">
+      <property role="IQ2ns" value="210587050054875793" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="fluids" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5a2uchisMd" resolve="Fluid" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bG9WTCNlWA">
+    <property role="EcuMT" value="210587050054606630" />
+    <property role="3GE5qa" value="Tables" />
+    <property role="TrG5h" value="SurfaceTable" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="bG9WTCOnEj" role="1TKVEi">
+      <property role="IQ2ns" value="210587050054875795" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="surfaces" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="7SogOFz2lCO" resolve="SurfaceProperties" />
     </node>
   </node>
 </model>

@@ -7,13 +7,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import de.slisson.mps.tables.runtime.cells.ChildsTracker;
+import de.slisson.mps.tables.runtime.gridmodel.Grid;
 import jetbrains.mps.openapi.editor.style.Style;
+import de.slisson.mps.tables.runtime.style.ITableStyleFactory;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import WellLanguage.editor.Styles_StyleSheet.arialfontStyleClass;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import de.slisson.mps.tables.runtime.cells.PartialTableEditor;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import de.slisson.mps.tables.runtime.gridmodel.EditorCellGridLeaf;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -58,37 +62,111 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_0();
+    return createPartialTable_1();
   }
 
-  private EditorCell createCollection_0() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_jn8cz7_a");
-    editorCell.setBig(true);
-    setCellContext(editorCell);
-    Style style = new StyleImpl();
-    new arialfontStyleClass(this).apply(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createCollection_1());
-    editorCell.addEditorCell(createCollection_2());
-    editorCell.addEditorCell(createCollection_3());
-    editorCell.addEditorCell(createCollection_4());
-    editorCell.addEditorCell(createCollection_5());
-    editorCell.addEditorCell(createCollection_6());
-    return editorCell;
+  private jetbrains.mps.nodeEditor.cells.EditorCell createPartialTable_0(final EditorContext editorContext, final SNode node) {
+    ChildsTracker childsTracker = null;
+
+    try {
+      ChildsTracker.pushNewInstance();
+      final Grid grid = createStaticHorizontal_jn8cz7_a0(editorContext, node);
+      final Style style = new ITableStyleFactory() {
+        public Style createStyle(final int columnIndex, final int rowIndex) {
+          Style style = new StyleImpl();
+          final EditorCell editorCell = null;
+          return style;
+        }
+      }.createStyle(0, 0);
+      grid.setStyle(style);
+
+      childsTracker = ChildsTracker.popInstance();
+      if (childsTracker == null) {
+        return new EditorCell_Error(editorContext, node, "not inside table");
+      }
+      PartialTableEditor editorCell = new PartialTableEditor(editorContext, node, grid);
+      ChildsTracker.getInstance().registerChild(editorCell);
+      editorCell.initChilds(childsTracker);
+
+      editorCell.setCellId("PartialTable_jn8cz7_a");
+      editorCell.setBig(true);
+      setCellContext(editorCell);
+      editorCell.init();
+      return editorCell;
+    } catch (RuntimeException ex) {
+      if (childsTracker == null) {
+        ChildsTracker.popInstance();
+      }
+      throw ex;
+    }
   }
-  private EditorCell createCollection_1() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_jn8cz7_a0");
-    editorCell.addEditorCell(createConstant_0());
-    editorCell.addEditorCell(createProperty_0());
-    return editorCell;
+  private EditorCell createPartialTable_1() {
+    return createPartialTable_0(getEditorContext(), myNode);
   }
-  private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Task:");
-    editorCell.setCellId("Constant_jn8cz7_a0a");
-    editorCell.setDefaultText("");
-    return editorCell;
+  public Grid createStaticHorizontal_jn8cz7_a0(final EditorContext editorContext, final SNode node) {
+    Grid grid = new Grid();
+
+    List<Grid> children = new ArrayList<Grid>(6);
+    if (true) {
+      children.add(createTableCell_jn8cz7_a0a(editorContext, node));
+    }
+    if (true) {
+      children.add(createTableCell_jn8cz7_b0a(editorContext, node));
+    }
+    if (true) {
+      children.add(createTableCell_jn8cz7_c0a(editorContext, node));
+    }
+    if (true) {
+      children.add(createTableCell_jn8cz7_d0a(editorContext, node));
+    }
+    if (true) {
+      children.add(createTableCell_jn8cz7_e0a(editorContext, node));
+    }
+    if (true) {
+      children.add(createTableCell_jn8cz7_f0a(editorContext, node));
+    }
+    int maxHeight = grid.getRowHeadersSizeY();
+    for (Grid child : ListSequence.fromList(children)) {
+      maxHeight = Math.max(maxHeight, child.getSizeY());
+    }
+    for (int x = 0; x < children.size(); x++) {
+      if (maxHeight > 0) {
+        children.get(x).setSpanY(maxHeight);
+      }
+      grid.setElement(x, 0, children.get(x));
+    }
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+    grid.setStyle(style);
+    return grid;
+  }
+  public Grid createTableCell_jn8cz7_a0a(final EditorContext editorContext, final SNode node) {
+
+    EditorCell cell = createProperty_0();
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+
+    Grid grid;
+    if (cell instanceof PartialTableEditor) {
+      grid = ((PartialTableEditor) cell).getGrid().clone();
+    } else {
+      grid = new Grid();
+      EditorCellGridLeaf leaf = new EditorCellGridLeaf(cell);
+      leaf.setStyle(style);
+      grid.setElement(0, 0, leaf);
+    }
+
+    return grid;
   }
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
@@ -111,18 +189,28 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_2() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_jn8cz7_b0");
-    editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createProperty_1());
-    return editorCell;
-  }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Description:");
-    editorCell.setCellId("Constant_jn8cz7_a1a");
-    editorCell.setDefaultText("");
-    return editorCell;
+  public Grid createTableCell_jn8cz7_b0a(final EditorContext editorContext, final SNode node) {
+
+    EditorCell cell = createProperty_1();
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+
+    Grid grid;
+    if (cell instanceof PartialTableEditor) {
+      grid = ((PartialTableEditor) cell).getGrid().clone();
+    } else {
+      grid = new Grid();
+      EditorCellGridLeaf leaf = new EditorCellGridLeaf(cell);
+      leaf.setStyle(style);
+      grid.setElement(0, 0, leaf);
+    }
+
+    return grid;
   }
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
@@ -145,18 +233,28 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_3() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_jn8cz7_c0");
-    editorCell.addEditorCell(createConstant_2());
-    editorCell.addEditorCell(createProperty_2());
-    return editorCell;
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Type:");
-    editorCell.setCellId("Constant_jn8cz7_a2a");
-    editorCell.setDefaultText("");
-    return editorCell;
+  public Grid createTableCell_jn8cz7_c0a(final EditorContext editorContext, final SNode node) {
+
+    EditorCell cell = createProperty_2();
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+
+    Grid grid;
+    if (cell instanceof PartialTableEditor) {
+      grid = ((PartialTableEditor) cell).getGrid().clone();
+    } else {
+      grid = new Grid();
+      EditorCellGridLeaf leaf = new EditorCellGridLeaf(cell);
+      leaf.setStyle(style);
+      grid.setElement(0, 0, leaf);
+    }
+
+    return grid;
   }
   private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
@@ -179,28 +277,38 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_4() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_jn8cz7_d0");
-    editorCell.addEditorCell(createConstant_3());
-    editorCell.addEditorCell(createRefNode_0());
-    return editorCell;
-  }
-  private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Start Date:");
-    editorCell.setCellId("Constant_jn8cz7_a3a");
-    editorCell.setDefaultText("");
-    return editorCell;
+  public Grid createTableCell_jn8cz7_d0a(final EditorContext editorContext, final SNode node) {
+
+    EditorCell cell = createRefNode_0();
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+
+    Grid grid;
+    if (cell instanceof PartialTableEditor) {
+      grid = ((PartialTableEditor) cell).getGrid().clone();
+    } else {
+      grid = new Grid();
+      EditorCellGridLeaf leaf = new EditorCellGridLeaf(cell);
+      leaf.setStyle(style);
+      grid.setElement(0, 0, leaf);
+    }
+
+    return grid;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new startDateSingleRoleHandler_jn8cz7_b3a(myNode, LINKS.startDate$OPvU, getEditorContext());
+    SingleRoleCellProvider provider = new startDateSingleRoleHandler_jn8cz7_a3a0(myNode, LINKS.startDate$OPvU, getEditorContext());
     return provider.createCell();
   }
-  private static class startDateSingleRoleHandler_jn8cz7_b3a extends SingleRoleCellProvider {
+  private static class startDateSingleRoleHandler_jn8cz7_a3a0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public startDateSingleRoleHandler_jn8cz7_b3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public startDateSingleRoleHandler_jn8cz7_a3a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -247,28 +355,38 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no startDate>";
     }
   }
-  private EditorCell createCollection_5() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_jn8cz7_e0");
-    editorCell.addEditorCell(createConstant_4());
-    editorCell.addEditorCell(createRefNode_1());
-    return editorCell;
-  }
-  private EditorCell createConstant_4() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "End Date:");
-    editorCell.setCellId("Constant_jn8cz7_a4a");
-    editorCell.setDefaultText("");
-    return editorCell;
+  public Grid createTableCell_jn8cz7_e0a(final EditorContext editorContext, final SNode node) {
+
+    EditorCell cell = createRefNode_1();
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+
+    Grid grid;
+    if (cell instanceof PartialTableEditor) {
+      grid = ((PartialTableEditor) cell).getGrid().clone();
+    } else {
+      grid = new Grid();
+      EditorCellGridLeaf leaf = new EditorCellGridLeaf(cell);
+      leaf.setStyle(style);
+      grid.setElement(0, 0, leaf);
+    }
+
+    return grid;
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new endDateSingleRoleHandler_jn8cz7_b4a(myNode, LINKS.endDate$Oa2x, getEditorContext());
+    SingleRoleCellProvider provider = new endDateSingleRoleHandler_jn8cz7_a4a0(myNode, LINKS.endDate$Oa2x, getEditorContext());
     return provider.createCell();
   }
-  private static class endDateSingleRoleHandler_jn8cz7_b4a extends SingleRoleCellProvider {
+  private static class endDateSingleRoleHandler_jn8cz7_a4a0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public endDateSingleRoleHandler_jn8cz7_b4a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public endDateSingleRoleHandler_jn8cz7_a4a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -315,18 +433,28 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no endDate>";
     }
   }
-  private EditorCell createCollection_6() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_jn8cz7_f0");
-    editorCell.addEditorCell(createConstant_5());
-    editorCell.addEditorCell(createRefCell_0());
-    return editorCell;
-  }
-  private EditorCell createConstant_5() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Well:");
-    editorCell.setCellId("Constant_jn8cz7_a5a");
-    editorCell.setDefaultText("");
-    return editorCell;
+  public Grid createTableCell_jn8cz7_f0a(final EditorContext editorContext, final SNode node) {
+
+    EditorCell cell = createRefCell_0();
+    final Style style = new ITableStyleFactory() {
+      public Style createStyle(final int columnIndex, final int rowIndex) {
+        Style style = new StyleImpl();
+        final EditorCell editorCell = null;
+        return style;
+      }
+    }.createStyle(0, 0);
+
+    Grid grid;
+    if (cell instanceof PartialTableEditor) {
+      grid = ((PartialTableEditor) cell).getGrid().clone();
+    } else {
+      grid = new Grid();
+      EditorCellGridLeaf leaf = new EditorCellGridLeaf(cell);
+      leaf.setStyle(style);
+      grid.setElement(0, 0, leaf);
+    }
+
+    return grid;
   }
   private EditorCell createRefCell_0() {
     final SReferenceLink referenceLink = LINKS.well$dq4p;
@@ -385,9 +513,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
         EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
         editorCell.setDefaultText("<no name>");
         editorCell.setCellId("property_name1");
-        Style style = new StyleImpl();
-        new arialfontStyleClass(this).apply(style, editorCell);
-        editorCell.getStyle().putAll(style);
         editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
         setCellContext(editorCell);
         Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);

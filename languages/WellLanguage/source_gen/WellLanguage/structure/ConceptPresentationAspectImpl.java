@@ -13,11 +13,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ActivitySchedule;
   private ConceptPresentation props_Authors;
   private ConceptPresentation props_CasingProperties;
+  private ConceptPresentation props_CasingTable;
   private ConceptPresentation props_Coordinates;
   private ConceptPresentation props_Date;
   private ConceptPresentation props_DepositWell;
   private ConceptPresentation props_Downhole;
+  private ConceptPresentation props_DownholeTable;
   private ConceptPresentation props_Fluid;
+  private ConceptPresentation props_FluidsTable;
   private ConceptPresentation props_HorizontalWell;
   private ConceptPresentation props_InjectionWell;
   private ConceptPresentation props_InnerPesonel;
@@ -31,7 +34,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SimpleJavaScripts;
   private ConceptPresentation props_SingleLineComment;
   private ConceptPresentation props_SurfaceProperties;
+  private ConceptPresentation props_SurfaceTable;
   private ConceptPresentation props_Task;
+  private ConceptPresentation props_TaskSubTable;
   private ConceptPresentation props_Well;
   private ConceptPresentation props_WellPersonel;
   private ConceptPresentation props_Worker;
@@ -70,6 +75,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CasingProperties = cpb.create();
         }
         return props_CasingProperties;
+      case LanguageConceptSwitch.CasingTable:
+        if (props_CasingTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CasingTable");
+          props_CasingTable = cpb.create();
+        }
+        return props_CasingTable;
       case LanguageConceptSwitch.Coordinates:
         if (props_Coordinates == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -98,6 +110,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Downhole = cpb.create();
         }
         return props_Downhole;
+      case LanguageConceptSwitch.DownholeTable:
+        if (props_DownholeTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DownholeTable");
+          props_DownholeTable = cpb.create();
+        }
+        return props_DownholeTable;
       case LanguageConceptSwitch.Fluid:
         if (props_Fluid == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -105,6 +124,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Fluid = cpb.create();
         }
         return props_Fluid;
+      case LanguageConceptSwitch.FluidsTable:
+        if (props_FluidsTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FluidsTable");
+          props_FluidsTable = cpb.create();
+        }
+        return props_FluidsTable;
       case LanguageConceptSwitch.HorizontalWell:
         if (props_HorizontalWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -196,6 +222,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SurfaceProperties = cpb.create();
         }
         return props_SurfaceProperties;
+      case LanguageConceptSwitch.SurfaceTable:
+        if (props_SurfaceTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SurfaceTable");
+          props_SurfaceTable = cpb.create();
+        }
+        return props_SurfaceTable;
       case LanguageConceptSwitch.Task:
         if (props_Task == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -203,6 +236,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Task = cpb.create();
         }
         return props_Task;
+      case LanguageConceptSwitch.TaskSubTable:
+        if (props_TaskSubTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TaskSubTable");
+          props_TaskSubTable = cpb.create();
+        }
+        return props_TaskSubTable;
       case LanguageConceptSwitch.Well:
         if (props_Well == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -4,31 +4,6 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot path="${module}/models" />
     </modelRoot>
-    <modelRoot contentPath="${module}/../../libraries" type="java_classes">
-      <sourceRoot location="jfreechart-1.5.3.jar" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/../../deps" type="java_classes">
-      <sourceRoot location="com.dslfoundry.plaintextgen" />
-      <sourceRoot location="de-itemis-mps-selection" />
-      <sourceRoot location="de.itemis.mps.celllayout" />
-      <sourceRoot location="de.slisson.mps.hacks" />
-      <sourceRoot location="mps-tables" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/../../deps/com.dslfoundry.plaintextgen/lib" type="java_classes">
-      <sourceRoot location="com.dslfoundry.plaintextgen.jar" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/../../deps/de-itemis-mps-selection/lib" type="java_classes">
-      <sourceRoot location="de-itemis-mps-selection.jar" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/../../deps/de.itemis.mps.celllayout/lib" type="java_classes">
-      <sourceRoot location="de.itemis.mps.celllayout.jar" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/../../deps/de.slisson.mps.hacks/lib" type="java_classes">
-      <sourceRoot location="de.slisson.mps.hacks.jar" />
-    </modelRoot>
-    <modelRoot contentPath="${module}/../../deps/mps-tables/lib" type="java_classes">
-      <sourceRoot location="mps-tables.jar" />
-    </modelRoot>
   </models>
   <facets>
     <facet type="java" compile="mps" classes="mps" ext="yes">

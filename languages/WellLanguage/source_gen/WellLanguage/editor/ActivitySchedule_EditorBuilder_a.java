@@ -302,17 +302,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return grid;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new tasksListHandler_13xmdf_a2a0(myNode, getEditorContext());
+    AbstractCellListHandler handler = new tasktablesListHandler_13xmdf_a2a0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_tasks");
+    editorCell.setCellId("refNodeList_tasktables");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class tasksListHandler_13xmdf_a2a0 extends RefNodeListHandler {
+  private static class tasktablesListHandler_13xmdf_a2a0 extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public tasksListHandler_13xmdf_a2a0(SNode ownerNode, EditorContext context) {
+    public tasktablesListHandler_13xmdf_a2a0(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -322,10 +322,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.tasks$_h9W;
+      return LINKS.tasktables$_h9W;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Task$nm;
+      return CONCEPTS.TaskSubTable$iT;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -335,7 +335,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(tasksListHandler_13xmdf_a2a0.this.getNode(), LINKS.tasks$_h9W));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(tasktablesListHandler_13xmdf_a2a0.this.getNode(), LINKS.tasktables$_h9W));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -383,11 +383,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept LinkAttribute$v_ = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute");
-    /*package*/ static final SConcept Task$nm = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7014fcf8df9866aaL, "WellLanguage.structure.Task");
+    /*package*/ static final SConcept TaskSubTable$iT = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68c0ac4aL, "WellLanguage.structure.TaskSubTable");
   }
 
   private static final class LINKS {
     /*package*/ static final SReferenceLink worker$VO0o = MetaAdapterFactory.getReferenceLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7014fcf8df986606L, 0x7014fcf8dfabe79fL, "worker");
-    /*package*/ static final SContainmentLink tasks$_h9W = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7014fcf8df986606L, 0x7014fcf8dfabe055L, "tasks");
+    /*package*/ static final SContainmentLink tasktables$_h9W = MetaAdapterFactory.getContainmentLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7014fcf8df986606L, 0x7014fcf8dfabe055L, "tasktables");
   }
 }
