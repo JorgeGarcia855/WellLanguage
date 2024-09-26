@@ -2,15 +2,11 @@
 <model ref="r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="b4d28e19-7d2d-47e9-943e-3a41f97a0e52" name="com.mbeddr.mpsutil.plantuml.node" version="0" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
     <import index="4fqr" ref="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
-    <import index="zqge" ref="r:59e90602-6655-4552-86eb-441a42a9a0e4(jetbrains.mps.lang.text.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="vs0r" ref="r:f7764ca4-8c75-4049-922b-08516400a727(com.mbeddr.core.base.structure)" />
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
@@ -161,9 +157,6 @@
     </node>
     <node concept="PrWs8" id="5CEHj$UR3NN" role="PzmwI">
       <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
-    </node>
-    <node concept="PrWs8" id="3lHLDwO0a98" role="PzmwI">
-      <ref role="PrY4T" to="vs0r:65XyadYMMYC" resolve="ICommentable" />
     </node>
     <node concept="1TJgyj" id="70kZfzvHIq_" role="1TKVEi">
       <property role="IQ2ns" value="8076358177617536677" />
@@ -695,7 +688,7 @@
     <property role="EcuMT" value="3849951613487734061" />
     <property role="TrG5h" value="WellPersonel" />
     <property role="3GE5qa" value="Workers" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3_aaaeoFvr6" role="1TKVEi">
       <property role="IQ2ns" value="4128156691544798918" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -776,7 +769,7 @@
     <property role="EcuMT" value="4128156691543827814" />
     <property role="3GE5qa" value="Units" />
     <property role="TrG5h" value="LengthWrapper" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3_aaaeoBMlB" role="1TKVEl">
       <property role="IQ2nx" value="4128156691543827815" />
       <property role="TrG5h" value="length" />
@@ -787,7 +780,7 @@
     <property role="EcuMT" value="4128156691544833704" />
     <property role="3GE5qa" value="Workers" />
     <property role="TrG5h" value="InnerPesonel" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="3_aaaeoFBUD" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -812,12 +805,9 @@
     <property role="TrG5h" value="SimpleJavaScripts" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="Scripting" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="3_aaaeoVBrf" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="PrWs8" id="3_aaaeoVBzq" role="PzmwI">
-      <ref role="PrY4T" to="vs0r:65XyadYMMYC" resolve="ICommentable" />
     </node>
     <node concept="PrWs8" id="3_aaaeoWYsj" role="PzmwI">
       <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
@@ -846,7 +836,7 @@
     <property role="EcuMT" value="4128156691550645071" />
     <property role="TrG5h" value="Metadata" />
     <property role="3GE5qa" value="Metadata" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3_aaaep1MIV" role="1TKVEl">
       <property role="IQ2nx" value="4128156691550645179" />
       <property role="TrG5h" value="version" />
@@ -875,7 +865,7 @@
     <property role="EcuMT" value="952715169456142323" />
     <property role="TrG5h" value="Authors" />
     <property role="3GE5qa" value="Metadata" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="OSImovzNvO" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>

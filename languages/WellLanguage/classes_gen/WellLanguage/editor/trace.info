@@ -766,47 +766,28 @@
   </root>
   <root nodeRef="r:c20525cc-35db-4546-a565-207bec23bc22(WellLanguage.editor)/3516518671490349838">
     <file name="SwingComponents.java">
-      <node id="3664452276849422254" at="20,45,21,66" concept="8" />
-      <node id="3664452276849422259" at="21,66,22,46" concept="2" />
-      <node id="3664452276849422266" at="22,46,23,47" concept="2" />
-      <node id="3664452276849422273" at="23,47,24,44" concept="2" />
-      <node id="3664452276849422280" at="24,44,25,44" concept="2" />
-      <node id="3664452276849422287" at="25,44,26,42" concept="2" />
-      <node id="3664452276849422294" at="26,42,27,0" concept="11" />
-      <node id="3664452276849422295" at="27,0,28,96" concept="8" />
-      <node id="3664452276849435178" at="28,96,29,45" concept="8" />
-      <node id="3664452276849458197" at="29,45,30,52" concept="2" />
-      <node id="3664452276849422303" at="30,52,31,17" concept="9" />
-      <node id="3664452276849422310" at="31,17,32,0" concept="11" />
-      <node id="6567999678832215487" at="35,129,36,40" concept="8" />
-      <node id="6567999678834911021" at="36,40,37,139" concept="2" />
-      <node id="6567999678832215507" at="40,51,41,83" concept="2" />
-      <node id="6567999678832215529" at="43,7,44,18" concept="9" />
-      <node id="6567999678832215501" at="39,0,43,0" concept="7" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="6567999678832215493" at="37,139,43,7" concept="2" />
-      <node id="6567999678832215539" at="35,0,46,0" concept="13" trace="createButton#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;Ljava/lang/Runnable;)Ljavax/swing/JButton;" />
-      <node id="3664452276849422250" at="20,0,34,0" concept="13" trace="chartComponent#()Ljavax/swing/JComponent;" />
-      <scope id="6567999678832215506" at="40,51,41,83" />
-      <scope id="6567999678832215501" at="39,0,43,0">
+      <node id="6567999678832215487" at="16,129,17,40" concept="8" />
+      <node id="6567999678834911021" at="17,40,18,139" concept="2" />
+      <node id="6567999678832215507" at="21,51,22,83" concept="2" />
+      <node id="6567999678832215529" at="24,7,25,18" concept="9" />
+      <node id="6567999678832215501" at="20,0,24,0" concept="7" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="6567999678832215493" at="18,139,24,7" concept="2" />
+      <node id="6567999678832215539" at="16,0,27,0" concept="13" trace="createButton#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;Ljava/lang/Runnable;)Ljavax/swing/JButton;" />
+      <scope id="6567999678832215506" at="21,51,22,83" />
+      <scope id="6567999678832215501" at="20,0,24,0">
         <var name="p0" id="6567999678832215504" />
       </scope>
-      <scope id="6567999678832215484" at="35,129,44,18">
+      <scope id="6567999678832215484" at="16,129,25,18">
         <var name="button" id="6567999678832215488" />
       </scope>
-      <scope id="6567999678832215539" at="35,0,46,0">
+      <scope id="6567999678832215539" at="16,0,27,0">
         <var name="action" id="6567999678832222226" />
         <var name="editorContext" id="6567999678832215533" />
         <var name="node" id="6567999678832215531" />
         <var name="title" id="6567999678832218406" />
       </scope>
-      <scope id="3664452276849422253" at="20,45,32,0">
-        <var name="chart" id="3664452276849422296" />
-        <var name="dataset" id="3664452276849422255" />
-        <var name="panel" id="3664452276849435179" />
-      </scope>
-      <scope id="3664452276849422250" at="20,0,34,0" />
-      <unit id="6567999678832215499" at="38,33,43,5" name="WellLanguage.editor.SwingComponents$1" />
-      <unit id="3516518671490349838" at="19,0,54,0" name="WellLanguage.editor.SwingComponents" />
+      <unit id="6567999678832215499" at="19,33,24,5" name="WellLanguage.editor.SwingComponents$1" />
+      <unit id="3516518671490349838" at="13,0,35,0" name="WellLanguage.editor.SwingComponents" />
     </file>
   </root>
   <root nodeRef="r:c20525cc-35db-4546-a565-207bec23bc22(WellLanguage.editor)/3849951613481792159">

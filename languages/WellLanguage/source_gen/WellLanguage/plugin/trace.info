@@ -15,30 +15,6 @@
       <unit at="8,0,11,0" name="WellLanguage.plugin.IconContainer" />
     </file>
   </root>
-  <root nodeRef="r:c9b9325a-217a-49a3-a02a-70f3704bacb2(WellLanguage.plugin)/3849951613478258310">
-    <file name="WellLanguage_ApplicationPlugin.java">
-      <node id="3849951613478258310" at="11,0,12,0" concept="2" trace="myId" />
-      <node id="3849951613478258310" at="17,27,18,16" concept="5" />
-      <node id="3849951613478258310" at="21,30,22,29" concept="6" />
-      <node id="3849951613478258310" at="24,44,25,13" concept="6" />
-      <node id="3849951613478258310" at="13,0,15,0" concept="0" trace="WellLanguage_ApplicationPlugin#()V" />
-      <node id="3849951613478258310" at="28,0,31,0" concept="3" trace="adjustRegularGroups#()V" />
-      <node id="3849951613478258310" at="16,0,20,0" concept="3" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="3849951613478258310" at="21,0,28,0" concept="3" trace="createGroups#()V" />
-      <scope id="3849951613478258310" at="13,43,13,43" />
-      <scope id="3849951613478258310" at="17,27,18,16" />
-      <scope id="3849951613478258310" at="28,37,29,87" />
-      <scope id="3849951613478258310" at="13,0,15,0" />
-      <scope id="3849951613478258310" at="28,0,31,0" />
-      <scope id="3849951613478258310" at="16,0,20,0" />
-      <scope id="3849951613478258310" at="21,30,26,46" />
-      <scope id="3849951613478258310" at="21,0,28,0" />
-      <unit id="3849951613478258310" at="10,0,32,0" name="WellLanguage.plugin.WellLanguage_ApplicationPlugin" />
-    </file>
-    <file name="startup.properties">
-      <unit id="3849951613478258310" at="1,0,5,0" name="WellLanguage.plugin.startup" />
-    </file>
-  </root>
   <root nodeRef="r:c9b9325a-217a-49a3-a02a-70f3704bacb2(WellLanguage.plugin)/3849951613478900835">
     <file name="Scripting_ActionGroup.java">
       <node id="3849951613478900835" at="10,0,11,0" concept="8" trace="ID" />
@@ -120,6 +96,27 @@
     </file>
     <file name="WellLanguage_ApplicationPlugin.java">
       <node id="3849951613486126990" at="22,29,23,41" concept="1" />
+    </file>
+  </root>
+  <root nodeRef="r:c9b9325a-217a-49a3-a02a-70f3704bacb2(WellLanguage.plugin)/7656422296643376359">
+    <file name="WellLanguage_ApplicationPlugin.java">
+      <node id="7656422296643376359" at="11,0,12,0" concept="2" trace="myId" />
+      <node id="7656422296643376359" at="17,27,18,16" concept="5" />
+      <node id="7656422296643376359" at="21,30,22,29" concept="6" />
+      <node id="7656422296643376359" at="24,44,25,13" concept="6" />
+      <node id="7656422296643376359" at="13,0,15,0" concept="0" trace="WellLanguage_ApplicationPlugin#()V" />
+      <node id="7656422296643376359" at="28,0,31,0" concept="3" trace="adjustRegularGroups#()V" />
+      <node id="7656422296643376359" at="16,0,20,0" concept="3" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7656422296643376359" at="21,0,28,0" concept="3" trace="createGroups#()V" />
+      <scope id="7656422296643376359" at="13,43,13,43" />
+      <scope id="7656422296643376359" at="17,27,18,16" />
+      <scope id="7656422296643376359" at="28,37,29,87" />
+      <scope id="7656422296643376359" at="13,0,15,0" />
+      <scope id="7656422296643376359" at="28,0,31,0" />
+      <scope id="7656422296643376359" at="16,0,20,0" />
+      <scope id="7656422296643376359" at="21,30,26,46" />
+      <scope id="7656422296643376359" at="21,0,28,0" />
+      <unit id="7656422296643376359" at="10,0,32,0" name="WellLanguage.plugin.WellLanguage_ApplicationPlugin" />
     </file>
   </root>
 </debug-info>

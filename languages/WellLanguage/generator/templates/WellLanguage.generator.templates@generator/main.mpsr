@@ -185,7 +185,7 @@
     </node>
     <node concept="3lhOvk" id="2XCu$oLS99h" role="3lj3bC">
       <ref role="30HIoZ" to="n484:5CEHj$UIuvf" resolve="MotorTable" />
-      <ref role="3lhOvi" node="2XCu$oLS99J" resolve="map_MotorTable" />
+      <ref role="3lhOvi" node="2XCu$oLS99J" resolve="html_MotorTable" />
     </node>
   </node>
 </model>

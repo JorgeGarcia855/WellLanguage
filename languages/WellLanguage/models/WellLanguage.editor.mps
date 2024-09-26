@@ -10,13 +10,10 @@
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
-    <import index="k6nw" ref="7fe13e34-8620-4d5d-92c7-df091b0ed628/java:org.jfree.chart(com.mbeddr.mpsutil.jfreechart.runtime/)" />
-    <import index="bq1s" ref="7fe13e34-8620-4d5d-92c7-df091b0ed628/java:org.jfree.data.category(com.mbeddr.mpsutil.jfreechart.runtime/)" />
     <import index="n484" ref="r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
-    <import index="s7wt" ref="r:f3e9fe62-b7bf-45b5-802d-9490929b754a(jetbrains.mps.lang.access.editor)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
@@ -297,193 +294,7 @@
   </registry>
   <node concept="312cEu" id="33dbLAOdvGe">
     <property role="TrG5h" value="SwingComponents" />
-    <node concept="2YIFZL" id="3bqJYT1YMYE" role="jymVt">
-      <property role="TrG5h" value="chartComponent" />
-      <node concept="3clFbS" id="3bqJYT1YMYH" role="3clF47">
-        <node concept="3cpWs8" id="3bqJYT1YMYI" role="3cqZAp">
-          <node concept="3cpWsn" id="3bqJYT1YMYJ" role="3cpWs9">
-            <property role="TrG5h" value="dataset" />
-            <node concept="3uibUv" id="3bqJYT1YMYK" role="1tU5fm">
-              <ref role="3uigEE" to="bq1s:~DefaultCategoryDataset" resolve="DefaultCategoryDataset" />
-            </node>
-            <node concept="2ShNRf" id="3bqJYT1YMYL" role="33vP2m">
-              <node concept="1pGfFk" id="3bqJYT1YMYM" role="2ShVmc">
-                <ref role="37wK5l" to="bq1s:~DefaultCategoryDataset.&lt;init&gt;()" resolve="DefaultCategoryDataset" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bqJYT1YMYN" role="3cqZAp">
-          <node concept="2OqwBi" id="3bqJYT1YMYO" role="3clFbG">
-            <node concept="37vLTw" id="3bqJYT1YMYP" role="2Oq$k0">
-              <ref role="3cqZAo" node="3bqJYT1YMYJ" resolve="dataset" />
-            </node>
-            <node concept="liA8E" id="3bqJYT1YMYQ" role="2OqNvi">
-              <ref role="37wK5l" to="bq1s:~DefaultCategoryDataset.addValue(double,java.lang.Comparable,java.lang.Comparable)" resolve="addValue" />
-              <node concept="3cmrfG" id="3bqJYT1YMYR" role="37wK5m">
-                <property role="3cmrfH" value="200" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMYS" role="37wK5m">
-                <property role="Xl_RC" value="Sales" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMYT" role="37wK5m">
-                <property role="Xl_RC" value="January" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bqJYT1YMYU" role="3cqZAp">
-          <node concept="2OqwBi" id="3bqJYT1YMYV" role="3clFbG">
-            <node concept="37vLTw" id="3bqJYT1YMYW" role="2Oq$k0">
-              <ref role="3cqZAo" node="3bqJYT1YMYJ" resolve="dataset" />
-            </node>
-            <node concept="liA8E" id="3bqJYT1YMYX" role="2OqNvi">
-              <ref role="37wK5l" to="bq1s:~DefaultCategoryDataset.addValue(double,java.lang.Comparable,java.lang.Comparable)" resolve="addValue" />
-              <node concept="3cmrfG" id="3bqJYT1YMYY" role="37wK5m">
-                <property role="3cmrfH" value="150" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMYZ" role="37wK5m">
-                <property role="Xl_RC" value="Sales" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZ0" role="37wK5m">
-                <property role="Xl_RC" value="February" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bqJYT1YMZ1" role="3cqZAp">
-          <node concept="2OqwBi" id="3bqJYT1YMZ2" role="3clFbG">
-            <node concept="37vLTw" id="3bqJYT1YMZ3" role="2Oq$k0">
-              <ref role="3cqZAo" node="3bqJYT1YMYJ" resolve="dataset" />
-            </node>
-            <node concept="liA8E" id="3bqJYT1YMZ4" role="2OqNvi">
-              <ref role="37wK5l" to="bq1s:~DefaultCategoryDataset.addValue(double,java.lang.Comparable,java.lang.Comparable)" resolve="addValue" />
-              <node concept="3cmrfG" id="3bqJYT1YMZ5" role="37wK5m">
-                <property role="3cmrfH" value="180" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZ6" role="37wK5m">
-                <property role="Xl_RC" value="Sales" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZ7" role="37wK5m">
-                <property role="Xl_RC" value="March" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bqJYT1YMZ8" role="3cqZAp">
-          <node concept="2OqwBi" id="3bqJYT1YMZ9" role="3clFbG">
-            <node concept="37vLTw" id="3bqJYT1YMZa" role="2Oq$k0">
-              <ref role="3cqZAo" node="3bqJYT1YMYJ" resolve="dataset" />
-            </node>
-            <node concept="liA8E" id="3bqJYT1YMZb" role="2OqNvi">
-              <ref role="37wK5l" to="bq1s:~DefaultCategoryDataset.addValue(double,java.lang.Comparable,java.lang.Comparable)" resolve="addValue" />
-              <node concept="3cmrfG" id="3bqJYT1YMZc" role="37wK5m">
-                <property role="3cmrfH" value="260" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZd" role="37wK5m">
-                <property role="Xl_RC" value="Sales" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZe" role="37wK5m">
-                <property role="Xl_RC" value="April" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bqJYT1YMZf" role="3cqZAp">
-          <node concept="2OqwBi" id="3bqJYT1YMZg" role="3clFbG">
-            <node concept="37vLTw" id="3bqJYT1YMZh" role="2Oq$k0">
-              <ref role="3cqZAo" node="3bqJYT1YMYJ" resolve="dataset" />
-            </node>
-            <node concept="liA8E" id="3bqJYT1YMZi" role="2OqNvi">
-              <ref role="37wK5l" to="bq1s:~DefaultCategoryDataset.addValue(double,java.lang.Comparable,java.lang.Comparable)" resolve="addValue" />
-              <node concept="3cmrfG" id="3bqJYT1YMZj" role="37wK5m">
-                <property role="3cmrfH" value="300" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZk" role="37wK5m">
-                <property role="Xl_RC" value="Sales" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZl" role="37wK5m">
-                <property role="Xl_RC" value="May" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3bqJYT1YMZm" role="3cqZAp" />
-        <node concept="3cpWs8" id="3bqJYT1YMZn" role="3cqZAp">
-          <node concept="3cpWsn" id="3bqJYT1YMZo" role="3cpWs9">
-            <property role="TrG5h" value="chart" />
-            <node concept="3uibUv" id="3bqJYT1YMZp" role="1tU5fm">
-              <ref role="3uigEE" to="k6nw:~JFreeChart" resolve="JFreeChart" />
-            </node>
-            <node concept="2YIFZM" id="3bqJYT1YMZq" role="33vP2m">
-              <ref role="1Pybhc" to="k6nw:~ChartFactory" resolve="ChartFactory" />
-              <ref role="37wK5l" to="k6nw:~ChartFactory.createLineChart(java.lang.String,java.lang.String,java.lang.String,org.jfree.data.category.CategoryDataset)" resolve="createLineChart" />
-              <node concept="Xl_RD" id="3bqJYT1YMZr" role="37wK5m">
-                <property role="Xl_RC" value="Monthly Sales" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZs" role="37wK5m">
-                <property role="Xl_RC" value="Month" />
-              </node>
-              <node concept="Xl_RD" id="3bqJYT1YMZt" role="37wK5m">
-                <property role="Xl_RC" value="Sales" />
-              </node>
-              <node concept="37vLTw" id="3bqJYT1YMZu" role="37wK5m">
-                <ref role="3cqZAo" node="3bqJYT1YMYJ" resolve="dataset" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3bqJYT1YQ8E" role="3cqZAp">
-          <node concept="3cpWsn" id="3bqJYT1YQ8F" role="3cpWs9">
-            <property role="TrG5h" value="panel" />
-            <node concept="3uibUv" id="3bqJYT1YQ8G" role="1tU5fm">
-              <ref role="3uigEE" to="k6nw:~ChartPanel" resolve="ChartPanel" />
-            </node>
-            <node concept="2ShNRf" id="3bqJYT1YQWt" role="33vP2m">
-              <node concept="1pGfFk" id="3bqJYT1YTGG" role="2ShVmc">
-                <property role="373rjd" value="true" />
-                <ref role="37wK5l" to="k6nw:~ChartPanel.&lt;init&gt;(org.jfree.chart.JFreeChart)" resolve="ChartPanel" />
-                <node concept="37vLTw" id="3bqJYT1YUte" role="37wK5m">
-                  <ref role="3cqZAo" node="3bqJYT1YMZo" resolve="chart" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3bqJYT1YVKl" role="3cqZAp">
-          <node concept="2OqwBi" id="3bqJYT1Z1IB" role="3clFbG">
-            <node concept="37vLTw" id="3bqJYT1YVKj" role="2Oq$k0">
-              <ref role="3cqZAo" node="3bqJYT1YQ8F" resolve="panel" />
-            </node>
-            <node concept="liA8E" id="3bqJYT1Z9wg" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~JComponent.setPreferredSize(java.awt.Dimension)" resolve="setPreferredSize" />
-              <node concept="2ShNRf" id="3bqJYT1ZbnQ" role="37wK5m">
-                <node concept="1pGfFk" id="3bqJYT1Zdn2" role="2ShVmc">
-                  <property role="373rjd" value="true" />
-                  <ref role="37wK5l" to="z60i:~Dimension.&lt;init&gt;(int,int)" resolve="Dimension" />
-                  <node concept="3cmrfG" id="3bqJYT1ZebS" role="37wK5m">
-                    <property role="3cmrfH" value="800" />
-                  </node>
-                  <node concept="3cmrfG" id="3bqJYT1Zftz" role="37wK5m">
-                    <property role="3cmrfH" value="600" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="3bqJYT1YMZv" role="3cqZAp">
-          <node concept="37vLTw" id="3bqJYT1YUBV" role="3cqZAk">
-            <ref role="3cqZAo" node="3bqJYT1YQ8F" resolve="panel" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="3bqJYT1YMZA" role="3cqZAp" />
-      </node>
-      <node concept="3uibUv" id="3bqJYT1YMZC" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
-      </node>
-      <node concept="3Tm1VV" id="3bqJYT1YMYG" role="1B3o_S" />
-    </node>
+    <node concept="2tJIrI" id="2hG7yitmI8d" role="jymVt" />
     <node concept="2tJIrI" id="4d7sY7O$7m" role="jymVt" />
     <node concept="2YIFZL" id="5GAeeyXF8nN" role="jymVt">
       <property role="TrG5h" value="createButton" />
@@ -1922,7 +1733,7 @@
       </node>
       <node concept="3F0ifn" id="OSImovDjTl" role="3EZMnx" />
       <node concept="3F1sOY" id="OSImovDjTm" role="3EZMnx">
-        <ref role="1NtTu8" to="n484:OSImovzNA9" />
+        <ref role="1NtTu8" to="n484:OSImovzNA9" resolve="metadata" />
       </node>
       <node concept="3F0ifn" id="OSImovDjTn" role="3EZMnx" />
       <node concept="2iRkQZ" id="OSImovDjTb" role="2iSdaV" />
@@ -1935,13 +1746,13 @@
     <node concept="3EZMnI" id="OSImovDkLB" role="2wV5jI">
       <node concept="3F0ifn" id="OSImovDlS5" role="3EZMnx">
         <property role="3F0ifm" value="Responsible Worker:" />
-        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
         <node concept="VSNWy" id="2jmgNkwjhyE" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
       </node>
       <node concept="1iCGBv" id="OSImovDlS6" role="3EZMnx">
-        <ref role="1NtTu8" to="n484:70kZfzvHIq_" />
+        <ref role="1NtTu8" to="n484:70kZfzvHIq_" resolve="worker" />
         <node concept="1sVBvm" id="OSImovDlS7" role="1sWHZn">
           <node concept="3F0A7n" id="OSImovDlS8" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -1953,14 +1764,14 @@
       <node concept="3F0ifn" id="OSImovDlS9" role="3EZMnx" />
       <node concept="3F0ifn" id="OSImovDlSa" role="3EZMnx">
         <property role="3F0ifm" value="Personel" />
-        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
         <node concept="VSNWy" id="2jmgNkwjhzW" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
       </node>
       <node concept="3F0ifn" id="2jmgNkwhHFw" role="3EZMnx" />
       <node concept="3F2HdR" id="OSImovDlSb" role="3EZMnx">
-        <ref role="1NtTu8" to="n484:3lHLDwOowSj" />
+        <ref role="1NtTu8" to="n484:3lHLDwOowSj" resolve="personel" />
         <node concept="2iRkQZ" id="OSImovDlSc" role="2czzBx" />
       </node>
       <node concept="3F0ifn" id="OSImovDlSd" role="3EZMnx" />
@@ -1974,7 +1785,7 @@
     <node concept="3EZMnI" id="OSImovDmQo" role="2wV5jI">
       <node concept="3F0ifn" id="OSImovDmQv" role="3EZMnx">
         <property role="3F0ifm" value="Coordinates" />
-        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
         <node concept="VSNWy" id="7f2CSxpM4qp" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
@@ -1988,7 +1799,7 @@
       <node concept="3F0ifn" id="OSImovDmQx" role="3EZMnx" />
       <node concept="3F0ifn" id="OSImovDmQy" role="3EZMnx">
         <property role="3F0ifm" value="Main Features" />
-        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
         <node concept="VSNWy" id="7f2CSxpM4qr" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
@@ -2001,7 +1812,7 @@
           <node concept="VPM3Z" id="OSImovDmQ$" role="3F10Kt" />
           <node concept="3F0ifn" id="OSImovDmQ_" role="3EZMnx">
             <property role="3F0ifm" value="Fluids" />
-            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
           <node concept="3F1sOY" id="OSImovDmQA" role="3EZMnx">
             <ref role="1NtTu8" to="n484:6WRs1dwvnPz" resolve="fluidProps" />
@@ -2009,7 +1820,7 @@
           <node concept="3F0ifn" id="OSImovDmQB" role="3EZMnx" />
           <node concept="3F0ifn" id="OSImovDmQC" role="3EZMnx">
             <property role="3F0ifm" value="Downhole" />
-            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
           <node concept="3F1sOY" id="OSImovDmQD" role="3EZMnx">
             <ref role="1NtTu8" to="n484:6WRs1dwvnPw" resolve="downholeProps" />
@@ -2017,7 +1828,7 @@
           <node concept="3F0ifn" id="OSImovDmQE" role="3EZMnx" />
           <node concept="3F0ifn" id="OSImovDmQF" role="3EZMnx">
             <property role="3F0ifm" value="Casing Properties" />
-            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
           <node concept="3F1sOY" id="OSImovDmQG" role="3EZMnx">
             <ref role="1NtTu8" to="n484:3_aaaeoZJOk" resolve="casingProps" />
@@ -2025,7 +1836,7 @@
           <node concept="3F0ifn" id="OSImovDmQH" role="3EZMnx" />
           <node concept="3F0ifn" id="OSImovDmQI" role="3EZMnx">
             <property role="3F0ifm" value="Surface Properties" />
-            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+            <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
           <node concept="3F1sOY" id="OSImovDmQJ" role="3EZMnx">
             <ref role="1NtTu8" to="n484:3_aaaeoZJR7" resolve="surfaceProps" />
@@ -2044,7 +1855,7 @@
     <node concept="3EZMnI" id="OSImovDoFv" role="2wV5jI">
       <node concept="3F0ifn" id="OSImovDoFA" role="3EZMnx">
         <property role="3F0ifm" value="Coding (Advanced Configuration)" />
-        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
         <node concept="VSNWy" id="7f2CSxpM4qt" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
@@ -2061,7 +1872,7 @@
           <ref role="1k5W1q" node="7f2CSxpCcR9" resolve="secondarycolor" />
         </node>
         <node concept="3F1sOY" id="OSImovDoFH" role="3EZMnx">
-          <ref role="1NtTu8" to="n484:3_aaaeoREyG" />
+          <ref role="1NtTu8" to="n484:3_aaaeoREyG" resolve="customStatements" />
         </node>
         <node concept="3F0ifn" id="OSImovDoFI" role="3EZMnx" />
         <node concept="3F0ifn" id="OSImovDoFJ" role="3EZMnx">
@@ -2069,7 +1880,7 @@
           <ref role="1k5W1q" node="7f2CSxpCcR9" resolve="secondarycolor" />
         </node>
         <node concept="3F2HdR" id="OSImovDoFK" role="3EZMnx">
-          <ref role="1NtTu8" to="n484:3_aaaeoISWM" />
+          <ref role="1NtTu8" to="n484:3_aaaeoISWM" resolve="customMethods" />
           <node concept="2iRkQZ" id="OSImovDoFL" role="2czzBx" />
         </node>
       </node>
@@ -2084,7 +1895,7 @@
     <node concept="3EZMnI" id="OSImovDpEV" role="2wV5jI">
       <node concept="3F0ifn" id="OSImovDpF2" role="3EZMnx">
         <property role="3F0ifm" value="Options" />
-        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="propertycolor" />
+        <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
         <node concept="VSNWy" id="7f2CSxpM5zg" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>

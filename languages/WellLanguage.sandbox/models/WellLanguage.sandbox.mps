@@ -5,7 +5,6 @@
     <use id="1f9e61a5-590e-4e5e-9835-cf0a05fde422" name="WellLanguage" version="0" />
   </languages>
   <imports>
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -117,8 +116,10 @@
         <property id="4128156691544847518" name="description" index="2xT9KX" />
         <property id="4128156691544847516" name="id" index="2xT9KZ" />
       </concept>
+      <concept id="8076358177615537834" name="WellLanguage.structure.Task" flags="ng" index="2Jz9Di" />
       <concept id="8076358177615537670" name="WellLanguage.structure.ActivitySchedule" flags="ng" index="2Jz9FY">
         <reference id="8076358177616816031" name="worker" index="2JJLHB" />
+        <child id="8076358177616814165" name="tasks" index="2JJLMH" />
       </concept>
       <concept id="8076358177616787798" name="WellLanguage.structure.Date" flags="ng" index="2JJSmI">
         <property id="8076358177616787884" name="year" index="2JJSlk" />
@@ -177,7 +178,7 @@
       <property role="g0V_S" value="5a2uchir2n/Gas" />
       <property role="g0V_A" value="5" />
       <property role="g0V_E" value="5" />
-      <ref role="1wVYcX" node="3_aaaeo_ku3" resolve="AAA" />
+      <ref role="1wVYcX" node="3_aaaeo_ku3" resolve="Pozo de Prueba" />
     </node>
     <node concept="2wjgfG" id="2jmgNkwkMMI" role="i_GWl">
       <property role="2wjgco" value="0.0.1" />
@@ -188,7 +189,7 @@
       <property role="g0V_S" value="5a2uchir2j/HSlip" />
       <property role="g0V_A" value="4" />
       <property role="g0V_E" value="4" />
-      <ref role="1wVYcX" node="3_aaaeo_ku3" resolve="AAA" />
+      <ref role="1wVYcX" node="3_aaaeo_ku3" resolve="Pozo de Prueba" />
     </node>
   </node>
   <node concept="3OX8kf" id="70kZfzvEYwr">
@@ -198,42 +199,43 @@
       <property role="TrG5h" value="juan" />
       <property role="2Ohnx_" value="4aW6f3R3niv/Ingeniero" />
       <property role="2Ohnxz" value="hace cosas" />
-      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="AAA" />
+      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="Pozo de Prueba" />
     </node>
     <node concept="2Ohnxw" id="70kZfzvMjPd" role="1OfyU_">
       <property role="3OX8Ex" value="3" />
       <property role="TrG5h" value="asf" />
       <property role="2Ohnx_" value="4aW6f3R3nii/Director" />
       <property role="2Ohnxz" value="3" />
-      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="AAA" />
+      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="Pozo de Prueba" />
     </node>
     <node concept="2Ohnxw" id="70kZfzvP9TB" role="1OfyU_">
       <property role="3OX8Ex" value="4" />
       <property role="TrG5h" value="Fran" />
       <property role="2Ohnx_" value="4aW6f3R3niv/Ingeniero" />
       <property role="2Ohnxz" value="profesor" />
-      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="AAA" />
+      <ref role="2JqeKl" node="3_aaaeo_ku3" resolve="Pozo de Prueba" />
     </node>
     <node concept="2wjgfG" id="2jmgNkwkMOT" role="i_xht">
       <property role="2wjgiE" value="h" />
-      <node concept="iHSUl" id="7f2CSxq2HWU" role="iHSUs" />
-      <node concept="iHSUl" id="7f2CSxq2HWW" role="iHSUs" />
-      <node concept="iHSUl" id="7f2CSxq2HWZ" role="iHSUs" />
-      <node concept="iHSUl" id="7f2CSxq2HX3" role="iHSUs" />
-      <node concept="2JJSmI" id="7f2CSxq2HX8" role="i_GWO" />
+      <property role="2wjgco" value="0.0.0" />
+      <node concept="iHSUl" id="7f2CSxq2HWU" role="iHSUs">
+        <property role="TrG5h" value="auteur" />
+      </node>
+      <node concept="2JJSmI" id="7f2CSxq2HX8" role="i_GWO">
+        <property role="2JJSmd" value="3" />
+        <property role="2JJSlN" value="3" />
+        <property role="2JJSlk" value="24" />
+      </node>
     </node>
-    <node concept="2Ohnxw" id="7f2CSxq2HWd" role="1OfyU_" />
-    <node concept="2Ohnxw" id="7f2CSxq2HWi" role="1OfyU_" />
-    <node concept="2Ohnxw" id="7f2CSxq2HWo" role="1OfyU_" />
-    <node concept="2Ohnxw" id="7f2CSxq2HWv" role="1OfyU_" />
-    <node concept="2Ohnxw" id="7f2CSxq2HWB" role="1OfyU_" />
-    <node concept="2Ohnxw" id="7f2CSxq2HWK" role="1OfyU_" />
   </node>
   <node concept="1mKnh" id="3lHLDwOf9Im">
-    <property role="TrG5h" value="Name of activiites" />
+    <property role="TrG5h" value="Name of activites" />
     <node concept="2Jz9FY" id="3lHLDwOf9In" role="1mKni">
       <property role="TrG5h" value="Tasking" />
       <ref role="2JJLHB" node="70kZfzvP9TB" resolve="Fran" />
+      <node concept="2Jz9Di" id="2hG7yitebIi" role="2JJLMH" />
+      <node concept="2Jz9Di" id="2hG7yitebIk" role="2JJLMH" />
+      <node concept="2Jz9Di" id="2hG7yitebIn" role="2JJLMH" />
     </node>
     <node concept="2wjgfG" id="2jmgNkwkMNV" role="i_GXQ">
       <property role="2wjgco" value="0." />
@@ -246,7 +248,7 @@
   </node>
   <node concept="fjumb" id="3_aaaeo_ku3">
     <property role="3GE5qa" value="Wells" />
-    <property role="TrG5h" value="AAA" />
+    <property role="TrG5h" value="Pozo de Prueba" />
     <property role="2Oks5A" value="AAA" />
     <ref role="2JCxDt" node="70kZfzvP9TB" resolve="Fran" />
     <node concept="1IRpYY" id="3_aaaeoGYMr" role="1j8qj" />
