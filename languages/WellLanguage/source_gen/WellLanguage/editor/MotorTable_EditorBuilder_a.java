@@ -25,6 +25,7 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -33,7 +34,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import de.slisson.mps.tables.runtime.cells.TableEditor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -95,8 +95,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
     new arialfontStyleClass(this).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createProperty_0());
-    editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createRefNode_0());
+    editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createTable_1());
     return editorCell;
   }
@@ -124,15 +125,21 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
+  private EditorCell createConstant_0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_18kcg9_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new metadataSingleRoleHandler_18kcg9_b0(myNode, LINKS.metadata$SJ0o, getEditorContext());
+    SingleRoleCellProvider provider = new metadataSingleRoleHandler_18kcg9_c0(myNode, LINKS.metadata$SJ0o, getEditorContext());
     return provider.createCell();
   }
-  private static class metadataSingleRoleHandler_18kcg9_b0 extends SingleRoleCellProvider {
+  private static class metadataSingleRoleHandler_18kcg9_c0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public metadataSingleRoleHandler_18kcg9_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public metadataSingleRoleHandler_18kcg9_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -179,9 +186,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no metadata>";
     }
   }
-  private EditorCell createConstant_0() {
+  private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_18kcg9_c0");
+    editorCell.setCellId("Constant_18kcg9_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -206,13 +213,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
           List<HeaderGrid> headerGrids = new ArrayList<HeaderGrid>(0);
           grid.setRowHeaders(headerGrids);
         }
-        final Grid childGrid = createChildsVertical_18kcg9_a3a(editorContext, node);
+        final Grid childGrid = createChildsVertical_18kcg9_a4a(editorContext, node);
         childGrid.setSpanX(Math.max(1, grid.getColumnHeadersSizeX()));
         childGrid.setSpanY(Math.max(1, grid.getRowHeadersSizeY()));
         grid.setElement(0, 0, childGrid);
 
         editorCell.value = new TableEditor(editorContext, node, grid);
-        editorCell.value.setCellId("Table_18kcg9_d0");
+        editorCell.value.setCellId("Table_18kcg9_e0");
 
 
         editorCell.value.init();
@@ -230,12 +237,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createTable_1() {
     return createTable_0(getEditorContext(), myNode);
   }
-  public Grid createChildsVertical_18kcg9_a3a(final EditorContext editorContext, final SNode node) {
+  public Grid createChildsVertical_18kcg9_a4a(final EditorContext editorContext, final SNode node) {
     Grid grid = new Grid();
     GridAdapter gridAdapter = new GridAdapter(grid, editorContext, node);
 
-    grid.setColumnHeaders(0, 0, createHeaderCollection_18kcg9_a0d0(editorContext, node));
-    grid.setRowHeaders(0, 0, createHeadQuery_18kcg9_a0d0(editorContext, node));
+    grid.setColumnHeaders(0, 0, createHeaderCollection_18kcg9_a0e0(editorContext, node));
+    grid.setRowHeaders(0, 0, createHeadQuery_18kcg9_a0e0(editorContext, node));
 
     final IHeaderNodeInsertAction insertAction = new ChildNodesInsertAction(node, SLinkOperations.findLinkDeclaration(LINKS.motors$ZR2X)) {};
 
@@ -306,20 +313,20 @@ import org.jetbrains.mps.openapi.language.SConcept;
     grid.flattenOneLevel();
     return grid;
   }
-  public HeaderGrid createHeaderCollection_18kcg9_a0d0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeaderCollection_18kcg9_a0e0(final EditorContext editorContext, final SNode node) {
     IHeaderNodeInsertAction insertAction = null;
     IHeaderNodeDeleteAction deleteAction = null;
 
     List<HeaderGrid> nodeList = new ArrayList<HeaderGrid>();
-    nodeList.add(createStaticHeader_18kcg9_a0a3a(editorContext, node));
-    nodeList.add(createStaticHeader_18kcg9_b0a3a(editorContext, node));
-    nodeList.add(createStaticHeader_18kcg9_c0a3a(editorContext, node));
-    nodeList.add(createStaticHeader_18kcg9_d0a3a(editorContext, node));
-    nodeList.add(createStaticHeader_18kcg9_e0a3a(editorContext, node));
+    nodeList.add(createStaticHeader_18kcg9_a0a4a(editorContext, node));
+    nodeList.add(createStaticHeader_18kcg9_b0a4a(editorContext, node));
+    nodeList.add(createStaticHeader_18kcg9_c0a4a(editorContext, node));
+    nodeList.add(createStaticHeader_18kcg9_d0a4a(editorContext, node));
+    nodeList.add(createStaticHeader_18kcg9_e0a4a(editorContext, node));
 
     return new HeaderGridFactory(editorContext, node, true).createFromHeaderGridList(nodeList);
   }
-  public HeaderGrid createStaticHeader_18kcg9_a0a3a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_18kcg9_a0a4a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -335,7 +342,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_18kcg9_b0a3a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_18kcg9_b0a4a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -351,7 +358,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_18kcg9_c0a3a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_18kcg9_c0a4a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -367,7 +374,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_18kcg9_d0a3a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_18kcg9_d0a4a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -383,7 +390,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createStaticHeader_18kcg9_e0a3a(final EditorContext editorContext, final SNode snode) {
+  public HeaderGrid createStaticHeader_18kcg9_e0a4a(final EditorContext editorContext, final SNode snode) {
     final Style style = new ITableStyleFactory() {
       public Style createStyle(final int columnIndex, final int rowIndex) {
         Style style = new StyleImpl();
@@ -399,7 +406,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     grid.setElement(0, 0, header);
     return grid;
   }
-  public HeaderGrid createHeadQuery_18kcg9_a0d0(final EditorContext editorContext, final SNode node) {
+  public HeaderGrid createHeadQuery_18kcg9_a0e0(final EditorContext editorContext, final SNode node) {
     Object queryResult = new Object() {
       public Object query() {
         return ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.motors$ZR2X)).select((it) -> Integer.toString(SNodeOperations.getIndexInParent(it) + 1));

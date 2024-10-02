@@ -611,6 +611,7 @@
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <ref role="1k5W1q" node="2jmgNkwg49w" resolve="title" />
       </node>
+      <node concept="3F0ifn" id="FcPQ8QEHg" role="3EZMnx" />
       <node concept="3F1sOY" id="OSImovFDfu" role="3EZMnx">
         <ref role="1NtTu8" to="n484:OSImovFBpN" resolve="metadata" />
       </node>
@@ -1609,37 +1610,39 @@
             <property role="3F0ifm" value="Fluids" />
             <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
-          <node concept="3F2HdR" id="bG9WTCNlXO" role="3EZMnx">
+          <node concept="3F0ifn" id="2TVACx$OjZI" role="3EZMnx" />
+          <node concept="3F1sOY" id="2TVACx$MZaw" role="3EZMnx">
             <ref role="1NtTu8" to="n484:6WRs1dwvnPz" resolve="fluidProps" />
-            <node concept="2iRkQZ" id="bG9WTCNlXQ" role="2czzBx" />
           </node>
           <node concept="3F0ifn" id="OSImovDmQB" role="3EZMnx" />
           <node concept="3F0ifn" id="OSImovDmQC" role="3EZMnx">
             <property role="3F0ifm" value="Downhole" />
             <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
-          <node concept="3F2HdR" id="bG9WTCNlYr" role="3EZMnx">
+          <node concept="3F0ifn" id="2TVACx$OjZW" role="3EZMnx" />
+          <node concept="3F1sOY" id="2TVACx$MZba" role="3EZMnx">
             <ref role="1NtTu8" to="n484:6WRs1dwvnPw" resolve="downholeProps" />
-            <node concept="2iRkQZ" id="bG9WTCNlYt" role="2czzBx" />
           </node>
           <node concept="3F0ifn" id="OSImovDmQE" role="3EZMnx" />
           <node concept="3F0ifn" id="OSImovDmQF" role="3EZMnx">
             <property role="3F0ifm" value="Casing Properties" />
             <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
-          <node concept="3F2HdR" id="bG9WTCNlZ5" role="3EZMnx">
+          <node concept="3F0ifn" id="2TVACx$Ok0b" role="3EZMnx" />
+          <node concept="3F1sOY" id="2TVACx$MZbL" role="3EZMnx">
             <ref role="1NtTu8" to="n484:3_aaaeoZJOk" resolve="casingProps" />
-            <node concept="2iRkQZ" id="bG9WTCNlZ7" role="2czzBx" />
           </node>
           <node concept="3F0ifn" id="OSImovDmQH" role="3EZMnx" />
           <node concept="3F0ifn" id="OSImovDmQI" role="3EZMnx">
             <property role="3F0ifm" value="Surface Properties" />
             <ref role="1k5W1q" node="4aW6f3QU$8h" resolve="primarycolor" />
           </node>
-          <node concept="3F2HdR" id="bG9WTCNlZM" role="3EZMnx">
+          <node concept="3F0ifn" id="2TVACx$Ok0r" role="3EZMnx" />
+          <node concept="3F2HdR" id="2TVACx$MZd1" role="3EZMnx">
             <ref role="1NtTu8" to="n484:3_aaaeoZJR7" resolve="surfaceProps" />
-            <node concept="2iRkQZ" id="bG9WTCNlZO" role="2czzBx" />
+            <node concept="2iRkQZ" id="2TVACx$MZd3" role="2czzBx" />
           </node>
+          <node concept="3F0ifn" id="2TVACx$Ok0I" role="3EZMnx" />
           <node concept="2iRkQZ" id="OSImovDmQK" role="2iSdaV" />
         </node>
       </node>
@@ -1814,7 +1817,7 @@
     <ref role="1XX52x" to="n484:bG9WTCKaLa" resolve="TaskSubTable" />
     <node concept="2rfBfz" id="bG9WTCKaLf" role="2wV5jI">
       <node concept="2reSaE" id="bG9WTCKaLW" role="2rf8GZ">
-        <ref role="2reCK$" to="n484:bG9WTCKaLb" />
+        <ref role="2reCK$" to="n484:bG9WTCKaLb" resolve="tasks" />
         <node concept="2r3Xtq" id="bG9WTCKaM1" role="2YiT2b">
           <node concept="2rfbtV" id="bG9WTCKaM6" role="uCobI">
             <property role="2rfbtB" value="Task" />
@@ -1843,7 +1846,7 @@
     <ref role="1XX52x" to="n484:bG9WTCNknZ" resolve="CasingTable" />
     <node concept="2rfBfz" id="bG9WTCOnNJ" role="2wV5jI">
       <node concept="2reSaE" id="bG9WTCOnNO" role="2rf8GZ">
-        <ref role="2reCK$" to="n484:bG9WTCOnEd" />
+        <ref role="2reCK$" to="n484:bG9WTCOnEd" resolve="casings" />
         <node concept="2r3Xtq" id="bG9WTCOnNT" role="2YiT2b">
           <node concept="2rfbtV" id="bG9WTCOnNX" role="uCobI">
             <property role="2rfbtB" value="Pressure" />
@@ -1866,7 +1869,7 @@
     <ref role="1XX52x" to="n484:bG9WTCNlW_" resolve="FluidsTable" />
     <node concept="2rfBfz" id="bG9WTCPraX" role="2wV5jI">
       <node concept="2reSaE" id="bG9WTCPrb2" role="2rf8GZ">
-        <ref role="2reCK$" to="n484:bG9WTCOnEh" />
+        <ref role="2reCK$" to="n484:bG9WTCOnEh" resolve="fluids" />
         <node concept="2r3Xtq" id="bG9WTCPrb5" role="2YiT2b">
           <node concept="2rfbtV" id="bG9WTCPrbd" role="uCobI">
             <property role="2rfbtB" value="Oil" />
@@ -1895,7 +1898,7 @@
     <ref role="1XX52x" to="n484:bG9WTCNko1" resolve="DownholeTable" />
     <node concept="2rfBfz" id="bG9WTCQz5U" role="2wV5jI">
       <node concept="2reSaE" id="bG9WTCQz5Z" role="2rf8GZ">
-        <ref role="2reCK$" to="n484:bG9WTCOnEf" />
+        <ref role="2reCK$" to="n484:bG9WTCOnEf" resolve="downholes" />
         <node concept="2r3Xtq" id="bG9WTCQz62" role="2YiT2b">
           <node concept="2rfbtV" id="bG9WTCQz6a" role="uCobI">
             <property role="2rfbtB" value="Top Perforation" />

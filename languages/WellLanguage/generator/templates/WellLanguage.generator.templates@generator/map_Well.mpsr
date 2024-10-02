@@ -9,7 +9,6 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
-      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="nn" index="2tJIrI" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -20,42 +19,21 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
-      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
-        <child id="1070534760952" name="componentType" index="10Q1$1" />
-      </concept>
-      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
-      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
-      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
-        <child id="5680397130376446158" name="type" index="1tU5fm" />
-      </concept>
-      <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <child id="1068580123133" name="returnType" index="3clF45" />
-        <child id="1068580123134" name="parameter" index="3clF46" />
-        <child id="1068580123135" name="body" index="3clF47" />
-      </concept>
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ngI" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
-        <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
-      </concept>
-      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ngI" index="1B3ioH">
-        <child id="1178549979242" name="visibility" index="1B3o_S" />
-      </concept>
-      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
+      <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
+        <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
+      </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
@@ -64,10 +42,33 @@
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
+      <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
+    </language>
+    <language id="990507d3-3527-4c54-bfe9-0ca3c9c6247a" name="com.dslfoundry.plaintextgen">
+      <concept id="5082088080656902716" name="com.dslfoundry.plaintextgen.structure.NewlineMarker" flags="ng" index="2EixSi" />
+      <concept id="1145195647825954804" name="com.dslfoundry.plaintextgen.structure.word" flags="ng" index="356sEF" />
+      <concept id="1145195647825954799" name="com.dslfoundry.plaintextgen.structure.Line" flags="ng" index="356sEK">
+        <child id="5082088080656976323" name="newlineMarker" index="2EinRH" />
+        <child id="1145195647825954802" name="words" index="356sEH" />
+      </concept>
+      <concept id="1145195647825954793" name="com.dslfoundry.plaintextgen.structure.SpaceIndentedText" flags="ng" index="356sEQ">
+        <property id="5198309202558919052" name="indent" index="333NGx" />
+      </concept>
+      <concept id="1145195647825954788" name="com.dslfoundry.plaintextgen.structure.TextgenText" flags="ng" index="356sEV">
+        <property id="5407518469085446424" name="ext" index="3Le9LX" />
+        <child id="1145195647826100986" name="content" index="356KY_" />
+      </concept>
+      <concept id="1145195647826084325" name="com.dslfoundry.plaintextgen.structure.VerticalLines" flags="ng" index="356WMU" />
+      <concept id="7214912913997260680" name="com.dslfoundry.plaintextgen.structure.IVerticalGroup" flags="ngI" index="383Yap">
+        <child id="7214912913997260696" name="lines" index="383Ya9" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -83,57 +84,993 @@
       </concept>
     </language>
   </registry>
-  <node concept="312cEu" id="5CEHj$UWJmy">
+  <node concept="356sEV" id="70kZfzvC6qb">
     <property role="TrG5h" value="map_Well" />
-    <node concept="2YIFZL" id="5CEHj$UWJny" role="jymVt">
-      <property role="TrG5h" value="main" />
-      <node concept="37vLTG" id="5CEHj$UWJnz" role="3clF46">
-        <property role="TrG5h" value="args" />
-        <node concept="10Q1$e" id="5CEHj$UWJn$" role="1tU5fm">
-          <node concept="17QB3L" id="5CEHj$UWJn_" role="10Q1$1" />
+    <property role="3Le9LX" value=".py" />
+    <node concept="356WMU" id="6Ybfbh9codb" role="356KY_">
+      <node concept="356sEK" id="6Ybfbh9codc" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9codd" role="356sEH">
+          <property role="TrG5h" value="import tkinter as tk" />
         </node>
+        <node concept="2EixSi" id="6Ybfbh9codf" role="2EinRH" />
       </node>
-      <node concept="3cqZAl" id="5CEHj$UWJnA" role="3clF45" />
-      <node concept="3Tm1VV" id="5CEHj$UWJnB" role="1B3o_S" />
-      <node concept="3clFbS" id="5CEHj$UWJnC" role="3clF47" />
-    </node>
-    <node concept="2tJIrI" id="4aW6f3R5YUO" role="jymVt" />
-    <node concept="2tJIrI" id="4aW6f3R5YWg" role="jymVt" />
-    <node concept="3Tm1VV" id="5CEHj$UWJmz" role="1B3o_S" />
-    <node concept="n94m4" id="5CEHj$UWJm$" role="lGtFl">
-      <ref role="n9lRv" to="n484:4u7RhGfIkkG" resolve="Well" />
-    </node>
-    <node concept="17Uvod" id="5CEHj$UX_U4" role="lGtFl">
-      <property role="2qtEX9" value="name" />
-      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-      <node concept="3zFVjK" id="5CEHj$UX_U7" role="3zH0cK">
-        <node concept="3clFbS" id="5CEHj$UX_U8" role="2VODD2">
-          <node concept="3clFbF" id="5CEHj$UX_Ue" role="3cqZAp">
-            <node concept="2OqwBi" id="70kZfzvwil6" role="3clFbG">
-              <node concept="2OqwBi" id="CBBprYMmnN" role="2Oq$k0">
-                <node concept="2OqwBi" id="5CEHj$UX_U9" role="2Oq$k0">
-                  <node concept="3TrcHB" id="5CEHj$UX_Uc" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+      <node concept="356sEK" id="6Ybfbh9codg" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9codh" role="356sEH">
+          <property role="TrG5h" value="from tkinter import ttk" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9codj" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9codk" role="383Ya9">
+        <node concept="2EixSi" id="6Ybfbh9codn" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9codo" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9codp" role="356sEH">
+          <property role="TrG5h" value="# Define classes for variables" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9codr" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9fV4y" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9fVbY" role="356sEH">
+          <property role="TrG5h" value="d" />
+          <node concept="29HgVG" id="6Ybfbh9fVc2" role="lGtFl">
+            <node concept="3NFfHV" id="6Ybfbh9fVc3" role="3NFExx">
+              <node concept="3clFbS" id="6Ybfbh9fVc4" role="2VODD2">
+                <node concept="3clFbF" id="6Ybfbh9fVca" role="3cqZAp">
+                  <node concept="2OqwBi" id="6Ybfbh9fVc5" role="3clFbG">
+                    <node concept="3TrEf2" id="6Ybfbh9fVc8" role="2OqNvi">
+                      <ref role="3Tt5mk" to="n484:OSImovzNA9" resolve="metadata" />
+                    </node>
+                    <node concept="30H73N" id="6Ybfbh9fVc9" role="2Oq$k0" />
                   </node>
-                  <node concept="30H73N" id="5CEHj$UX_Ud" role="2Oq$k0" />
-                </node>
-                <node concept="liA8E" id="CBBprYMniB" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.replaceAll(java.lang.String,java.lang.String)" resolve="replaceAll" />
-                  <node concept="Xl_RD" id="CBBprYMnqA" role="37wK5m">
-                    <property role="Xl_RC" value="\\s" />
-                  </node>
-                  <node concept="Xl_RD" id="CBBprYMo5D" role="37wK5m" />
-                </node>
-              </node>
-              <node concept="liA8E" id="70kZfzvwjAj" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.concat(java.lang.String)" resolve="concat" />
-                <node concept="Xl_RD" id="70kZfzvwjJ1" role="37wK5m">
-                  <property role="Xl_RC" value="__" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="CBBprYMiXe" role="3cqZAp" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9fV4$" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9cods" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9codt" role="356sEH">
+          <property role="TrG5h" value="class Coordinates:" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9codv" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="6Ybfbh9cod$" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="6Ybfbh9codw" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9codx" role="356sEH">
+            <property role="TrG5h" value="def __init__(self, latitude, longitude):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9codz" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9codD" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9cod_" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9codA" role="356sEH">
+              <property role="TrG5h" value="self.latitude = latitude" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9codC" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9codE" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9codF" role="356sEH">
+              <property role="TrG5h" value="self.longitude = longitude" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9codH" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9codI" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9codL" role="2EinRH" />
+          </node>
+        </node>
+      </node>
+      <node concept="356sEK" id="6Ybfbh9codM" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9codN" role="356sEH">
+          <property role="TrG5h" value="class DownholeTable:" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9codP" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="6Ybfbh9codU" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="6Ybfbh9codQ" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9codR" role="356sEH">
+            <property role="TrG5h" value="def __init__(self, depth, pressure, temperature):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9codT" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9codZ" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9codV" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9codW" role="356sEH">
+              <property role="TrG5h" value="self.depth = depth" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9codY" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coe0" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coe1" role="356sEH">
+              <property role="TrG5h" value="self.pressure = pressure" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coe3" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coe4" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coe5" role="356sEH">
+              <property role="TrG5h" value="self.temperature = temperature" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coe7" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coe8" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coeb" role="2EinRH" />
+          </node>
+        </node>
+      </node>
+      <node concept="356sEK" id="6Ybfbh9coec" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9coed" role="356sEH">
+          <property role="TrG5h" value="class FluidsTable:" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9coef" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="6Ybfbh9coek" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="6Ybfbh9coeg" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9coeh" role="356sEH">
+            <property role="TrG5h" value="def __init__(self, flow_rate, fluid_type, viscosity):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9coej" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9coep" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9coel" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coem" role="356sEH">
+              <property role="TrG5h" value="self.flow_rate = flow_rate" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coeo" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coeq" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coer" role="356sEH">
+              <property role="TrG5h" value="self.fluid_type = fluid_type" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coet" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coeu" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coev" role="356sEH">
+              <property role="TrG5h" value="self.viscosity = viscosity" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coex" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coey" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coe_" role="2EinRH" />
+          </node>
+        </node>
+      </node>
+      <node concept="356sEK" id="6Ybfbh9coeA" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9coeB" role="356sEH">
+          <property role="TrG5h" value="class PumpingUnit:" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9coeD" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="6Ybfbh9coeI" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="6Ybfbh9coeE" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9coeF" role="356sEH">
+            <property role="TrG5h" value="def __init__(self, pump_efficiency, motor_load):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9coeH" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9coeN" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9coeJ" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coeK" role="356sEH">
+              <property role="TrG5h" value="self.pump_efficiency = pump_efficiency" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coeM" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coeO" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coeP" role="356sEH">
+              <property role="TrG5h" value="self.motor_load = motor_load" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coeR" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coeS" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coeV" role="2EinRH" />
+          </node>
+        </node>
+      </node>
+      <node concept="356sEK" id="6Ybfbh9coeW" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9coeX" role="356sEH">
+          <property role="TrG5h" value="class SurfaceProperties:" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9coeZ" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="6Ybfbh9cof4" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="6Ybfbh9cof0" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cof1" role="356sEH">
+            <property role="TrG5h" value="def __init__(self, equipment_condition, surface_pressure):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9cof3" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9cof9" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9cof5" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cof6" role="356sEH">
+              <property role="TrG5h" value="self.equipment_condition = equipment_condition" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cof8" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofa" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cofb" role="356sEH">
+              <property role="TrG5h" value="self.surface_pressure = surface_pressure" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofd" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofe" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cofh" role="2EinRH" />
+          </node>
+        </node>
+      </node>
+      <node concept="356sEK" id="6Ybfbh9cofi" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9cofj" role="356sEH">
+          <property role="TrG5h" value="# GUI Class" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9cofl" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9cofm" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9cofn" role="356sEH">
+          <property role="TrG5h" value="class WellFormGUI:" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9cofp" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="6Ybfbh9cofu" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="6Ybfbh9cofq" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cofr" role="356sEH">
+            <property role="TrG5h" value="def __init__(self, root):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9coft" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9cofz" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9cofv" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cofw" role="356sEH">
+              <property role="TrG5h" value="self.root = root" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofy" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cof$" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cof_" role="356sEH">
+              <property role="TrG5h" value="self.root.title(&quot;Well Node Data Input Form&quot;)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofB" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofC" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cofF" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofG" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cofH" role="356sEH">
+              <property role="TrG5h" value="# Create Notebook (tabs)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofJ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofK" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cofL" role="356sEH">
+              <property role="TrG5h" value="self.notebook = ttk.Notebook(root)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofN" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofO" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cofP" role="356sEH">
+              <property role="TrG5h" value="self.notebook.pack(pady=10, expand=True)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofR" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofS" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cofV" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cofW" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cofX" role="356sEH">
+              <property role="TrG5h" value="# Tabs" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cofZ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cog0" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cog1" role="356sEH">
+              <property role="TrG5h" value="self.create_coordinates_tab()" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cog3" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cog4" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cog5" role="356sEH">
+              <property role="TrG5h" value="self.create_downhole_tab()" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cog7" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cog8" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cog9" role="356sEH">
+              <property role="TrG5h" value="self.create_fluid_tab()" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogb" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogc" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogd" role="356sEH">
+              <property role="TrG5h" value="self.create_pump_unit_tab()" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogf" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogg" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogh" role="356sEH">
+              <property role="TrG5h" value="self.create_surface_properties_tab()" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogj" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogk" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cogn" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogo" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogp" role="356sEH">
+              <property role="TrG5h" value="# Submit Button" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogr" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogs" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogt" role="356sEH">
+              <property role="TrG5h" value="submit_button = tk.Button(root, text=&quot;Submit&quot;, command=self.submit)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogv" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogw" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogx" role="356sEH">
+              <property role="TrG5h" value="submit_button.pack(pady=10)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogz" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cog$" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cogB" role="2EinRH" />
+          </node>
+        </node>
+        <node concept="356sEK" id="6Ybfbh9cogC" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cogD" role="356sEH">
+            <property role="TrG5h" value="def create_coordinates_tab(self):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9cogF" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9cogK" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9cogG" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogH" role="356sEH">
+              <property role="TrG5h" value="self.coordinates_tab = ttk.Frame(self.notebook)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogJ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogL" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogM" role="356sEH">
+              <property role="TrG5h" value="self.notebook.add(self.coordinates_tab, text=&quot;Coordinates&quot;)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogO" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogP" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cogS" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogT" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogU" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.coordinates_tab, text=&quot;Latitude:&quot;).grid(row=0, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cogW" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cogX" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cogY" role="356sEH">
+              <property role="TrG5h" value="self.latitude_entry = tk.Entry(self.coordinates_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coh0" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coh1" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coh2" role="356sEH">
+              <property role="TrG5h" value="self.latitude_entry.grid(row=0, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coh4" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coh5" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coh8" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coh9" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coha" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.coordinates_tab, text=&quot;Longitude:&quot;).grid(row=1, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohc" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohd" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohe" role="356sEH">
+              <property role="TrG5h" value="self.longitude_entry = tk.Entry(self.coordinates_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohg" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohh" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohi" role="356sEH">
+              <property role="TrG5h" value="self.longitude_entry.grid(row=1, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohk" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohl" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coho" role="2EinRH" />
+          </node>
+        </node>
+        <node concept="356sEK" id="6Ybfbh9cohp" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cohq" role="356sEH">
+            <property role="TrG5h" value="def create_downhole_tab(self):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9cohs" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9cohx" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9coht" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohu" role="356sEH">
+              <property role="TrG5h" value="self.downhole_tab = ttk.Frame(self.notebook)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohw" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohy" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohz" role="356sEH">
+              <property role="TrG5h" value="self.notebook.add(self.downhole_tab, text=&quot;Downhole Properties&quot;)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coh_" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohA" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cohD" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohE" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohF" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.downhole_tab, text=&quot;Depth (m):&quot;).grid(row=0, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohH" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohI" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohJ" role="356sEH">
+              <property role="TrG5h" value="self.depth_entry = tk.Entry(self.downhole_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohL" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohM" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohN" role="356sEH">
+              <property role="TrG5h" value="self.depth_entry.grid(row=0, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohP" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohQ" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cohT" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohU" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohV" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.downhole_tab, text=&quot;Pressure (psi):&quot;).grid(row=1, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cohX" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cohY" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cohZ" role="356sEH">
+              <property role="TrG5h" value="self.pressure_entry = tk.Entry(self.downhole_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coi1" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coi2" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coi3" role="356sEH">
+              <property role="TrG5h" value="self.pressure_entry.grid(row=1, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coi5" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coi6" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coi9" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coia" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coib" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.downhole_tab, text=&quot;Temperature (°C):&quot;).grid(row=2, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coid" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coie" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coif" role="356sEH">
+              <property role="TrG5h" value="self.temperature_entry = tk.Entry(self.downhole_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coih" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coii" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coij" role="356sEH">
+              <property role="TrG5h" value="self.temperature_entry.grid(row=2, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coil" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coim" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coip" role="2EinRH" />
+          </node>
+        </node>
+        <node concept="356sEK" id="6Ybfbh9coiq" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9coir" role="356sEH">
+            <property role="TrG5h" value="def create_fluid_tab(self):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9coit" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9coiy" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9coiu" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coiv" role="356sEH">
+              <property role="TrG5h" value="self.fluid_tab = ttk.Frame(self.notebook)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coix" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiz" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coi$" role="356sEH">
+              <property role="TrG5h" value="self.notebook.add(self.fluid_tab, text=&quot;Fluid Properties&quot;)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coiA" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiB" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coiE" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiF" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coiG" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.fluid_tab, text=&quot;Flow Rate (bpd):&quot;).grid(row=0, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coiI" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiJ" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coiK" role="356sEH">
+              <property role="TrG5h" value="self.flow_rate_entry = tk.Entry(self.fluid_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coiM" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiN" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coiO" role="356sEH">
+              <property role="TrG5h" value="self.flow_rate_entry.grid(row=0, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coiQ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiR" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coiU" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiV" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coiW" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.fluid_tab, text=&quot;Fluid Type:&quot;).grid(row=1, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coiY" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coiZ" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coj0" role="356sEH">
+              <property role="TrG5h" value="self.fluid_type_entry = tk.Entry(self.fluid_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coj2" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coj3" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coj4" role="356sEH">
+              <property role="TrG5h" value="self.fluid_type_entry.grid(row=1, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coj6" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coj7" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coja" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojb" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojc" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.fluid_tab, text=&quot;Viscosity (cp):&quot;).grid(row=2, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coje" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojf" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojg" role="356sEH">
+              <property role="TrG5h" value="self.viscosity_entry = tk.Entry(self.fluid_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coji" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojj" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojk" role="356sEH">
+              <property role="TrG5h" value="self.viscosity_entry.grid(row=2, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojm" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojn" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cojq" role="2EinRH" />
+          </node>
+        </node>
+        <node concept="356sEK" id="6Ybfbh9cojr" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cojs" role="356sEH">
+            <property role="TrG5h" value="def create_pump_unit_tab(self):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9coju" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9cojz" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9cojv" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojw" role="356sEH">
+              <property role="TrG5h" value="self.pump_unit_tab = ttk.Frame(self.notebook)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojy" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coj$" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coj_" role="356sEH">
+              <property role="TrG5h" value="self.notebook.add(self.pump_unit_tab, text=&quot;Pump Unit Properties&quot;)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojB" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojC" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cojF" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojG" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojH" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.pump_unit_tab, text=&quot;Pump Efficiency (%):&quot;).grid(row=0, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojJ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojK" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojL" role="356sEH">
+              <property role="TrG5h" value="self.pump_efficiency_entry = tk.Entry(self.pump_unit_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojN" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojO" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojP" role="356sEH">
+              <property role="TrG5h" value="self.pump_efficiency_entry.grid(row=0, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojR" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojS" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cojV" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cojW" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cojX" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.pump_unit_tab, text=&quot;Motor Load (kW):&quot;).grid(row=1, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cojZ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cok0" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cok1" role="356sEH">
+              <property role="TrG5h" value="self.motor_load_entry = tk.Entry(self.pump_unit_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cok3" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cok4" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cok5" role="356sEH">
+              <property role="TrG5h" value="self.motor_load_entry.grid(row=1, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cok7" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cok8" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cokb" role="2EinRH" />
+          </node>
+        </node>
+        <node concept="356sEK" id="6Ybfbh9cokc" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cokd" role="356sEH">
+            <property role="TrG5h" value="def create_surface_properties_tab(self):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9cokf" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9cokk" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9cokg" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cokh" role="356sEH">
+              <property role="TrG5h" value="self.surface_properties_tab = ttk.Frame(self.notebook)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cokj" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokl" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cokm" role="356sEH">
+              <property role="TrG5h" value="self.notebook.add(self.surface_properties_tab, text=&quot;Surface Properties&quot;)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9coko" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokp" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coks" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokt" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coku" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.surface_properties_tab, text=&quot;Equipment Condition:&quot;).grid(row=0, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cokw" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokx" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9coky" role="356sEH">
+              <property role="TrG5h" value="self.equipment_condition_entry = tk.Entry(self.surface_properties_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cok$" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cok_" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cokA" role="356sEH">
+              <property role="TrG5h" value="self.equipment_condition_entry.grid(row=0, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cokC" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokD" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cokG" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokH" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cokI" role="356sEH">
+              <property role="TrG5h" value="tk.Label(self.surface_properties_tab, text=&quot;Surface Pressure (psi):&quot;).grid(row=1, column=0)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cokK" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokL" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cokM" role="356sEH">
+              <property role="TrG5h" value="self.surface_pressure_entry = tk.Entry(self.surface_properties_tab)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cokO" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokP" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cokQ" role="356sEH">
+              <property role="TrG5h" value="self.surface_pressure_entry.grid(row=1, column=1)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cokS" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9cokT" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9cokW" role="2EinRH" />
+          </node>
+        </node>
+        <node concept="356sEK" id="6Ybfbh9cokX" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9cokY" role="356sEH">
+            <property role="TrG5h" value="# Submit function to gather input data" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9col0" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="6Ybfbh9col1" role="383Ya9">
+          <node concept="356sEF" id="6Ybfbh9col2" role="356sEH">
+            <property role="TrG5h" value="def submit(self):" />
+          </node>
+          <node concept="2EixSi" id="6Ybfbh9col4" role="2EinRH" />
+        </node>
+        <node concept="356sEQ" id="6Ybfbh9col9" role="383Ya9">
+          <property role="333NGx" value="    " />
+          <node concept="356sEK" id="6Ybfbh9col5" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9col6" role="356sEH">
+              <property role="TrG5h" value="coordinates = Coordinates(" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9col8" role="2EinRH" />
+          </node>
+          <node concept="356sEQ" id="6Ybfbh9cole" role="383Ya9">
+            <property role="333NGx" value="    " />
+            <node concept="356sEK" id="6Ybfbh9cola" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9colb" role="356sEH">
+                <property role="TrG5h" value="latitude=self.latitude_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9cold" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9colf" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9colg" role="356sEH">
+                <property role="TrG5h" value="longitude=self.longitude_entry.get()" />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9coli" role="2EinRH" />
+            </node>
+          </node>
+          <node concept="356sEK" id="6Ybfbh9colj" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9colk" role="356sEH">
+              <property role="TrG5h" value=")" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9colm" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9coln" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9colq" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9colr" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9cols" role="356sEH">
+              <property role="TrG5h" value="downhole_props = DownholeTable(" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9colu" role="2EinRH" />
+          </node>
+          <node concept="356sEQ" id="6Ybfbh9colz" role="383Ya9">
+            <property role="333NGx" value="    " />
+            <node concept="356sEK" id="6Ybfbh9colv" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9colw" role="356sEH">
+                <property role="TrG5h" value="depth=self.depth_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9coly" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9col$" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9col_" role="356sEH">
+                <property role="TrG5h" value="pressure=self.pressure_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9colB" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9colC" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9colD" role="356sEH">
+                <property role="TrG5h" value="temperature=self.temperature_entry.get()" />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9colF" role="2EinRH" />
+            </node>
+          </node>
+          <node concept="356sEK" id="6Ybfbh9colG" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9colH" role="356sEH">
+              <property role="TrG5h" value=")" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9colJ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9colK" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9colN" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9colO" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9colP" role="356sEH">
+              <property role="TrG5h" value="fluid_props = FluidsTable(" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9colR" role="2EinRH" />
+          </node>
+          <node concept="356sEQ" id="6Ybfbh9colW" role="383Ya9">
+            <property role="333NGx" value="    " />
+            <node concept="356sEK" id="6Ybfbh9colS" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9colT" role="356sEH">
+                <property role="TrG5h" value="flow_rate=self.flow_rate_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9colV" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9colX" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9colY" role="356sEH">
+                <property role="TrG5h" value="fluid_type=self.fluid_type_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9com0" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9com1" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9com2" role="356sEH">
+                <property role="TrG5h" value="viscosity=self.viscosity_entry.get()" />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9com4" role="2EinRH" />
+            </node>
+          </node>
+          <node concept="356sEK" id="6Ybfbh9com5" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9com6" role="356sEH">
+              <property role="TrG5h" value=")" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9com8" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9com9" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9comc" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comd" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9come" role="356sEH">
+              <property role="TrG5h" value="pump_unit_props = PumpingUnit(" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9comg" role="2EinRH" />
+          </node>
+          <node concept="356sEQ" id="6Ybfbh9coml" role="383Ya9">
+            <property role="333NGx" value="    " />
+            <node concept="356sEK" id="6Ybfbh9comh" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9comi" role="356sEH">
+                <property role="TrG5h" value="pump_efficiency=self.pump_efficiency_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9comk" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9comm" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9comn" role="356sEH">
+                <property role="TrG5h" value="motor_load=self.motor_load_entry.get()" />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9comp" role="2EinRH" />
+            </node>
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comq" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9comr" role="356sEH">
+              <property role="TrG5h" value=")" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9comt" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comu" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9comx" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comy" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9comz" role="356sEH">
+              <property role="TrG5h" value="surface_props = SurfaceProperties(" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9com_" role="2EinRH" />
+          </node>
+          <node concept="356sEQ" id="6Ybfbh9comE" role="383Ya9">
+            <property role="333NGx" value="    " />
+            <node concept="356sEK" id="6Ybfbh9comA" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9comB" role="356sEH">
+                <property role="TrG5h" value="equipment_condition=self.equipment_condition_entry.get()," />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9comD" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="6Ybfbh9comF" role="383Ya9">
+              <node concept="356sEF" id="6Ybfbh9comG" role="356sEH">
+                <property role="TrG5h" value="surface_pressure=self.surface_pressure_entry.get()" />
+              </node>
+              <node concept="2EixSi" id="6Ybfbh9comI" role="2EinRH" />
+            </node>
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comJ" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9comK" role="356sEH">
+              <property role="TrG5h" value=")" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9comM" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comN" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9comQ" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comR" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9comS" role="356sEH">
+              <property role="TrG5h" value="# For now, just print the input data" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9comU" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comV" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9comW" role="356sEH">
+              <property role="TrG5h" value="print(&quot;Coordinates:&quot;, coordinates.latitude, coordinates.longitude)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9comY" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9comZ" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9con0" role="356sEH">
+              <property role="TrG5h" value="print(&quot;Downhole Props:&quot;, downhole_props.depth, downhole_props.pressure, downhole_props.temperature)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9con2" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9con3" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9con4" role="356sEH">
+              <property role="TrG5h" value="print(&quot;Fluid Props:&quot;, fluid_props.flow_rate, fluid_props.fluid_type, fluid_props.viscosity)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9con6" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9con7" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9con8" role="356sEH">
+              <property role="TrG5h" value="print(&quot;Pump Unit Props:&quot;, pump_unit_props.pump_efficiency, pump_unit_props.motor_load)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cona" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9conb" role="383Ya9">
+            <node concept="356sEF" id="6Ybfbh9conc" role="356sEH">
+              <property role="TrG5h" value="print(&quot;Surface Props:&quot;, surface_props.equipment_condition, surface_props.surface_pressure)" />
+            </node>
+            <node concept="2EixSi" id="6Ybfbh9cone" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="6Ybfbh9conf" role="383Ya9">
+            <node concept="2EixSi" id="6Ybfbh9coni" role="2EinRH" />
+          </node>
+        </node>
+      </node>
+      <node concept="356sEK" id="6Ybfbh9conj" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9conk" role="356sEH">
+          <property role="TrG5h" value="# Main Tkinter loop" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9conm" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9conn" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9cono" role="356sEH">
+          <property role="TrG5h" value="root = tk.Tk()" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9conq" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9conr" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9cons" role="356sEH">
+          <property role="TrG5h" value="app = WellFormGUI(root)" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9conu" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6Ybfbh9conv" role="383Ya9">
+        <node concept="356sEF" id="6Ybfbh9conw" role="356sEH">
+          <property role="TrG5h" value="root.mainloop()" />
+        </node>
+        <node concept="2EixSi" id="6Ybfbh9cony" role="2EinRH" />
+      </node>
+    </node>
+    <node concept="n94m4" id="70kZfzvC6qd" role="lGtFl">
+      <ref role="n9lRv" to="n484:4u7RhGfIkkG" resolve="Well" />
+    </node>
+    <node concept="17Uvod" id="70kZfzvDqqd" role="lGtFl">
+      <property role="2qtEX9" value="name" />
+      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+      <node concept="3zFVjK" id="70kZfzvDqqe" role="3zH0cK">
+        <node concept="3clFbS" id="70kZfzvDqqf" role="2VODD2">
+          <node concept="3clFbF" id="70kZfzvDqHY" role="3cqZAp">
+            <node concept="2OqwBi" id="70kZfzvD$B6" role="3clFbG">
+              <node concept="2OqwBi" id="70kZfzvDsGP" role="2Oq$k0">
+                <node concept="2OqwBi" id="70kZfzvDrc8" role="2Oq$k0">
+                  <node concept="30H73N" id="70kZfzvDqHX" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="70kZfzvDrrK" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="70kZfzvDu08" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.replaceAll(java.lang.String,java.lang.String)" resolve="replaceAll" />
+                  <node concept="Xl_RD" id="70kZfzvDunm" role="37wK5m">
+                    <property role="Xl_RC" value="\\s" />
+                  </node>
+                  <node concept="Xl_RD" id="70kZfzvDvFE" role="37wK5m">
+                    <property role="Xl_RC" value="_" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="70kZfzvDAK_" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.toLowerCase()" resolve="toLowerCase" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

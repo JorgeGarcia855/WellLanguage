@@ -444,20 +444,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L);
     b.origin("r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)/5154331406846477612");
     b.version(3);
-    b.associate("worker", 0x7014fcf8dfb6e6a5L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x42bc18f0f6f96090L).optional(true).origin("8076358177617536677").done();
-    b.aggregate("coordinates", 0x6f377013607a958cL).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31147cce5L).optional(true).ordered(true).multiple(false).origin("8013997290454422924").done();
-    b.aggregate("downholeProps", 0x6f377013607d7d60L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68cd4601L).optional(true).ordered(true).multiple(true).origin("8013997290454613344").done();
-    b.aggregate("fluidProps", 0x6f377013607d7d63L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68cd5f25L).optional(true).ordered(true).multiple(true).origin("8013997290454613347").done();
-    b.aggregate("pumpUnitProps", 0x51643a35ce93a256L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b05dL).optional(true).ordered(true).multiple(true).origin("5864876617516687958").done();
-    b.aggregate("surfaceProps", 0x394a28a398fefdc7L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7e18434ae3095a34L).optional(true).ordered(true).multiple(true).origin("4128156691550109127").done();
-    b.aggregate("casingProps", 0x394a28a398fefd14L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68cd45ffL).optional(true).ordered(true).multiple(true).origin("4128156691550108948").done();
-    b.aggregate("motorProps", 0x51643a35ce934d39L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b081L).optional(true).ordered(true).multiple(true).origin("5864876617516666169").done();
-    b.aggregate("machinery", 0x356dc6983421400bL).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x1b88da8d75554533L).optional(true).ordered(true).multiple(true).origin("3849951613483565067").done();
-    b.aggregate("personel", 0x356dc69834620e13L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x356dc6983460dd2dL).optional(true).ordered(true).multiple(true).origin("3849951613487812115").done();
-    b.aggregate("urgentTasks", 0x356dc69834620e1dL).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7014fcf8df9866aaL).optional(true).ordered(true).multiple(true).origin("3849951613487812125").done();
+    b.associate("worker", 0x7014fcf8dfb6e6a5L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x42bc18f0f6f96090L).optional(false).origin("8076358177617536677").done();
+    b.aggregate("coordinates", 0x6f377013607a958cL).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31147cce5L).optional(false).ordered(true).multiple(false).origin("8013997290454422924").done();
+    b.aggregate("downholeProps", 0x6f377013607d7d60L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68cd4601L).optional(false).ordered(true).multiple(false).origin("8013997290454613344").done();
+    b.aggregate("fluidProps", 0x6f377013607d7d63L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68cd5f25L).optional(false).ordered(true).multiple(false).origin("8013997290454613347").done();
+    b.aggregate("pumpUnitProps", 0x51643a35ce93a256L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b05dL).optional(false).ordered(true).multiple(true).origin("5864876617516687958").done();
+    b.aggregate("surfaceProps", 0x394a28a398fefdc7L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7e18434ae3095a34L).optional(false).ordered(true).multiple(true).origin("4128156691550109127").done();
+    b.aggregate("casingProps", 0x394a28a398fefd14L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x2ec27ce68cd45ffL).optional(false).ordered(true).multiple(false).origin("4128156691550108948").done();
+    b.aggregate("motorProps", 0x51643a35ce934d39L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b081L).optional(false).ordered(true).multiple(true).origin("5864876617516666169").done();
+    b.aggregate("machinery", 0x356dc6983421400bL).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x1b88da8d75554533L).optional(false).ordered(true).multiple(true).origin("3849951613483565067").done();
+    b.aggregate("personel", 0x356dc69834620e13L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x356dc6983460dd2dL).optional(false).ordered(true).multiple(true).origin("3849951613487812115").done();
+    b.aggregate("urgentTasks", 0x356dc69834620e1dL).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x7014fcf8df9866aaL).optional(false).ordered(true).multiple(true).origin("3849951613487812125").done();
     b.aggregate("customMethods", 0x394a28a398bb8f32L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L).optional(true).ordered(true).multiple(true).origin("4128156691545689906").done();
     b.aggregate("customStatements", 0x394a28a398dea8acL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(true).ordered(true).multiple(false).origin("4128156691547990188").done();
-    b.aggregate("metadata", 0xd38b9661f8f3989L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x394a28a399072b4fL).optional(true).ordered(true).multiple(false).origin("952715169456142729").done();
+    b.aggregate("metadata", 0xd38b9661f8f3989L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x394a28a399072b4fL).optional(false).ordered(true).multiple(false).origin("952715169456142729").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWellPersonel() {

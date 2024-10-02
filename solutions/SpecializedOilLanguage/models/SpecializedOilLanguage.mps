@@ -251,7 +251,7 @@
       </node>
     </node>
     <node concept="13uUGR" id="6QNL$bAhKQ5" role="1l3spa">
-      <ref role="13uUGO" to="ffeo:6eCuTcwOnJO" />
+      <ref role="13uUGO" to="ffeo:6eCuTcwOnJO" resolve="IDEA" />
       <node concept="398BVA" id="6QNL$bAhKQ6" role="13uUGP">
         <ref role="398BVh" node="6QNL$bAhKQ4" resolve="idea_home" />
       </node>
@@ -297,13 +297,13 @@
         <ref role="m$f5T" node="6QNL$bAhKQq" resolve="WellLanguage" />
       </node>
       <node concept="m$_yC" id="6QNL$bAhKQx" role="m$_yJ">
-        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" />
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
       <node concept="m$_yC" id="bG9WTCEu7p" role="m$_yJ">
-        <ref role="m$_y1" to="90a9:29so9Vb$6Tj" />
+        <ref role="m$_y1" to="90a9:29so9Vb$6Tj" resolve="de.slisson.mps.tables" />
       </node>
       <node concept="m$_yC" id="bG9WTCEu7s" role="m$_yJ">
-        <ref role="m$_y1" to="90a9:2NTGYE$JTH6" />
+        <ref role="m$_y1" to="90a9:2NTGYE$JTH6" resolve="com.dslfoundry.plaintextgen" />
       </node>
       <node concept="3_J27D" id="6QNL$bAhKQy" role="m_cZH">
         <node concept="3Mxwew" id="6QNL$bAhKQz" role="3MwsjC">
