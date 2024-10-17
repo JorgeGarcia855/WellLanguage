@@ -152,7 +152,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="2TVACx$R5u0" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
+                          <ref role="37wK5l" to="wyt6:~String.toString()" resolve="toString" />
                         </node>
                       </node>
                     </node>

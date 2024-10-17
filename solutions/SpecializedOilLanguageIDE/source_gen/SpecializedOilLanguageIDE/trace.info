@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root nodeRef="r:81f2078c-b646-4df5-a46d-e41fb9d176e4(SpecializedOilLanguageIDE)/1812650517765674381">
+    <file name="WellLanguage.xml">
+      <unit id="1812650517765674381" at="1,0,602,10" name="SpecializedOilLanguageIDE.WellLanguage" />
+    </file>
+  </root>
+  <root nodeRef="r:81f2078c-b646-4df5-a46d-e41fb9d176e4(SpecializedOilLanguageIDE)/1812650517765674566">
+    <file name="WellLanguageDistribution.xml">
+      <unit id="1812650517765674566" at="1,0,230,10" name="SpecializedOilLanguageIDE.WellLanguageDistribution" />
+    </file>
+  </root>
+  <root nodeRef="r:81f2078c-b646-4df5-a46d-e41fb9d176e4(SpecializedOilLanguageIDE)/1812650517765675225">
+    <file name="Info.plist.xml">
+      <unit id="1812650517765675225" at="1,0,186,8" name="SpecializedOilLanguageIDE.Info$plist" />
+    </file>
+  </root>
+</debug-info>
+

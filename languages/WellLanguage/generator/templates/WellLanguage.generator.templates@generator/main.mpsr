@@ -139,6 +139,24 @@
         <ref role="v9R2y" node="2TVACx$QTOC" resolve="reduce_Coordinates_html" />
       </node>
     </node>
+    <node concept="3aamgX" id="2TVACx_8QDn" role="3acgRq">
+      <ref role="30HIoZ" to="n484:70kZfzvA6o6" resolve="ActivitySchedule" />
+      <node concept="j$656" id="2TVACx_8Rb5" role="1lVwrX">
+        <ref role="v9R2y" node="2TVACx_8Rb3" resolve="reduce_ActivitySchedule" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="2TVACx_8VpL" role="3acgRq">
+      <ref role="30HIoZ" to="n484:bG9WTCKaLa" resolve="TaskSubTable" />
+      <node concept="j$656" id="2TVACx_8Vqn" role="1lVwrX">
+        <ref role="v9R2y" node="2TVACx_8Vql" resolve="reduce_TaskSubTable" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="2TVACx_8Vqq" role="3acgRq">
+      <ref role="30HIoZ" to="n484:70kZfzvA6qE" resolve="Task" />
+      <node concept="j$656" id="2TVACx_8Vr2" role="1lVwrX">
+        <ref role="v9R2y" node="2TVACx_8Vr0" resolve="reduce_Task" />
+      </node>
+    </node>
     <node concept="3lhOvk" id="5CEHj$UWJkW" role="3lj3bC">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="n484:4u7RhGfIkkG" resolve="Well" />
@@ -157,6 +175,14 @@
     <node concept="3lhOvk" id="2TVACx$QY1u" role="3lj3bC">
       <ref role="30HIoZ" to="n484:5CEHj$UIuvf" resolve="MotorTable" />
       <ref role="3lhOvi" node="2TVACx$QY1z" resolve="map_MotorTable" />
+    </node>
+    <node concept="3lhOvk" id="2TVACx_4cN2" role="3lj3bC">
+      <ref role="30HIoZ" to="n484:3lHLDwOdGd9" resolve="ActivityBoard" />
+      <ref role="3lhOvi" node="2TVACx_4cN8" resolve="map_ActivityBoard" />
+    </node>
+    <node concept="3lhOvk" id="2TVACx_4cNc" role="3lj3bC">
+      <ref role="30HIoZ" to="n484:CBBprYOLyp" resolve="WorkersTable" />
+      <ref role="3lhOvi" node="2TVACx_4cNj" resolve="map_WorkersTable" />
     </node>
   </node>
 </model>

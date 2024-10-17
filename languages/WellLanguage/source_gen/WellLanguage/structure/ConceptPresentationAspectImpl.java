@@ -24,13 +24,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_HorizontalWell;
   private ConceptPresentation props_InjectionWell;
   private ConceptPresentation props_InnerPesonel;
-  private ConceptPresentation props_LengthWrapper;
   private ConceptPresentation props_Machinery;
   private ConceptPresentation props_Metadata;
   private ConceptPresentation props_Motor;
   private ConceptPresentation props_MotorTable;
   private ConceptPresentation props_ProductionWell;
   private ConceptPresentation props_PumpingUnit;
+  private ConceptPresentation props_PumpingUnitTable;
   private ConceptPresentation props_SimpleJavaScripts;
   private ConceptPresentation props_SingleLineComment;
   private ConceptPresentation props_SurfaceProperties;
@@ -152,13 +152,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_InnerPesonel = cpb.create();
         }
         return props_InnerPesonel;
-      case LanguageConceptSwitch.LengthWrapper:
-        if (props_LengthWrapper == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LengthWrapper");
-          props_LengthWrapper = cpb.create();
-        }
-        return props_LengthWrapper;
       case LanguageConceptSwitch.Machinery:
         if (props_Machinery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -197,10 +190,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PumpingUnit:
         if (props_PumpingUnit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PumpingUnit");
+          cpb.presentationByReference(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b05dL, 0x5a2ab5393ac55606L, "well", "", "");
           props_PumpingUnit = cpb.create();
         }
         return props_PumpingUnit;
+      case LanguageConceptSwitch.PumpingUnitTable:
+        if (props_PumpingUnitTable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_PumpingUnitTable = cpb.create();
+        }
+        return props_PumpingUnitTable;
       case LanguageConceptSwitch.SimpleJavaScripts:
         if (props_SimpleJavaScripts == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

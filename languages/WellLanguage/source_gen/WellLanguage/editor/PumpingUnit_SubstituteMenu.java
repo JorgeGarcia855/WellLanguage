@@ -22,34 +22,34 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class DepositWell_SubstituteMenu extends SubstituteMenuBase {
-  public DepositWell_SubstituteMenu() {
-    super(false, new EditorMenuDescriptorBase("default substitute menu for DepositWell. Generated from implicit smart reference attribute.", new SNodePointer("r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)", "8013997290454422936")));
+public class PumpingUnit_SubstituteMenu extends SubstituteMenuBase {
+  public PumpingUnit_SubstituteMenu() {
+    super(false, new EditorMenuDescriptorBase("default substitute menu for PumpingUnit. Generated from implicit smart reference attribute.", new SNodePointer("r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)", "92897613166784605")));
   }
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_7wkfqu_a(), CONCEPTS.DepositWell$vf));
-    result.add(new SMP_Subconcepts_7wkfqu_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_jbkax9_a(), CONCEPTS.PumpingUnit$Mw));
+    result.add(new SMP_Subconcepts_jbkax9_b());
     return result;
   }
 
-  public class SMP_ReferenceScope_7wkfqu_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_jbkax9_a extends ReferenceScopeSubstituteMenuPart {
 
-    public SMP_ReferenceScope_7wkfqu_a() {
-      super(CONCEPTS.DepositWell$vf, LINKS.worker$c6bb, new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+    public SMP_ReferenceScope_jbkax9_a() {
+      super(CONCEPTS.PumpingUnit$Mw, LINKS.well$F3SR, new EditorMenuDescriptorBase("reference scope substitute menu part", null));
     }
 
   }
-  public class SMP_Subconcepts_7wkfqu_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
-    public SMP_Subconcepts_7wkfqu_b() {
-      super(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "DepositWell", null));
+  public class SMP_Subconcepts_jbkax9_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+    public SMP_Subconcepts_jbkax9_b() {
+      super(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "PumpingUnit", null));
     }
 
     @Override
     protected Collection<SAbstractConcept> getConcepts(final SubstituteMenuContext _context) {
-      return getDirectDescendants(_context, CONCEPTS.DepositWell$vf);
+      return getDirectDescendants(_context, CONCEPTS.PumpingUnit$Mw);
     }
 
     @Override
@@ -59,10 +59,10 @@ public class DepositWell_SubstituteMenu extends SubstituteMenuBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept DepositWell$vf = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x6f377013607a9598L, "WellLanguage.structure.DepositWell");
+    /*package*/ static final SConcept PumpingUnit$Mw = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b05dL, "WellLanguage.structure.PumpingUnit");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink worker$c6bb = MetaAdapterFactory.getReferenceLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, 0x7014fcf8dfb6e6a5L, "worker");
+    /*package*/ static final SReferenceLink well$F3SR = MetaAdapterFactory.getReferenceLink(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149b05dL, 0x5a2ab5393ac55606L, "well");
   }
 }
