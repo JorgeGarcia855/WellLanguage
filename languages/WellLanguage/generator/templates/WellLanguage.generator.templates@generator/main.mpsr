@@ -28,6 +28,7 @@
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
+        <property id="1177959072138" name="keepSourceRoot" index="13Pg2o" />
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
     </language>
@@ -183,6 +184,11 @@
     <node concept="3lhOvk" id="2TVACx_4cNc" role="3lj3bC">
       <ref role="30HIoZ" to="n484:CBBprYOLyp" resolve="WorkersTable" />
       <ref role="3lhOvi" node="2TVACx_4cNj" resolve="map_WorkersTable" />
+    </node>
+    <node concept="3lhOvk" id="2eq$k95rREl" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
+      <ref role="30HIoZ" to="n484:2eq$k95rJAG" resolve="HTMLIndex" />
+      <ref role="3lhOvi" node="2bxi2$jnkmN" resolve="index" />
     </node>
   </node>
 </model>

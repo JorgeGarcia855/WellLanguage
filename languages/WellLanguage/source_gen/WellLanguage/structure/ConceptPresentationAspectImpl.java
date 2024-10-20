@@ -21,6 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DownholeTable;
   private ConceptPresentation props_Fluid;
   private ConceptPresentation props_FluidsTable;
+  private ConceptPresentation props_HTMLIndex;
   private ConceptPresentation props_HorizontalWell;
   private ConceptPresentation props_InjectionWell;
   private ConceptPresentation props_InnerPesonel;
@@ -131,6 +132,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_FluidsTable = cpb.create();
         }
         return props_FluidsTable;
+      case LanguageConceptSwitch.HTMLIndex:
+        if (props_HTMLIndex == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("HTMLIndex");
+          props_HTMLIndex = cpb.create();
+        }
+        return props_HTMLIndex;
       case LanguageConceptSwitch.HorizontalWell:
         if (props_HorizontalWell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -4,7 +4,6 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/WellLanguage.sandbox/WellLanguage.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WellLanguage/WellLanguage.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/SpecializedOilLanguage/SpecializedOilLanguage.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/SpecializedOilLanguageIDE/SpecializedOilLanguageIDE.msd" folder="" />
     </projectModules>
   </component>
