@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-d3jogvosqjzvforikh849z8nm0n8ykr">
-  <files names="BehaviorAspectDescriptor.java:ProductionWell__BehaviorDescriptor.java:Well__BehaviorDescriptor.java" />
+<product version="3" modelHash="-8zsgkxw7lnc4dogoi1kpcctefl38rhf">
+  <files names="ActivityBoard__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:MotorTable__BehaviorDescriptor.java:ProductionWell__BehaviorDescriptor.java:Well__BehaviorDescriptor.java:WorkersTable__BehaviorDescriptor.java" />
 </product>
 

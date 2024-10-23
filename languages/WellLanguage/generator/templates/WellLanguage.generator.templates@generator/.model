@@ -16,6 +16,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" />
+    <import index="gmq4" ref="r:0dc6eaeb-91f2-4042-81e5-b15d42dcb7f8(WellLanguage.behavior)" implicit="true" />
   </imports>
 </model>
 

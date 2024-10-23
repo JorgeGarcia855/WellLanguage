@@ -7,20 +7,10 @@
   <imports />
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
-      <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <child id="1068580123133" name="returnType" index="3clF45" />
-        <child id="1068580123135" name="body" index="3clF47" />
-      </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ngI" index="1B3ioH">
-        <child id="1178549979242" name="visibility" index="1B3o_S" />
-      </concept>
-      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="1f9e61a5-590e-4e5e-9835-cf0a05fde422" name="WellLanguage">
       <concept id="3849951613487734061" name="WellLanguage.structure.WellPersonel" flags="ng" index="13hIP">
@@ -113,7 +103,6 @@
         <child id="4128156691547990188" name="customStatements" index="2x_80f" />
         <child id="4128156691550109127" name="surfaceProps" index="2xHdl$" />
         <child id="4128156691550108948" name="casingProps" index="2xHdmR" />
-        <child id="4128156691545689906" name="customMethods" index="2xWquh" />
       </concept>
       <concept id="6497204669838387151" name="WellLanguage.structure.MotorTable" flags="ng" index="1w$PbQ">
         <child id="952715169458189939" name="metadata" index="i_GWl" />
@@ -290,12 +279,6 @@
     <node concept="3clFbS" id="W00hD4rKsa" role="2x_80f">
       <node concept="3clFbH" id="1$BP0F5fRNP" role="3cqZAp" />
       <node concept="3clFbH" id="1$BP0F5fRNR" role="3cqZAp" />
-    </node>
-    <node concept="2YIFZL" id="1$BP0F5fRO0" role="2xWquh">
-      <property role="TrG5h" value="fb" />
-      <node concept="3cqZAl" id="1$BP0F5fRO1" role="3clF45" />
-      <node concept="3Tm1VV" id="1$BP0F5fRO2" role="1B3o_S" />
-      <node concept="3clFbS" id="1$BP0F5fRO3" role="3clF47" />
     </node>
   </node>
 </model>

@@ -212,7 +212,6 @@
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" kind="rt" />
           <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" kind="rt" />
           <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" kind="rt" />
-          <module ref="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" kind="rt" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" kind="rt" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" kind="rt" />
           <module ref="f0fff802-6d26-4d2e-b89d-391357265626(de.slisson.mps.hacks.editor)" kind="rt" />
@@ -284,7 +283,6 @@
           <language id="l:ad93155d-79b2-4759-b10c-55123e763903:jetbrains.mps.lang.messages" />
           <language id="l:d4615e3b-d671-4ba9-af01-2b78369b0ba7:jetbrains.mps.lang.pattern" />
           <language id="l:28f9e497-3b42-4291-aeba-0a1039153ab1:jetbrains.mps.lang.plugin" />
-          <language id="l:ef7bf5ac-d06c-4342-b11d-e42104eb9343:jetbrains.mps.lang.plugin.standalone" />
           <language id="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" />
           <language id="l:982eb8df-2c96-4bd7-9963-11712ea622e5:jetbrains.mps.lang.resources" />
           <language id="l:b3551702-269c-4f05-ba61-58060cef4292:jetbrains.mps.lang.rulesAndMessages" />
@@ -410,8 +408,6 @@
       <plugin path="${artifacts.de.itemis.mps.extensions}/mps-tables" id="de.slisson.mps.tables" />
       <plugin path="${artifacts.mpsBuild}/mps-build" id="jetbrains.mps.build" />
       <plugin path="${artifacts.mpsCore}/mps-core" id="jetbrains.mps.core" />
-      <library file="${artifacts.mpsStandalone}/languages/workbench-stub.jar" />
-      <library file="${artifacts.mpsStandalone}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <chunk>
         <module file="${basedir}/languages/WellLanguage/WellLanguage.mpl" />
       </chunk>
@@ -464,8 +460,6 @@
         <fileset file="${artifacts.mpsStandalone}/lib/mps-generator.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/mps-project-check.jar" />
-        <fileset file="${artifacts.mpsStandalone}/lib/mps-icons.jar" />
-        <fileset file="${artifacts.mpsStandalone}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/annotations.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/app.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/app-client.jar" />
@@ -538,8 +532,6 @@
         <fileset file="${artifacts.mpsStandalone}/lib/mps-generator.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/mps-project-check.jar" />
-        <fileset file="${artifacts.mpsStandalone}/lib/mps-icons.jar" />
-        <fileset file="${artifacts.mpsStandalone}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/WellLanguage" />
         <fileset file="${artifacts.mpsStandalone}/lib/annotations.jar" />
         <fileset file="${artifacts.mpsStandalone}/lib/app.jar" />
