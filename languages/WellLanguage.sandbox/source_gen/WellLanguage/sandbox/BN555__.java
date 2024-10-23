@@ -13,7 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import WellLanguage.util.HtmlTag;
 
-public class BN122__ {
+public class BN555__ {
   private static String path = "";
   public static void main(String[] args) {
     gui();
@@ -49,7 +49,7 @@ public class BN122__ {
     } else {
       writeToHtml(map_ActivityBoard.generateActivitiesHtml(), path + "/" + "TableroActividades" + ".html");
       writeToHtml(map_MotorTable.generateMotorTableHtml(), path + "/" + "TablaMotores" + ".html");
-      writeToHtml(generateWellHtml(), path + "/" + "BN122" + ".html");
+      writeToHtml(generateWellHtml(), path + "/" + "BN555" + ".html");
       writeToHtml(generateIndex(), path + "/index" + ".html");
       writeToHtml(map_WorkersTable.generateWorkersTableHtml(), path + "/" + "Tabla_de_Empleados" + ".html");
       JOptionPane.showMessageDialog(null, "Saved to: " + folderPath, "Folder Path", JOptionPane.INFORMATION_MESSAGE);
@@ -110,7 +110,7 @@ public class BN122__ {
     html.append(HtmlTag.HEAD_OPEN);
     html.append(HtmlTag.META);
     html.append(HtmlTag.TITLE_OPEN);
-    html.append("BN122");
+    html.append("BN555");
     html.append(HtmlTag.TITLE_CLOSE);
     html.append(HtmlTag.STYLE_OPEN);
     html.append(HtmlTag.CSS_STYLE);
@@ -118,7 +118,7 @@ public class BN122__ {
     html.append(HtmlTag.HEAD_CLOSE);
     html.append(HtmlTag.BODY_OPEN);
     html.append(HtmlTag.HEADER_OPEN);
-    html.append(HtmlTag.hTagFormat(1, "BN122"));
+    html.append(HtmlTag.hTagFormat(1, "BN555"));
     html.append(HtmlTag.NAV_OPEN);
     html.append(HtmlTag.UL_OPEN);
     html.append(HtmlTag.LI_OPEN);
@@ -142,7 +142,7 @@ public class BN122__ {
     html.append(HtmlTag.UL_CLOSE);
     html.append(HtmlTag.NAV_CLOSE);
     html.append(HtmlTag.HEADER_CLOSE);
-    html.append(HtmlTag.hTagFormat(1, "BN122"));
+    html.append(HtmlTag.hTagFormat(1, "BN555"));
     html.append(HtmlTag.BR);
     html.append(HtmlTag.DIV_OPEN);
     html.append(HtmlTag.hTagFormat(3, "0.01"));

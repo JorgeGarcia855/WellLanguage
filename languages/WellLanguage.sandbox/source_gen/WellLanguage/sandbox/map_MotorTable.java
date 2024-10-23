@@ -23,6 +23,9 @@ public class map_MotorTable {
     html.append(HtmlTag.NAV_OPEN);
     html.append(HtmlTag.UL_OPEN);
     html.append(HtmlTag.LI_OPEN);
+    html.append(HtmlTag.linkFormat("index" + ".html", "home"));
+    html.append(HtmlTag.LI_CLOSE);
+    html.append(HtmlTag.LI_OPEN);
     html.append(HtmlTag.linkFormat("TableroActividades" + ".html", "TableroActividades"));
     html.append(HtmlTag.LI_CLOSE);
     html.append(HtmlTag.LI_OPEN);
@@ -30,6 +33,9 @@ public class map_MotorTable {
     html.append(HtmlTag.LI_CLOSE);
     html.append(HtmlTag.LI_OPEN);
     html.append(HtmlTag.linkFormat("BN122" + ".html", "BN122"));
+    html.append(HtmlTag.LI_CLOSE);
+    html.append(HtmlTag.LI_OPEN);
+    html.append(HtmlTag.linkFormat("BN555" + ".html", "BN555"));
     html.append(HtmlTag.LI_CLOSE);
     html.append(HtmlTag.LI_OPEN);
     html.append(HtmlTag.linkFormat("Tabla_de_Empleados" + ".html", "Tabla de Empleados"));

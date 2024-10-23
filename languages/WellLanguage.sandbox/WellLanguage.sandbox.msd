@@ -10,6 +10,9 @@
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>
+  <dependencies>
+    <dependency reexport="false">5d294cc7-0580-4a60-bf41-ac5d3605cede(WellLanguage.generator)</dependency>
+  </dependencies>
   <languageVersions>
     <language slang="l:1f9e61a5-590e-4e5e-9835-cf0a05fde422:WellLanguage" version="0" />
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="12" />
@@ -18,6 +21,7 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
+    <module reference="5d294cc7-0580-4a60-bf41-ac5d3605cede(WellLanguage.generator)" version="0" />
     <module reference="db0caab3-349d-4875-88da-fe238e607462(WellLanguage.sandbox)" version="0" />
   </dependencyVersions>
 </solution>

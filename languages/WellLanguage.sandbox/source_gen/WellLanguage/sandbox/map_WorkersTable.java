@@ -23,6 +23,9 @@ public class map_WorkersTable {
     html.append(HtmlTag.NAV_OPEN);
     html.append(HtmlTag.UL_OPEN);
     html.append(HtmlTag.LI_OPEN);
+    html.append(HtmlTag.linkFormat("index" + ".html", "home"));
+    html.append(HtmlTag.LI_CLOSE);
+    html.append(HtmlTag.LI_OPEN);
     html.append(HtmlTag.linkFormat("TableroActividades" + ".html", "TableroActividades"));
     html.append(HtmlTag.LI_CLOSE);
     html.append(HtmlTag.LI_OPEN);
@@ -32,6 +35,9 @@ public class map_WorkersTable {
     html.append(HtmlTag.linkFormat("BN122" + ".html", "BN122"));
     html.append(HtmlTag.LI_CLOSE);
     html.append(HtmlTag.LI_OPEN);
+    html.append(HtmlTag.linkFormat("BN555" + ".html", "BN555"));
+    html.append(HtmlTag.LI_CLOSE);
+    html.append(HtmlTag.LI_OPEN);
     html.append(HtmlTag.linkFormat("Tabla_de_Empleados" + ".html", "Tabla de Empleados"));
     html.append(HtmlTag.LI_CLOSE);
     html.append(HtmlTag.UL_CLOSE);
@@ -39,7 +45,24 @@ public class map_WorkersTable {
     html.append(HtmlTag.HEADER_CLOSE);
     html.append(HtmlTag.hTagFormat(1, "Tabla de Empleados"));
     html.append(HtmlTag.BR);
-    html.append(HtmlTag.htmlMetadataDiv());
+    html.append(HtmlTag.DIV_OPEN);
+    html.append(HtmlTag.hTagFormat(3, "0.01"));
+    html.append(HtmlTag.BR);
+    html.append(HtmlTag.P_OPEN);
+    html.append("3-3-3");
+    html.append(HtmlTag.P_CLOSE);
+    html.append(HtmlTag.BR);
+    html.append(HtmlTag.UL_OPEN);
+    html.append(HtmlTag.LI_OPEN);
+    html.append("juan");
+    html.append(HtmlTag.LI_CLOSE);
+    html.append(HtmlTag.UL_CLOSE);
+    html.append(HtmlTag.BR);
+    html.append(HtmlTag.P_OPEN);
+    html.append("tabla de empleados");
+    html.append(HtmlTag.P_CLOSE);
+    html.append(HtmlTag.DIV_CLOSE);
+
     html.append(HtmlTag.BR);
     html.append(HtmlTag.TABLE_OPEN);
     html.append(HtmlTag.TR_OPEN);
