@@ -28,7 +28,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDownholeTable = createDescriptorForDownholeTable();
   /*package*/ final ConceptDescriptor myConceptFluid = createDescriptorForFluid();
   /*package*/ final ConceptDescriptor myConceptFluidsTable = createDescriptorForFluidsTable();
-  /*package*/ final ConceptDescriptor myConceptHTMLIndex = createDescriptorForHTMLIndex();
   /*package*/ final ConceptDescriptor myConceptHorizontalWell = createDescriptorForHorizontalWell();
   /*package*/ final ConceptDescriptor myConceptInjectionWell = createDescriptorForInjectionWell();
   /*package*/ final ConceptDescriptor myConceptInnerPesonel = createDescriptorForInnerPesonel();
@@ -69,7 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptActivityBoard, myConceptActivitySchedule, myConceptAuthors, myConceptCasingProperties, myConceptCasingTable, myConceptCoordinates, myConceptDate, myConceptDepositWell, myConceptDownhole, myConceptDownholeTable, myConceptFluid, myConceptFluidsTable, myConceptHTMLIndex, myConceptHorizontalWell, myConceptInjectionWell, myConceptInnerPesonel, myConceptMachinery, myConceptMetadata, myConceptMotor, myConceptMotorTable, myConceptProductionWell, myConceptPumpingUnit, myConceptPumpingUnitTable, myConceptSimpleJavaScripts, myConceptSingleLineComment, myConceptSurfaceProperties, myConceptSurfaceTable, myConceptTask, myConceptTaskSubTable, myConceptWell, myConceptWellPersonel, myConceptWorker, myConceptWorkersTable);
+    return Arrays.asList(myConceptActivityBoard, myConceptActivitySchedule, myConceptAuthors, myConceptCasingProperties, myConceptCasingTable, myConceptCoordinates, myConceptDate, myConceptDepositWell, myConceptDownhole, myConceptDownholeTable, myConceptFluid, myConceptFluidsTable, myConceptHorizontalWell, myConceptInjectionWell, myConceptInnerPesonel, myConceptMachinery, myConceptMetadata, myConceptMotor, myConceptMotorTable, myConceptProductionWell, myConceptPumpingUnit, myConceptPumpingUnitTable, myConceptSimpleJavaScripts, myConceptSingleLineComment, myConceptSurfaceProperties, myConceptSurfaceTable, myConceptTask, myConceptTaskSubTable, myConceptWell, myConceptWellPersonel, myConceptWorker, myConceptWorkersTable);
   }
 
   @Override
@@ -100,8 +99,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFluid;
       case LanguageConceptSwitch.FluidsTable:
         return myConceptFluidsTable;
-      case LanguageConceptSwitch.HTMLIndex:
-        return myConceptHTMLIndex;
       case LanguageConceptSwitch.HorizontalWell:
         return myConceptHorizontalWell;
       case LanguageConceptSwitch.InjectionWell:
@@ -273,13 +270,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)/210587050054606629");
     b.version(3);
     b.aggregate("fluids", 0x2ec27ce68d17a91L).target(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x14a09e31149cc8dL).optional(true).ordered(true).multiple(true).origin("210587050054875793").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForHTMLIndex() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WellLanguage", "HTMLIndex", 0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x239a9142456ef9acL);
-    b.class_(false, false, true);
-    b.origin("r:11041e4c-db17-433f-9948-c6a16ce7eaf6(WellLanguage.structure)/2565522651559688620");
-    b.version(3);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForHorizontalWell() {

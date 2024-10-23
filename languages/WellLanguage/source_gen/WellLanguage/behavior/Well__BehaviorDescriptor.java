@@ -5,24 +5,46 @@ package WellLanguage.behavior;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
+import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class Well__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, "WellLanguage.structure.Well");
 
+  public static final SMethod<List<SNode>> listRootWells_id7lCn$XWPSwL = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("listRootWells").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(8460115595505403953L).languageId(0x9835cf0a05fde422L, 0x1f9e61a5590e4e5eL).build2();
+  public static final SMethod<List<SNode>> listRootWorkersTables_id7lCn$XWPSwX = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("listRootWorkersTables").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(8460115595505403965L).languageId(0x9835cf0a05fde422L, 0x1f9e61a5590e4e5eL).build2();
+  public static final SMethod<List<SNode>> listRootMotors_id7lCn$XWPUeK = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("listRootMotors").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(8460115595505410992L).languageId(0x9835cf0a05fde422L, 0x1f9e61a5590e4e5eL).build2();
+  public static final SMethod<List<SNode>> listRootActivities_id7lCn$XWPSx9 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("listRootActivities").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).baseMethodId(8460115595505403977L).languageId(0x9835cf0a05fde422L, 0x1f9e61a5590e4e5eL).build2();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(listRootWells_id7lCn$XWPSwL, listRootWorkersTables_id7lCn$XWPSwX, listRootMotors_id7lCn$XWPUeK, listRootActivities_id7lCn$XWPSx9);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static List<SNode> listRootWells_id7lCn$XWPSwL(@NotNull SNode __thisNode__) {
+    return SModelOperations.roots(SNodeOperations.getModel(__thisNode__), CONCEPTS.Well$D_);
+  }
+  /*package*/ static List<SNode> listRootWorkersTables_id7lCn$XWPSwX(@NotNull SNode __thisNode__) {
+    return SModelOperations.roots(SNodeOperations.getModel(__thisNode__), CONCEPTS.WorkersTable$1W);
+  }
+  /*package*/ static List<SNode> listRootMotors_id7lCn$XWPUeK(@NotNull SNode __thisNode__) {
+    return SModelOperations.roots(SNodeOperations.getModel(__thisNode__), CONCEPTS.MotorTable$X_);
+  }
+  /*package*/ static List<SNode> listRootActivities_id7lCn$XWPSx9(@NotNull SNode __thisNode__) {
+    return SModelOperations.roots(SNodeOperations.getModel(__thisNode__), CONCEPTS.ActivityBoard$ZT);
+  }
 
   /*package*/ Well__BehaviorDescriptor() {
   }
@@ -39,6 +61,14 @@ public final class Well__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((List<SNode>) listRootWells_id7lCn$XWPSwL(node));
+      case 1:
+        return (T) ((List<SNode>) listRootWorkersTables_id7lCn$XWPSwX(node));
+      case 2:
+        return (T) ((List<SNode>) listRootMotors_id7lCn$XWPUeK(node));
+      case 3:
+        return (T) ((List<SNode>) listRootActivities_id7lCn$XWPSx9(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -66,5 +96,12 @@ public final class Well__BehaviorDescriptor extends BaseBHDescriptor {
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Well$D_ = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x4787dd1b0fb9452cL, "WellLanguage.structure.Well");
+    /*package*/ static final SConcept WorkersTable$1W = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0xa279d96fed31899L, "WellLanguage.structure.WorkersTable");
+    /*package*/ static final SConcept MotorTable$X_ = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x5a2ab5393ab9e7cfL, "WellLanguage.structure.MotorTable");
+    /*package*/ static final SConcept ActivityBoard$ZT = MetaAdapterFactory.getConcept(0x1f9e61a5590e4e5eL, 0x9835cf0a05fde422L, 0x356dc6983436c349L, "WellLanguage.structure.ActivityBoard");
   }
 }
